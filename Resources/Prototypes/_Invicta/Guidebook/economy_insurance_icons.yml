@@ -1,0 +1,49 @@
+- type: entity
+  id: GuideInsuranceIconNonStatus
+  name: Иконка страховки — гражданская
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: /Textures/_Invicta/economy/insurance.rsi
+    layers:
+    - state: NonStatus
+
+- type: entity
+  id: GuideInsuranceIconCopper
+  name: Иконка страховки — бронзовая
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: /Textures/_Invicta/economy/insurance.rsi
+    layers:
+    - state: Copper
+
+- type: entity
+  id: GuideInsuranceIconSilver
+  name: Иконка страховки — серебряная
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: /Textures/_Invicta/economy/insurance.rsi
+    layers:
+    - state: Silver
+
+- type: entity
+  id: GuideInsuranceIconGold
+  name: Иконка страховки — золотая
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: /Textures/_Invicta/economy/insurance.rsi
+    layers:
+    - state: Gold
+
+- type: entity
+  id: GuideInsuranceIconPlatinum
+  name: Иконка страховки — платиновая
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: /Textures/_Invicta/economy/insurance.rsi
+    layers:
+    - state: Platinum

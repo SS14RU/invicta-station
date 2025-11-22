@@ -97,6 +97,7 @@ using Content.Shared.Administration.Logs;
 using Content.Server.Radio.EntitySystems;
 using Content.Shared.Cargo;
 using Content.Shared.Cargo.Components;
+using Content.Shared.Cargo.BUI;
 using Content.Shared.Cargo.Prototypes;
 using Content.Shared.CCVar;
 using Content.Shared.Containers.ItemSlots;
@@ -111,8 +112,8 @@ using Robust.Shared.Random;
 
 namespace Content.Server.Cargo.Systems;
 
-public sealed partial class CargoSystem : SharedCargoSystem
-{
+    public sealed partial class CargoSystem : SharedCargoSystem
+    {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -133,13 +134,20 @@ public sealed partial class CargoSystem : SharedCargoSystem
     [Dependency] private readonly RadioSystem _radio = default!;
 
     private EntityQuery<TransformComponent> _xformQuery;
-    private EntityQuery<CargoSellBlacklistComponent> _blacklistQuery;
-    private EntityQuery<MobStateComponent> _mobQuery;
-    private EntityQuery<TradeStationComponent> _tradeQuery;
+        private EntityQuery<CargoSellBlacklistComponent> _blacklistQuery;
+        private EntityQuery<MobStateComponent> _mobQuery;
+        private EntityQuery<TradeStationComponent> _tradeQuery;
 
-    private HashSet<EntityUid> _setEnts = new();
-    private List<EntityUid> _listEnts = new();
-    private List<(EntityUid, CargoPalletComponent, TransformComponent)> _pads = new();
+        private HashSet<EntityUid> _setEnts = new();
+        private List<EntityUid> _listEnts = new();
+        private List<(EntityUid, CargoPalletComponent, TransformComponent)> _pads = new();
+
+        partial void InitializeInvictaBridge();
+        partial void BeforeCargoBankUpdate(EntityUid station, StationBankAccountComponent component, ref int amount, ref bool handled);
+        partial void AfterCargoBankUpdate(EntityUid station, StationBankAccountComponent component, int amount, bool handled);
+        partial void EnsureInvictaBalanceSync(EntityUid station);
+        partial void ShouldSkipCargoPassiveIncome(EntityUid station, StationBankAccountComponent bank, ref bool skip);
+        partial void AdjustCargoInterfaceState(EntityUid station, StationCargoOrderDatabaseComponent orderDatabase, StationBankAccountComponent bankAccount, ref CargoConsoleInterfaceState state);
 
     public override void Initialize()
     {
@@ -155,6 +163,7 @@ public sealed partial class CargoSystem : SharedCargoSystem
         InitializeTelepad();
         InitializeBounty();
         InitializeFunds();
+        InitializeInvictaBridge();
     }
 
     public override void Update(float frameTime)
@@ -195,9 +204,21 @@ public sealed partial class CargoSystem : SharedCargoSystem
         if (!Resolve(ent, ref ent.Comp))
             return;
 
+        var amount = balanceAdded;
+        var handled = false;
+        BeforeCargoBankUpdate(ent.Owner, ent.Comp, ref amount, ref handled);
+
+        if (handled)
+        {
+            AfterCargoBankUpdate(ent.Owner, ent.Comp, amount, true);
+            return;
+        }
+
+        EnsureInvictaBalanceSync(ent.Owner);
+
         foreach (var (account, percent) in accountDistribution)
         {
-            var accountBalancedAdded = (int) Math.Round(percent * balanceAdded);
+            var accountBalancedAdded = (int) Math.Round(percent * amount);
             ent.Comp.Accounts[account] += accountBalancedAdded;
         }
 
@@ -208,5 +229,6 @@ public sealed partial class CargoSystem : SharedCargoSystem
             return;
 
         Dirty(ent);
+        AfterCargoBankUpdate(ent.Owner, ent.Comp, amount, false);
     }
 }

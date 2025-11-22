@@ -17,7 +17,9 @@
 # Straight in-game baby
 lobbyenabled = false
 # Dev map for faster loading & convenience
-map = "Dev"
+# map = "Dev"
+# Invicta: force our cyberiad map to avoid restart loops
+map = "SS14RUCyberiad"
 role_timers = false
 
 [events]

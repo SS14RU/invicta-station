@@ -1,0 +1,459 @@
+﻿- type: entity
+  id: Thaler
+  suffix: 1 TR
+  # components:
+  # - type: Stack
+  #   count: 1
+
+- type: entity
+  parent: BaseItem
+  id: MoneyHolder
+  name: money holder
+  description: A lot of money, probably.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: /Textures/_Invicta/economy/moneyholder.rsi
+    layers:
+    - state: icon
+  - type: NameIdentifier
+    group: ThalerHolder
+  - type: Item
+    size: Small
+    heldPrefix: default
+    shape:
+    - 0,0,1,0
+  - type: EconomyMoneyHolder
+    allowCurrency: Thaler
+    amount: 0
+
+- type: entity
+  parent: MoneyHolder
+  id: ThalerHolder
+  name: thaler holder
+  suffix: Economy
+  components:
+  - type: Sprite
+    sprite: /Textures/_Invicta/economy/moneyholder.rsi
+    layers:
+    - state: icon
+  - type: EconomyMoneyHolder
+    allowCurrency: Thaler
+
+- type: entity
+  parent: MoneyHolder
+  id: AdminThalerHolder
+  name: admin thaler holder
+  suffix: Economy
+  components:
+  - type: Sprite
+    sprite: /Textures/_Invicta/economy/moneyholder.rsi
+    layers:
+    - state: icon
+  - type: EconomyMoneyHolder
+    balance: 10000
+    allowCurrency: Thaler
+
+- type: currency
+  id: Thaler
+  displayName: store-currency-display-thaler
+  cash:
+    1: Thaler
+  canWithdraw: true
+
+- type: economyAccountId
+  id: Nanotrasen
+  descriptior: "-"
+  prefix: "NT"
+  streak: 1
+  numbersPerStreak: 4
+
+- type: entity
+  parent: BaseItem
+  id: BankAccountNanotrasen
+  name: bank account
+  suffix: Economy
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/id_cards.rsi
+    layers:
+    - state: silver
+    - state: idcaptain
+  - type: Item
+    size: Small
+    heldPrefix: default
+    storedRotation: -90
+  - type: EconomyAccountHolder
+    accountIdByProto: Nanotrasen
+    moneyHolderEntId: ThalerHolder
+    accountSetup:
+      generateAccountID: true
+      allowedCurrency: Thaler
+      balance: 6000
+
+# - type: entity
+#   parent: IDCardStandard
+#   id: IDCardNT
+#   name: passenger ID card
+#   components:
+#   - type: EconomyAccountHolder
+#     allowCurrency: Thaler
+#     accountIdByProto: Nanotrasen
+#     moneyHolderEntId: ThalerHolder
+
+#РћС‚РґРµР»С‹
+- type: entity
+  parent: BankAccountNanotrasen
+  id: IDCard-NT-Command
+  name: РџР»Р°С‚С‘Р¶РЅС‹Р№ СЃС‡РµС‚ "РЎС‚Р°РЅС†РёРё"
+  suffix: Economy
+  components:
+  - type: Sprite
+    layers:
+    - state: gold
+      color: "#3A3126"
+    - state: idcaptain
+  - type: EconomyAccountHolder
+    accountIdByProto: Nanotrasen
+    moneyHolderEntId: ThalerHolder
+    accountSetup:
+      accountID: NT-Command
+      accountName: РЎС‚Р°РЅС†РёСЏ
+      allowedCurrency: Thaler
+      balance: 10000
+      accountTags:
+        - Department
+        - Station
+
+- type: entity
+  parent: BankAccountNanotrasen
+  id: IDCard-NT-Engineering
+  name: РџР»Р°С‚С‘Р¶РЅС‹Р№ СЃС‡РµС‚ "РРЅР¶РµРЅРµСЂРЅРѕРіРѕ РѕС‚РґРµР»Р°"
+  suffix: Economy
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+      color: "#3A3126"
+    - state: idstationengineer
+  - type: EconomyAccountHolder
+    accountIdByProto: Nanotrasen
+    moneyHolderEntId: ThalerHolder
+    accountSetup:
+      accountID: NT-Engineering
+      accountName: РРЅР¶РµРЅРµСЂРЅС‹Р№ РѕС‚РґРµР»
+      allowedCurrency: Thaler
+      balance: 3600
+      accountTags:
+        - Department
+
+
+- type: entity
+  parent: BankAccountNanotrasen
+  id: IDCard-NT-Service
+  name: РџР»Р°С‚С‘Р¶РЅС‹Р№ СЃС‡РµС‚ "РЎРµСЂРІРёСЃРЅРѕРіРѕ РѕС‚РґРµР»Р°"
+  suffix: Economy
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+      color: "#3A3126"
+    - state: idheadofpersonnel
+  - type: EconomyAccountHolder
+    accountIdByProto: Nanotrasen
+    moneyHolderEntId: ThalerHolder
+    accountSetup:
+      accountID: NT-Service
+      accountName: РЎРµСЂРІРёСЃРЅС‹Р№ РѕС‚РґРµР»
+      allowedCurrency: Thaler
+      balance: 2400
+      accountTags:
+        - Department
+
+- type: entity
+  parent: BankAccountNanotrasen
+  id: IDCard-NT-Security
+  name: РџР»Р°С‚С‘Р¶РЅС‹Р№ СЃС‡РµС‚ "РЎР»СѓР¶Р±С‹ Р±РµР·РѕРїР°СЃРЅРѕСЃС‚Рё"
+  suffix: Economy
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+      color: "#3A3126"
+    - state: idsecurityofficer
+  - type: EconomyAccountHolder
+    accountIdByProto: Nanotrasen
+    moneyHolderEntId: ThalerHolder
+    accountSetup:
+      accountID: NT-Security
+      allowedCurrency: Thaler
+      accountName: Р”РµРїР°СЂС‚Р°РјРµРЅС‚Р° РЁРµСЂРёС„Р°
+      balance: 3800
+      accountTags:
+        - Department
+
+- type: entity
+  parent: BankAccountNanotrasen
+  id: IDCard-NT-Medical
+  name: РџР»Р°С‚С‘Р¶РЅС‹Р№ СЃС‡РµС‚ "РњРµРґРёС†РёРЅСЃРєРѕРіРѕ РѕС‚РґРµР»Р°"
+  suffix: Economy
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+      color: "#3A3126"
+    - state: idmedicaldoctor
+  - type: EconomyAccountHolder
+    accountIdByProto: Nanotrasen
+    moneyHolderEntId: ThalerHolder
+    accountSetup:
+      accountID: NT-Medical
+      accountName: РњРµРґРёС†РёРЅСЃРєРёР№ РѕС‚РґРµР»
+      allowedCurrency: Thaler
+      balance: 3200
+      accountTags:
+        - Department
+
+- type: entity
+  parent: BankAccountNanotrasen
+  id: IDCard-NT-Science
+  name: РџР»Р°С‚С‘Р¶РЅС‹Р№ СЃС‡РµС‚ "РќР°СѓС‡РЅРѕРіРѕ РѕС‚РґРµР»Р°"
+  suffix: Economy
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+      color: "#3A3126"
+    - state: idscientist
+  - type: EconomyAccountHolder
+    accountIdByProto: Nanotrasen
+    moneyHolderEntId: ThalerHolder
+    accountSetup:
+      accountID: NT-Science
+      accountName: РќР°СѓС‡РЅС‹Р№ РѕС‚РґРµР»
+      allowedCurrency: Thaler
+      balance: 3000
+      accountTags:
+        - Department
+
+- type: entity
+  parent: BankAccountNanotrasen
+  id: IDCard-NT-Cargo
+  name: РџР»Р°С‚С‘Р¶РЅС‹Р№ СЃС‡РµС‚ "РћС‚РґРµР»Р° СЃРЅР°Р±Р¶РµРЅРёСЏ"
+  suffix: Economy
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+      color: "#3A3126"
+    - state: idcargotechnician
+  - type: EconomyAccountHolder
+    accountIdByProto: Nanotrasen
+    moneyHolderEntId: ThalerHolder
+    accountSetup:
+      accountID: NT-Cargo
+      accountName: РљР°СЂРіРѕ РѕС‚РґРµР»
+      allowedCurrency: Thaler
+      balance: 2600
+      accountTags:
+        - Department
+
+- type: entity
+  parent: BankAccountNanotrasen
+  id: IDCard-NT-CentCom
+  name: РџР»Р°С‚РµР¶РЅС‹Р№ СЃС‡РµС‚ "Р¦РµРЅС‚Р°Р»СЊРЅРѕРіРѕ РљРѕРјР°РЅРґРѕРІР°РЅРёСЏ"
+  description: РўР’РћР™ Р‘РћР“
+  suffix: Economy
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+      color: "#1D1915"
+    - state: idcentcom
+  - type: EconomyAccountHolder
+    accountIdByProto: Nanotrasen
+    moneyHolderEntId: ThalerHolder
+    accountSetup:
+      accountID: NT-CentCom
+      accountName: Р¦РµРЅС‚РєРѕРј
+      allowedCurrency: Thaler
+      balance: 18446744073709524615
+
+#РљР°СЃСЃС‹
+- type: entity
+  parent: BankAccountNanotrasen
+  id: IDCard-NT-Service-B
+  name: РљР°СЃСЃР° Р‘Р°СЂР°
+  description: РЎС‡РµС‚ РґР»СЏ РѕРїР»Р°С‚С‹ РЅР°РїРёС‚РєРѕРІ РґР»СЏ РєР»РёРµРЅС‚РѕРІ.
+  suffix: Economy
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+      color: "#695441"
+    - state: idbartender
+  - type: EconomyAccountHolder
+    accountIdByProto: Nanotrasen
+    moneyHolderEntId: ThalerHolder
+    accountSetup:
+      accountID: NT-Service-B
+      accountName: РљР°СЃСЃР° Р‘Р°СЂР°
+      allowedCurrency: Thaler
+      balance: 250
+      accountTags:
+        - Department
+        - CashRegister
+
+- type: entity
+  parent: BankAccountNanotrasen
+  id: IDCard-NT-Service-K
+  name: РљР°СЃСЃР° РљСѓС…РЅРё
+  description: РЎС‡РµС‚ РґР»СЏ РѕРїР»Р°С‚С‹ РїСЂРѕРґСѓРєС‚РѕРІ РґР»СЏ РєР»РёРµРЅС‚РѕРІ.
+  suffix: Economy
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+      color: "#695441"
+    - state: idcook
+  - type: EconomyAccountHolder
+    accountIdByProto: Nanotrasen
+    moneyHolderEntId: ThalerHolder
+    accountSetup:
+      accountID: NT-Service-K
+      accountName: РљР°СЃСЃР° РљСѓС…РЅРё
+      allowedCurrency: Thaler
+      balance: 125
+      accountTags:
+        - Department
+        - CashRegister
+
+- type: entity
+  parent: BankAccountNanotrasen
+  id: IDCard-NT-Service-H
+  name: РљР°СЃСЃР° Р“РёРґСЂРѕРїРѕРЅРёРєРё
+  description: РЎС‡РµС‚ РґР»СЏ РѕРїР»Р°С‚С‹ СЃРµРјСЏРЅ.
+  suffix: Economy
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+      color: "#695441"
+    - state: idbotanist
+  - type: EconomyAccountHolder
+    accountIdByProto: Nanotrasen
+    moneyHolderEntId: ThalerHolder
+    accountSetup:
+      accountID: NT-Service-H
+      accountName: РљР°СЃСЃР° Р“РёРґСЂРѕРїРѕРЅРёРєРё
+      allowedCurrency: Thaler
+      balance: 125
+      accountTags:
+        - Department
+        - CashRegister
+
+- type: entity
+  parent: BankAccountNanotrasen
+  id: IDCard-NT-Medical-C
+  name: РљР°СЃСЃР° РҐРёРјРёРё
+  description: РЎС‡РµС‚ РґР»СЏ РѕРїР»Р°С‚С‹ С…РёРјРёС‡РµСЃРєРёС… СЂРµР°РіРµРЅС‚РѕРІ.
+  suffix: Economy
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+      color: "#695441"
+    - state: idchemist
+  - type: EconomyAccountHolder
+    accountIdByProto: Nanotrasen
+    moneyHolderEntId: ThalerHolder
+    accountSetup:
+      accountID: NT-Medical-C
+      accountName: РљР°СЃСЃР° РҐРёРјРёРё
+      allowedCurrency: Thaler
+      balance: 100
+      accountTags:
+        - Department
+        - CashRegister
+
+- type: entity
+  parent: BankAccountNanotrasen
+  id: IDCard-NT-Medical-M
+  name: РљР°СЃСЃР° РњРµРґР°
+  description: РЎС‡РµС‚ РґР»СЏ РѕРїР»Р°С‚С‹ РјРµРґРёС†РёРЅСЃРєРёС… СЂР°СЃС…РѕРґРЅРёРєРѕРІ.
+  suffix: Economy
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+      color: "#695441"
+    - state: idparamedic
+  - type: EconomyAccountHolder
+    accountIdByProto: Nanotrasen
+    moneyHolderEntId: ThalerHolder
+    accountSetup:
+      accountID: NT-Medical-M
+      accountName: РљР°СЃСЃР° РњРµРґР°
+      allowedCurrency: Thaler
+      balance: 50
+      accountTags:
+        - Department
+        - CashRegister
+
+#РЎРµР№С„С‹
+- type: entity
+  parent: [GunSafe]
+  id: SafeMedical
+  name: РЎРµР№С„ РєР°СЃСЃС‹ РјРµРґР°.
+  suffix: Economy
+  components:
+  - type: StorageFill
+    contents:
+    - id: IDCard-NT-Medical-C
+    - id: IDCard-NT-Medical-M
+  - type: AccessReader
+    access: [["Command"]]
+
+- type: entity
+  parent: [GunSafe]
+  id: SafeService
+  name: РЎРµР№С„ РєР°СЃСЃС‹ РЎРµСЂРІРёСЃР°.
+  suffix: Economy
+  components:
+  - type: StorageFill
+    contents:
+    - id: IDCard-NT-Service-B
+    - id: IDCard-NT-Service-K
+    - id: IDCard-NT-Service-H
+  - type: AccessReader
+    access: [["Command"]]
+
+- type: entity
+  parent: [GunSafe]
+  id: SafeEconomy
+  name: РЎРµР№С„ СЃС‡РµС‚РѕРІ СЃС‚Р°РЅС†РёРё.
+  suffix: Economy
+  components:
+  - type: StorageFill
+    contents:
+    - id: IDCard-NT-Cargo
+    - id: IDCard-NT-Science
+    - id: IDCard-NT-Medical
+    - id: IDCard-NT-Security
+    - id: IDCard-NT-Service
+    - id: IDCard-NT-Engineering
+  - type: AccessReader
+    access: [["Command"]]
+
+- type: entity
+  parent: [GunSafe]
+  id: SafeCentCom
+  name: РЎРµР№С„ СЃС‡РµС‚Р° Р¦Рљ.
+  suffix: Economy
+  components:
+  - type: StorageFill
+    contents:
+    - id: IDCard-NT-CentCom
+  - type: AccessReader
+    access: [["Command"]]
+

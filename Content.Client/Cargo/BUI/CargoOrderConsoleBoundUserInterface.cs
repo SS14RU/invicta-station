@@ -39,7 +39,7 @@ using static Robust.Client.UserInterface.Controls.BaseButton;
 
 namespace Content.Client.Cargo.BUI
 {
-    public sealed class CargoOrderConsoleBoundUserInterface : BoundUserInterface
+    public sealed partial class CargoOrderConsoleBoundUserInterface : BoundUserInterface
     {
         private readonly SharedCargoSystem _cargoSystem;
 
@@ -69,6 +69,9 @@ namespace Content.Client.Cargo.BUI
         /// </summary>
         [ViewVariables]
         private CargoProductPrototype? _product;
+
+        partial void OnMenuOpenedExtended(CargoConsoleMenu menu);
+        partial void OnStateUpdatedExtended(BoundUserInterfaceState state);
 
         public CargoOrderConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
         {
@@ -136,6 +139,7 @@ namespace Content.Client.Cargo.BUI
                 SendMessage(new CargoConsoleToggleLimitMessage());
             };
 
+            OnMenuOpenedExtended(_menu);
             _menu.OpenCentered();
         }
 
@@ -171,6 +175,8 @@ namespace Content.Client.Cargo.BUI
 
             _menu?.UpdateStation(station);
             Populate(cState.Orders);
+
+            OnStateUpdatedExtended(state);
         }
 
         protected override void Dispose(bool disposing)

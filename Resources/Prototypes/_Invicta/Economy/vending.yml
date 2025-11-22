@@ -1,0 +1,108 @@
+﻿- type: entity
+  parent: VendingMachine
+  id: VendingMachine-NT-Engineering
+  name: NT-Engineering
+  abstract: true
+  components:
+  - type: NameIdentifier
+    group: Engineering
+  - type: EconomyBankTerminal
+    allowCurrency: Thaler
+    linkedAccount: NT-Engineering
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachine-NT-Service
+  name: NT-Service
+  abstract: true
+  components:
+  - type: NameIdentifier
+    group: Service
+  - type: EconomyBankTerminal
+    allowCurrency: Thaler
+    linkedAccount: NT-Service
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachine-NT-Security
+  name: NT-Security
+  abstract: true
+  components:
+  - type: NameIdentifier
+    group: Security
+  - type: EconomyBankTerminal
+    allowCurrency: Thaler
+    linkedAccount: NT-Security
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachine-NT-Medical
+  name: NT-Medical
+  abstract: true
+  components:
+  - type: NameIdentifier
+    group: Medical
+  - type: EconomyBankTerminal
+    allowCurrency: Thaler
+    linkedAccount: NT-Medical
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachine-NT-Science
+  name: NT-Science
+  abstract: true
+  components:
+  - type: NameIdentifier
+    group: Science
+  - type: EconomyBankTerminal
+    allowCurrency: Thaler
+    linkedAccount: NT-Science
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachine-NT-Cargo
+  name: NT-Cargo
+  abstract: true
+  components:
+  - type: NameIdentifier
+    group: Cargo
+  - type: EconomyBankTerminal
+    allowCurrency: Thaler
+    linkedAccount: NT-Cargo
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachine-NT-CentCom
+  name: NT-CentCom
+  abstract: true
+  components:
+  - type: NameIdentifier
+    group: CC
+  - type: EconomyBankTerminal
+    allowCurrency: Thaler
+    linkedAccount: NT-CentCom
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachine-NT-Command
+  name: NT-Command
+  abstract: true
+  components:
+  - type: NameIdentifier
+    group: Command
+  - type: EconomyBankTerminal
+    allowCurrency: Thaler
+    linkedAccount: NT-Command
+
+- type: entity
+  parent: VendingMachineWallmount
+  id: VendingMachineWallMedical-NT-Medical
+  name: NanoMed
+  abstract: true
+  description: "It's a wall-mounted medical equipment dispenser. Natural chemicals only!"
+  components:
+  - type: NameIdentifier
+    group: Medical
+  - type: EconomyBankTerminal
+    allowCurrency: Thaler
+    linkedAccount: NT-Medical

@@ -61,6 +61,10 @@ namespace Content.Client.Cargo.UI
 
         public event Action<ButtonEventArgs>? OnToggleUnboundedLimit;
 
+        partial void OnMenuConstructed();
+        private partial string FormatPointCost(int cost, string defaultText);
+        partial void OnBankDataUpdated(string name, int points);
+
         private readonly List<string> _categoryStrings = new();
         private string? _category;
 
@@ -120,6 +124,8 @@ namespace Content.Client.Cargo.UI
             {
                 OnToggleUnboundedLimit?.Invoke(a);
             };
+
+            OnMenuConstructed();
         }
 
         private void OnCategoryItemSelected(OptionButton.ItemSelectedEventArgs args)
@@ -309,9 +315,10 @@ namespace Content.Client.Cargo.UI
             }
 
             var balance = _cargoSystem.GetBalanceFromAccount((_station.Value, bankAccount), orderConsole.Account);
-            PointsLabel.Text = Loc.GetString("cargo-console-menu-points-amount", ("amount", balance));
+            PointsLabel.Text = FormatPointCost(balance, Loc.GetString("cargo-console-menu-points-amount", ("amount", balance)));
             TransferLimitLabel.Text = Loc.GetString("cargo-console-menu-account-action-transfer-limit",
                 ("limit", (int) (balance * orderConsole.TransferLimit)));
+            OnBankDataUpdated(AccountNameLabel.Text ?? string.Empty, balance);
 
             UnlimitedNotifier.Visible = orderConsole.TransferUnbounded;
             AccountActionButton.Disabled = TransferSpinBox.Value <= 0 ||

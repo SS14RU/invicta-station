@@ -1,0 +1,96 @@
+﻿using Content.Shared._Invicta.Economy.Bank;
+using Content.Shared.Containers.ItemSlots;
+
+namespace Content.Client._Invicta.Economy.Bank.UI.ManagementConsole;
+
+public sealed class EconomyManagementConsoleBoundUserInterface : BoundUserInterface
+{
+    [ViewVariables]
+    private EconomyManagementConsoleMenu? _menu;
+
+    public EconomyManagementConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
+    {
+    }
+
+    protected override void Open()
+    {
+        base.Open();
+        _menu = new EconomyManagementConsoleMenu(this);
+        _menu.OnClose += Close;
+
+        _menu.PrivilegedIdButton.OnPressed += _ => SendMessage(new ItemSlotButtonPressedEvent(EconomyManagementConsoleComponent.ConsoleCardID));
+        _menu.TargetIdButton.OnPressed += _ => SendMessage(new ItemSlotButtonPressedEvent(EconomyManagementConsoleComponent.TargetCardID));
+        _menu?.OpenCentered();
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
+        if (!disposing)
+            return;
+
+        _menu?.Dispose();
+    }
+
+    protected override void UpdateState(BoundUserInterfaceState state)
+    {
+        base.UpdateState(state);
+        if (state is not EconomyManagementConsoleUserInterfaceState consoleState)
+            return;
+
+        _menu?.UpdateState(consoleState);
+    }
+
+    public void BlockAccountToggle(string accountId, bool blocked)
+    {
+        var msg = new EconomyManagementConsoleChangeParameterMessage(accountId, EconomyBankAccountParam.Blocked, blocked);
+
+        SendMessage(msg);
+    }
+
+    public void ChangeName(string accountId, string newName)
+    {
+        // reeeee hardcoding
+        if (string.IsNullOrEmpty(accountId) || newName.Length > 40)
+            return;
+
+        var msg = new EconomyManagementConsoleChangeParameterMessage(accountId, EconomyBankAccountParam.AccountName, newName);
+        SendMessage(msg);
+    }
+
+    public void ChangeJob(string accountId, string jobName)
+    {
+        if (string.IsNullOrEmpty(accountId))
+            return;
+
+        var msg = new EconomyManagementConsoleChangeParameterMessage(accountId, EconomyBankAccountParam.JobName, jobName);
+        SendMessage(msg);
+    }
+
+    public void ChangeSalary(string accountId, ulong salary)
+    {
+        if (string.IsNullOrEmpty(accountId))
+            return;
+
+        var msg = new EconomyManagementConsoleChangeParameterMessage(accountId, EconomyBankAccountParam.Salary, salary);
+        SendMessage(msg);
+    }
+
+    public void ChangeAccountHolderID(NetEntity holder, string newID)
+    {
+        var msg = new EconomyManagementConsoleChangeHolderIDMessage(holder, newID);
+        SendMessage(msg);
+    }
+
+    public void InitializeAccountOnHolder(NetEntity holder)
+    {
+        var msg = new EconomyManagementConsoleInitAccountOnHolderMessage(holder);
+        SendMessage(msg);
+    }
+
+    public void PayBonus(string payer, float bonusPercent, List<string> accounts)
+    {
+        var msg = new EconomyManagementConsolePayBonusMessage(payer, bonusPercent, accounts);
+        SendMessage(msg);
+    }
+}

@@ -1,0 +1,56 @@
+﻿- type: entity
+  parent: BaseComputer
+  id: ComputerInsurance
+  name: РўРµСЂРјРёРЅР°Р» СЃС‚СЂР°С…РѕРІРѕРіРѕ СѓРїСЂР°РІР»РµРЅРёСЏ
+  description: РљРѕРјРїСЊСЋС‚РµСЂ, РёСЃРїРѕР»СЊР·СѓРµРјС‹Р№ РґР»СЏ РїСЂРѕСЃРјРѕС‚СЂР° Рё СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ СЃС‚СЂР°С…РѕРІС‹С… Р·Р°РїРёСЃРµР№
+  components:
+  - type: StationAiWhitelist
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: comm
+    - map: ["computerLayerKeys"]
+      state: generic_keys
+  - type: AccessReader
+    access: [[ "Captain", "ChiefMedicalOfficer" ]]
+  - type: ActivatableUI
+    key: enum.EconomyInsuranceTerminalUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.EconomyInsuranceTerminalUiKey.Key:
+        type: EconomyInsuranceTerminalBoundUserInterface
+  - type: ItemSlots
+  - type: Computer
+    board: ComputerInsuranceCircuitboard
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#3c5eb5"
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
+  - type: EconomyInsuranceTerminal
+    cardSlot:
+      priority: 0
+      whitelist:
+        components:
+        - IdCard
+  - type: ContainerContainer
+    containers:
+      board: !type:Container
+      InsuranceTerminal-IdSlot: !type:ContainerSlot
+
+- type: entity
+  parent: [ BaseComputerCircuitboard ]
+  id: ComputerInsuranceCircuitboard
+  name: РџР»Р°С‚Р° С‚РµСЂРјРёРЅР°Р»Р° СЃС‚СЂР°С…РѕРІРѕРіРѕ СѓРїСЂР°РІР»РµРЅРёСЏ
+  description: РџРµС‡Р°С‚РЅР°СЏ РїР»Р°С‚Р° РґР»СЏ С‚РµСЂРјРёРЅР°Р»Р° СЃС‚СЂР°С…РѕРІРѕРіРѕ СѓРїСЂР°РІР»РµРЅРёСЏ, РёСЃРїРѕР»СЊР·СѓРµРјР°СЏ РґР»СЏ РІСЃС‚СЂР°РёРІР°РЅРёСЏ РІ РєРѕСЂРїСѓСЃ РјР°С€РёРЅС‹ РґР»СЏ РїСЂРѕСЃРјРѕС‚СЂР° Рё СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ СЃС‚СЂР°С…РѕРІС‹С… Р·Р°РїРёСЃРµР№
+  components:
+    - type: Sprite
+      state: cpu_command
+    - type: ComputerBoard
+      prototype: ComputerInsurance

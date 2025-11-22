@@ -1,0 +1,80 @@
+﻿using Content.Shared.GameTicking.Components;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
+using Content.Shared._Invicta.Economy;
+using Content.Shared.Mind;
+using Content.Shared.Roles;
+using Content.Shared.Mind.Components;
+using Content.Shared.Roles.Jobs;
+using Content.Server._Invicta.Economy;
+using Content.Server.StationEvents.Events;
+using Content.Shared._Invicta.Economy.Bank;
+
+namespace Content.Server._Invicta.Economy.Bank;
+
+public sealed class EconomyPayDayRule : StationEventSystem<EconomyPayDayRuleComponent>
+{
+    [Dependency] private readonly IEntityManager _entMan = default!;
+    [Dependency] private readonly EconomyBankAccountSystem _bankAccountSystem = default!;
+    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+
+    protected override void Started(EntityUid uid, EconomyPayDayRuleComponent ruleComponent, GameRuleComponent gameRule, GameRuleStartedEvent args)
+    {
+        var accounts = _bankAccountSystem.GetAccounts();
+        if (!_bankAccountSystem.TryGetAccount(ruleComponent.PayerAccountId, out var payerAccount))
+            return;
+
+        if (!_prototype.TryIndex(ruleComponent.SallaryProto, out var sallariesProto))
+            return;
+
+        Dictionary<string, ProtoId<JobPrototype>> manifest = new();
+        List<Entity<EconomyBankAccountComponent>> blockedAccounts = new();
+
+        foreach (var (_, accountEntity) in accounts)
+        {
+            var account = accountEntity.Comp;
+
+            if (account.Blocked || !account.CanReachPayDay)
+                continue;
+
+            if (account.Blocked)
+                continue;
+
+            if (account.JobName is not { } jobId || !_prototype.TryIndex<JobPrototype>(jobId, out var jobProto))
+                continue;
+
+            EconomySallariesJobEntry? entry = null;
+            foreach (var item in sallariesProto.Jobs)
+            {
+                if (item.Key.Id == jobProto.ID)
+                    entry = item.Value;
+            }
+
+            if (entry is null)
+                continue;
+
+            ulong sallary = ((ulong)ruleComponent.Coef.Next(_random))/100* entry.Value.Sallary;
+            string? err;
+            var reason = Loc.GetString("economybanksystem-log-reason-payday");
+
+            switch (ruleComponent.PayType)
+            {
+                case EconomyPayDayRuleType.Adding:
+                    _bankAccountSystem.TrySendMoney(payerAccount.Value.Comp.AccountID, account.AccountID, sallary, reason, out err);
+                    break;
+                case EconomyPayDayRuleType.Decrementing:
+                    if (!_bankAccountSystem.TrySendMoney(account.AccountID, payerAccount.Value.Comp.AccountID, sallary, reason, out err))
+                    {
+                        if (_bankAccountSystem.TrySetAccountParameter(account.AccountID, EconomyBankAccountParam.Blocked, true))
+                            blockedAccounts.Add(accountEntity);
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        //notify that we blocked, or we cant proccess any payment
+    }
+}

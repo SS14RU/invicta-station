@@ -1,0 +1,40 @@
+﻿- type: entity
+  id: PaydayRule
+  parent: BaseGameRule
+  components:
+  - type: PaydayRule
+    intervalMinutes: 40
+    salaryPrototype: NanotrasenDefaultSallaries
+    fallbackAccountId: NT-CentCom
+    announcementId: PaydayRuleAnnouncement
+    announcementMessage: payday-rule-announcement
+    failurePopup: payday-rule-popup-insufficient
+
+- type: entity
+  id: SalaryIncreaseRule
+  parent: BaseGameRule
+  components:
+  - type: StationEvent
+    weight: 5
+    reoccurrenceDelay: 30
+  - type: SalaryIncreaseRule
+    minPercent: 10
+    maxPercent: 60
+    step: 5
+    announcementId: PaydayRuleAnnouncement
+    announcementMessage: salary-increase-announcement
+
+- type: entity
+  id: SalaryDecreaseRule
+  parent: BaseGameRule
+  components:
+  - type: StationEvent
+    weight: 7
+    reoccurrenceDelay: 30
+  - type: SalaryDecreaseRule
+    minPercent: 10
+    maxPercent: 60
+    step: 5
+    announcementId: PaydayRuleAnnouncement
+    announcementMessage: salary-decrease-announcement
+

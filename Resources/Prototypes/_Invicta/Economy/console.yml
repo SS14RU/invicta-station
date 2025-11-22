@@ -1,0 +1,119 @@
+﻿- type: entity
+  parent: BaseComputer
+  id: ComputerLogs
+  name: РљРѕРЅСЃРѕР»СЊ С„РёРЅР°РЅСЃРѕРІС‹С… РѕРїРµСЂР°С†РёР№
+  description: РљРѕРјРїСЊСЋС‚РµСЂ, РёСЃРїРѕР»СЊР·СѓРµРјС‹Р№ РґР»СЏ РїСЂРѕСЃРјРѕС‚СЂР° Рё Р°РЅР°Р»РёР·Р° Р»РѕРіРѕРІ С„РёРЅР°РЅСЃРѕРІС‹С… РѕРїРµСЂР°С†РёР№.
+  components:
+  - type: StationAiWhitelist
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: comm
+    - map: ["computerLayerKeys"]
+      state: generic_keys
+  - type: AccessReader
+    access: [[ "Command", "Security" ]]
+  - type: ActivatableUI
+    key: enum.EconomyLogConsoleMenuUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.EconomyLogConsoleMenuUiKey.Key:
+        type: EconomyLogConsoleBoundUserInterface
+  - type: Computer
+    board: ComputerLogsCircuitboard
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#3c5eb5"
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
+
+- type: entity
+  parent: [ BaseComputerCircuitboard ]
+  id: ComputerLogsCircuitboard
+  name: РџР»Р°С‚Р° РєРѕРЅСЃРѕР»Рё С„РёРЅР°РЅСЃРѕРІС‹С… РѕРїРµСЂР°С†РёР№
+  description: РџРµС‡Р°С‚РЅР°СЏ РїР»Р°С‚Р° РґР»СЏ РєРѕРЅСЃРѕР»Рё С„РёРЅР°РЅСЃРѕРІС‹С… РѕРїРµСЂР°С†РёР№, РёСЃРїРѕР»СЊР·СѓРµРјР°СЏ РґР»СЏ РѕР±СЂР°Р±РѕС‚РєРё Рё СЂРµРіРёСЃС‚СЂР°С†РёРё РґР°РЅРЅС‹С… Рѕ С‚СЂР°РЅР·Р°РєС†РёСЏС… РЅР° СЃС‚Р°РЅС†РёРё.
+  components:
+    - type: Sprite
+      state: cpu_command
+    - type: ComputerBoard
+      prototype: ComputerLogs
+
+- type: entity
+  parent: BaseComputer
+  id: ComputerEconomyManagement
+  name: РљРѕРЅСЃРѕР»СЊ СѓРїСЂР°РІР»РµРЅРёСЏ СЃС‡РµС‚Р°РјРё
+  description: РљРѕРјРїСЊСЋС‚РµСЂ, РёСЃРїРѕР»СЊР·СѓРµРјС‹Р№ РґР»СЏ СѓРїСЂР°РІР»РµРЅРёСЏ С„РёРЅР°РЅСЃРѕРІС‹РјРё СЃС‡РµС‚Р°РјРё.
+  suffix: Economy
+  components:
+  - type: EconomyManagementConsole
+    defaultJob: Passenger
+    allowCentralCommandAccount: false
+    allowRestrictedAccounts: true
+    cardSlot:
+      ejectSound: /Audio/Machines/id_swipe.ogg
+      insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+      ejectOnBreak: true
+      swap: false
+      whitelist:
+        components:
+        - IdCard
+    targetCardSlot:
+      ejectSound: /Audio/Machines/id_swipe.ogg
+      insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+      ejectOnBreak: true
+      swap: false
+      whitelist:
+        components:
+        - EconomyAccountHolder
+  - type: StationAiWhitelist
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: comm
+    - map: ["computerLayerKeys"]
+      state: generic_keys
+  - type: AccessReader
+    access: [["Captain"], ["HeadOfPersonnel"]]
+  - type: ActivatableUI
+    key: enum.EconomyManagementConsoleUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.EconomyManagementConsoleUiKey.Key:
+        type: EconomyManagementConsoleBoundUserInterface
+  - type: ItemSlots
+  - type: Computer
+    board: ComputerEconomyManagementCircuitboard
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#3c5eb5"
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
+  - type: ContainerContainer
+    containers:
+      board: !type:Container
+      ManagementConsole-IdSlot: !type:ContainerSlot
+      ManagementConsole-Target-IdSlot: !type:ContainerSlot
+
+- type: entity
+  parent: [ BaseComputerCircuitboard ]
+  id: ComputerEconomyManagementCircuitboard
+  name: РџР»Р°С‚Р° РєРѕРЅСЃРѕР»Рё СѓРїСЂР°РІР»РµРЅРёСЏ СЃС‡РµС‚Р°РјРё
+  description: РџРµС‡Р°С‚РЅР°СЏ РїР»Р°С‚Р° РґР»СЏ РєРѕРЅСЃРѕР»Рё, РёСЃРїРѕР»СЊР·СѓРµРјРѕР№ РґР»СЏ СѓРїСЂР°РІР»РµРЅРёСЏ С„РёРЅР°РЅСЃРѕРІС‹РјРё СЃС‡РµС‚Р°РјРё.
+  suffix: Economy
+  components:
+    - type: Sprite
+      state: cpu_command
+    - type: ComputerBoard
+      prototype: ComputerEconomyManagement
