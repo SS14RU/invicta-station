@@ -196,7 +196,7 @@ public sealed class EconomyInsuranceSystem : EconomyInsuranceSystemShared
     private void OnPlayerSpawn(PlayerSpawningEvent ev)
     {
         if (ev.SpawnResult is null || ev.HumanoidCharacterProfile is null)
-            DebugTools.Assert("Unable to proccess insurance on player spawn!");
+            return;
 
         var playerUid = ev.SpawnResult.Value;
         var profile = ev.HumanoidCharacterProfile;
@@ -205,7 +205,7 @@ public sealed class EconomyInsuranceSystem : EconomyInsuranceSystemShared
         var preparedData = PerformPrepareData(playerUid, profile, job);
 
         if (preparedData is null)
-            DebugTools.Assert($"Unable to proccess insurance by getting necessary components");
+            return;
 
         if (!TryCreateInsuranceRecord(preparedData.InsurancePrototype,
                 preparedData.InsurerName,
@@ -214,7 +214,6 @@ public sealed class EconomyInsuranceSystem : EconomyInsuranceSystemShared
                 out var economyInsuranceInfo,
                 out var error))
         {
-            DebugTools.Assert($"Unable to create insurance record for {playerUid}!\n{error}");
             return;
         }
 
