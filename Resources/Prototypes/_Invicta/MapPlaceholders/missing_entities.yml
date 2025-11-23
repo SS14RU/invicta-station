@@ -1,271 +1,174 @@
 - type: entity
-  id: InvictaMapPlaceholderBase
-  name: placeholder entity
-  description: Fallback stub for missing map prototype
-  components:
-  - type: Transform
-  - type: MetaData
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: AirlockExternalGlassShuttleCargoShuttle
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: AtmosFixCoolant
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: AugustineCircuitBoard
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: BlackBarrel
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: ButtonFrameCautionSecurity2
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: CCTVCircuitBoard
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: ChaplainCircuitBoard
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: ClosetCabinetWood
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: ClothingBeltUtilityAtmos
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: ClothingHeadHatBeretOfficer
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: ClothingNeckCrucifixGoldSaintPeter
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: ClothingNeckNecklacePendantSilverLarge
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: ClothingOuterHardsuitBlueshield
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: ClothingShoesBootsMagSec
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: ClothingShoesBootsWinterClown
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: ClothingShoesBootsWinterMime
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: ClothingUniformJumpskirtPencilSkirtGymBra
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: ClothingUniformJumpsuitYogaGymBra
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: ClothingUniformMNKGymBra
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: ClownCircuitBoard
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: ComputerPsionicsRecords
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: ComputerSupermatter
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: CowboyCircuitBoard
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: CrateWooden
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: CrewsimovCircuitBoard
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: DecorBarrels
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: DruidCircuitBoard
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: EngineerCircuitBoard
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: FlagNanoTrasen
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: FoodPizzaCorncob
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: GasOutletInjectorHighFlow
-
-- type: entity
   parent: InvictaMapPlaceholderBase
-  id: GasVentScrubberHighFlow
+  id: AirlockClownLocked
+  # Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: GasVolumePumpHighFlow
+  id: AirlockMailGlassLocked
+  # Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: HighSecEngineeringLocked
+  id: AirlockMaintMimeLocked
+  # Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: HolopadCargoMail
+  id: CapacitorStockPart
+  # tags.yml / Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: HolopadSecurityCorpsman
+  id: ClothingNeckHeadphones
+  # Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: JanitorCircuitBoard
+  id: DefaultStationBeaconMetempsychosis
+  # DeltaV/Entities/Objects/Devices/station_beacon.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: LockerBartenderFilled
+  id: EpinephrineChemistryBottle
+  # Entities/Objects/Specific/chemistry-bottles.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: LunchboxEngineering
+  id: GlimmerProber
+  # Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: MedicalCircuitBoard
+  id: GunSafeEnergyGunMini
+  # DeltaV/Catalog/Fills/Lockers/security.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: MotherDroneCircuitBoard
+  id: KitchenDeepFryer
+  # Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: NTAgressiveCircuitBoard
+  id: MatterBinStockPart
+  # tags.yml / Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: OilJarCorn
+  id: PosterContrabandBustyBackdoorExoBabes6
+  # Entities/Structures/Wallmounts/Signs/posters.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: OilJarGhee
+  id: PosterContrabandLustyExomorph
+  # Entities/Structures/Wallmounts/Signs/posters.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: OracleSpawner
+  id: PoweredLightBlueInterior
+  # Nyanotrasen/Entities/Structures/Lighting/base_lighting.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: PlushieOrangeFox
+  id: ReverseEngineeringMachine
+  # Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: PoweredLightColoredFrostyBlue
+  id: SpawnPointMailCarrier
+  # Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: QuarantineCircuitBoard
+  id: SpawnPointMedicalBorg
+  # Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ReagentContainerChocolate
+  id: SpawnPointSeniorEngineer
+  # Entities/Markers/Spawners/jobs.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: RedBarrel
+  id: SpawnPointSeniorOfficer
+  # Entities/Markers/Spawners/jobs.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ResearchCircuitBoard
+  id: SpawnPointSeniorPhysician
+  # Entities/Markers/Spawners/jobs.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: Shower
+  id: SpawnPointSeniorResearcher
+  # Entities/Markers/Spawners/jobs.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: SophicScribeSpawner
+  id: VendingMachineBoozeUnlocked
+  # DeltaV/Entities/Structures/Machines/vending_machines.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: SpawnMobBatonBot
+  id: VendingMachineBoxingDrobe
+  # Nyanotrasen/Entities/Structures/Machines/vending_machines.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: SpawnMobDisablerBot
+  id: VendingMachineCourierDrobe
+  # Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: SpawnPointMaid
+  id: VendingMachineMNKDrobe
+  # Nyanotrasen/Entities/Structures/Machines/vending_machines.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: TyrantCircuitBoard
+  id: WarpPointArrivals
+  # Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: WarpPointBridge
+  id: WarpPointDetective
+  # Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: WarpPointChapel
+  id: WarpPointDisposals
+  # DeltaV/Entities/Markers/warp_point.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: WarpPointCourt
+  id: WarpPointEpistemics
+  # Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: WarpPointEvac
+  id: WarpPointHOP
+  # DeltaV/Entities/Markers/warp_point.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: WarpPointLogistics
+  id: WarpPointJanitor
+  # Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: WarpPointMedical
+  id: WarpPointLawyer
+  # Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: WarpPointSalvage
+  id: WarpPointLibrary
+  # Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: WarpPointVault
+  id: WarpPointMorgue
+  # Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: WeaponEnergyGunMiniSecurity
+  id: WindoorSecureMailLocked
+  # Mapping/mapping_templates.yml
