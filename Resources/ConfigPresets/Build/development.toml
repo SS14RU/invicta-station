@@ -17,9 +17,7 @@
 # Straight in-game baby
 lobbyenabled = false
 # Dev map for faster loading & convenience
-# map = "Dev"
-# Invicta: force our cyberiad map to avoid restart loops
-map = "SS14RUCyberiad"
+map = "Dev"
 role_timers = false
 
 [events]
@@ -56,7 +54,7 @@ preload_grids = false
 see_own_notes = true
 
 [lavaland] # Lavaland Change
-enabled = true
+enabled = false
 
 [ic]
 random_characters = false

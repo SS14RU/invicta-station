@@ -90,7 +90,7 @@
   minPlayers: 0
   maxPlayers: 90
   stations:
-    CyberiadBroken:
+    Cyberiad:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
