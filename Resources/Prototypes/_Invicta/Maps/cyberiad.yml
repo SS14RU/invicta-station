@@ -47,7 +47,6 @@
             Scientist: [ 5, 5 ]
             # Roboticist: [ 1, 2 ]
             ResearchAssistant: [ 4, 4 ]
-            ForensicMantis: [ 1, 1 ]
             SeniorResearcher: [ 1, 1 ]
             #security
             HeadOfSecurity: [ 1, 1 ]
@@ -132,7 +131,6 @@
             Scientist: [ 5, 5 ]
             # Roboticist: [ 1, 2 ]
             ResearchAssistant: [ 4, 4 ]
-            ForensicMantis: [ 1, 1 ]
             SeniorResearcher: [ 1, 1 ]
             #security
             HeadOfSecurity: [ 1, 1 ]
