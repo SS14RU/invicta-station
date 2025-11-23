@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: BaseItem
   id: SellableBatteryConnector
   name: sellable battery connector port
@@ -9,7 +9,7 @@
     - type: Item
       size: Huge
     - type: Sprite
-      sprite: /Textures/_Invicta/economy/sellablebatteries.rsi
+      sprite: _Invicta/economy/sellablebatteries.rsi
       layers:
         - state: station
           map: [ "enum.SubfloorLayers.FirstLayer" ]

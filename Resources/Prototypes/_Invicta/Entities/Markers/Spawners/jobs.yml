@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: SpawnPointCnsCommander
   parent: SpawnPointJobBase
   name: Cns Commander

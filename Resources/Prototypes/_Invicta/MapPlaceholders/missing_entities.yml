@@ -1,4 +1,12 @@
 - type: entity
+  id: InvictaMapPlaceholderBase
+  name: placeholder entity
+  description: Fallback stub for missing map prototype
+  components:
+  - type: Transform
+  - type: MetaData
+
+- type: entity
   parent: InvictaMapPlaceholderBase
   id: AirlockClownLocked
   # Mapping/mapping_templates.yml
@@ -172,3 +180,272 @@
   parent: InvictaMapPlaceholderBase
   id: WindoorSecureMailLocked
   # Mapping/mapping_templates.yml
+
+# Additional placeholders from map load errors
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: AirlockExternalGlassShuttleCargoShuttle
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: AtmosFixCoolant
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: AugustineCircuitBoard
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: BlackBarrel
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: ButtonFrameCautionSecurity2
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: CCTVCircuitBoard
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: ChaplainCircuitBoard
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: ClosetCabinetWood
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: ClothingBeltUtilityAtmos
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: ClothingHeadHatBeretOfficer
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: ClothingNeckCrucifixGoldSaintPeter
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: ClothingNeckNecklacePendantSilverLarge
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: ClothingOuterHardsuitBlueshield
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: ClothingShoesBootsMagSec
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: ClothingShoesBootsWinterClown
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: ClothingShoesBootsWinterMime
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: ClothingUniformJumpskirtPencilSkirtGymBra
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: ClothingUniformJumpsuitYogaGymBra
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: ClothingUniformMNKGymBra
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: ClownCircuitBoard
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: ComputerPsionicsRecords
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: ComputerSupermatter
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: CowboyCircuitBoard
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: CrateWooden
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: CrewsimovCircuitBoard
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: DecorBarrels
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: DruidCircuitBoard
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: EngineerCircuitBoard
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: FlagNanoTrasen
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: FoodPizzaCorncob
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: GasOutletInjectorHighFlow
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: GasVentScrubberHighFlow
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: GasVolumePumpHighFlow
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: HighSecEngineeringLocked
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: HolopadCargoMail
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: HolopadSecurityCorpsman
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: JanitorCircuitBoard
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: LockerBartenderFilled
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: LunchboxEngineering
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: MedicalCircuitBoard
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: MotherDroneCircuitBoard
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: NTAgressiveCircuitBoard
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: OilJarCorn
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: OilJarGhee
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: OracleSpawner
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: OverlordCircuitBoard
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: PlushieOrangeFox
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: PoweredLightColoredFrostyBlue
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: QuarantineCircuitBoard
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: ReagentContainerChocolate
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: RedBarrel
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: ResearchCircuitBoard
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: Shower
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: SophicScribeSpawner
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: SpawnMobBatonBot
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: SpawnMobDisablerBot
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: SpawnPointMaid
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: TyrantCircuitBoard
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: WarpPointBridge
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: WarpPointChapel
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: WarpPointCourt
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: WarpPointEvac
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: WarpPointLogistics
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: WarpPointMedical
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: WarpPointSalvage
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: WarpPointVault
+
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: WeaponEnergyGunMiniSecurity

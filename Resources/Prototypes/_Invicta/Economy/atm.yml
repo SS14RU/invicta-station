@@ -1,10 +1,10 @@
-﻿- type: entity
+- type: entity
   id: BankATM
   parent: BaseMachinePowered
   name: ATM
   components:
   - type: Sprite
-    sprite: /Textures/_Invicta/economy/ATM.rsi
+    sprite: _Invicta/economy/ATM.rsi
     layers:
       - map: ["computerLayerBody"]
         state: ATM
@@ -21,7 +21,7 @@
           True: { visible: true }
           False: { visible: false }
   - type: Icon
-    sprite: /Textures/_Invicta/economy/ATM.rsi
+    sprite: _Invicta/economy/ATM.rsi
     state: icon
   - type: Physics
     bodyType: Static

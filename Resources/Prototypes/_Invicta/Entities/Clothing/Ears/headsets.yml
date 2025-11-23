@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: ClothingHeadset
   id: ClothingHeadsetCorporations
   name: corporate-supervision-service-headset

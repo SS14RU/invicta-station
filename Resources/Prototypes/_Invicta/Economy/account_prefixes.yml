@@ -1,4 +1,4 @@
-﻿- type: economyAccountPrefix
+- type: economyAccountPrefix
   id: AccountPrefixEmpty
   order: 0
   display: " "

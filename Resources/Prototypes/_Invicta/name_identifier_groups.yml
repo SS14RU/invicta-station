@@ -1,4 +1,4 @@
-﻿- type: nameIdentifierGroup
+- type: nameIdentifierGroup
   id: Service
   prefix: СРВ
   minValue: 0

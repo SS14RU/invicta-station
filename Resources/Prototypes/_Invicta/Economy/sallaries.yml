@@ -1,4 +1,4 @@
-﻿- type: economySallaries
+- type: economySallaries
   id: NanotrasenDefaultSallaries
   payerAccountId: "NT-CentCom"
   proccessOnlyPrefixedAccounts: "NT-"

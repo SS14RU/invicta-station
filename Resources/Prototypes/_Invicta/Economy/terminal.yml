@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: BaseItem
   id: BaseTerminal
   name: base terminal
@@ -16,7 +16,7 @@
     interfaces:
       enum.EconomyTerminalUiKey.Key:
         type: EconomyTerminalBoundUserInterface
-#С…Р·, РјРЅРµ РЅРµС‡РµРіРѕ РїРёСЃР°С‚СЊ РґР°Р»СЊС€Рµ, РґСѓРјР°Р№ СЃР°Рј
+#хз, мне нечего писать дальше, думай сам
 #Disssr top 1 razrab
 
 - type: entity
@@ -25,7 +25,7 @@
   name: service terminal
   components:
   - type: Sprite
-    sprite: /Textures/_Invicta/economy/terminal.rsi
+    sprite: _Invicta/economy/terminal.rsi
     state: ser
   - type: EconomyBankTerminal
     allowCurrency: Thaler
@@ -37,7 +37,7 @@
   name: security terminal
   components:
   - type: Sprite
-    sprite: /Textures/_Invicta/economy/terminal.rsi
+    sprite: _Invicta/economy/terminal.rsi
     state: sec
   - type: EconomyBankTerminal
     allowCurrency: Thaler
@@ -49,7 +49,7 @@
   name: science terminal
   components:
   - type: Sprite
-    sprite: /Textures/_Invicta/economy/terminal.rsi
+    sprite: _Invicta/economy/terminal.rsi
     state: sci
   - type: EconomyBankTerminal
     allowCurrency: Thaler
@@ -61,7 +61,7 @@
   name: medical terminal
   components:
   - type: Sprite
-    sprite: /Textures/_Invicta/economy/terminal.rsi
+    sprite: _Invicta/economy/terminal.rsi
     state: med
   - type: EconomyBankTerminal
     allowCurrency: Thaler
@@ -73,7 +73,7 @@
   name: cargo terminal
   components:
   - type: Sprite
-    sprite: /Textures/_Invicta/economy/terminal.rsi
+    sprite: _Invicta/economy/terminal.rsi
     state: cargo
   - type: EconomyBankTerminal
     allowCurrency: Thaler
@@ -85,7 +85,7 @@
   name: engineering terminal
   components:
   - type: Sprite
-    sprite: /Textures/_Invicta/economy/terminal.rsi
+    sprite: _Invicta/economy/terminal.rsi
     state: eng
   - type: EconomyBankTerminal
     allowCurrency: Thaler
@@ -97,7 +97,7 @@
   name: central command terminal
   components:
   - type: Sprite
-    sprite: /Textures/_Invicta/economy/terminal.rsi
+    sprite: _Invicta/economy/terminal.rsi
     state: cc
   - type: EconomyBankTerminal
     allowCurrency: Thaler

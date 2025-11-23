@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: [ EncryptionKey, BaseCentcommContraband ]
   id: EncryptionKeyCorporations
   name: encryption-key-corporations
