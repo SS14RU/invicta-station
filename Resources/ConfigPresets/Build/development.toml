@@ -56,7 +56,7 @@ preload_grids = false
 see_own_notes = true
 
 [lavaland] # Lavaland Change
-enabled = false
+enabled = true
 
 [ic]
 random_characters = false
