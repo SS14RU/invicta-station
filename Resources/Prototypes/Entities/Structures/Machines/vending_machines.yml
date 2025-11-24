@@ -292,7 +292,7 @@
     - RobotTalk
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineCondiments
   name: condiment station
   description: Slather these thick gooey substances on your food for a full flavor effect.
@@ -325,7 +325,7 @@
     noRot: false
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Security  # Invicta: department-linked vending
   id: VendingMachineAmmo
   name: liberation station
   description: An overwhelming amount of ancient patriotism washes over you just by looking at the machine.
@@ -351,7 +351,7 @@
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineBooze
   name: Booze-O-Mat
   description: A technological marvel, supposedly able to mix just the mixture you'd like to drink the moment you ask for one.
@@ -419,7 +419,7 @@
     - Drinks
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineCart
   name: PTech
   description: PTech vending! Providing a ROBUST selection of PDAs, cartridges, and anything else a dull paper pusher needs!
@@ -457,7 +457,7 @@
     rotateWhilePulling: true
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineChefvend
   name: ChefVend
   description: An ingredient vendor for all your cheffin needs.
@@ -492,7 +492,7 @@
     autoRot: true
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineCigs
   name: ShadyCigs Deluxe
   description: If you want to get cancer, might as well do it in style.
@@ -528,7 +528,7 @@
     rotateWhilePulling: true
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineClothing
   name: ClothesMate
   description: A vending machine for clothing.
@@ -564,7 +564,7 @@
       - DroneUsable # Goobstation
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineWinter
   name: WinterDrobe
   description: The best place to enjoy the cold!
@@ -600,7 +600,7 @@
     - DroneUsable # Goobstation
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineCoffee
   name: Solar's Best Hot Drinks
   description: Served boiling so it stays hot all shift!
@@ -649,7 +649,7 @@
     rotateWhilePulling: true
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineCola
   name: Robust Softdrinks
   description: A softdrink vendor provided by Robust Industries, LLC.
@@ -738,7 +738,7 @@
     autoRot: true
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineSpaceUp
   name: Space-Up! Vendor
   description: Indulge in an explosion of flavor.
@@ -799,7 +799,7 @@
     rotateWhilePulling: true
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineStarkist
   name: Star-kist Vendor
   description: The taste of a star in liquid form.
@@ -828,7 +828,7 @@
     noRot: true
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineShamblersJuice
   name: Shambler's Juice Vendor
   description: ~Shake me up some of that Shambler's Juice!~
@@ -864,7 +864,7 @@
     autoRot: true
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachinePwrGame
   name: Pwr Game Vendor
   description: You want it, we got it. Brought to you in partnership with Vlad's Salads.
@@ -902,7 +902,7 @@
     autoRot: true
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineDrGibb
   name: Dr. Gibb Vendor
   description: Canned explosion of different flavors in this very vendor!
@@ -976,7 +976,7 @@
     color: "#00E645"
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineDinnerware
   name: Plasteel Chef's Dinnerware Vendor
   description: A kitchen and restaurant equipment vendor.
@@ -1018,7 +1018,7 @@
     rotateWhilePulling: true
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineMagivend
   name: MagiVend
   description: A magic vending machine.
@@ -1058,7 +1058,7 @@
     rotateWhilePulling: true
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineDiscount
   name: Discount Dan's
   description: A vending machine containing discount snacks from the infamous 'Discount Dan' franchise.
@@ -1093,7 +1093,7 @@
     autoRot: true
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Engineering  # Invicta: department-linked vending
   id: VendingMachineEngivend
   name: Engi-Vend
   description: Spare tool vending. What? Did you expect some witty description?
@@ -1134,7 +1134,7 @@
     - DroneUsable # Goobstation
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Medical  # Invicta: department-linked vending
   id: VendingMachineMedical
   name: NanoMed Plus
   description: It's a medical drug dispenser. Natural chemicals only! (And wheelchairs, why not) # Goobstation
@@ -1180,7 +1180,7 @@
     rotateWhilePulling: true
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineNutri
   name: NutriMax
   description: A vending machine containing nutritional substances for plants and botanical tools.
@@ -1216,7 +1216,7 @@
     autoRot: true
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Security  # Invicta: department-linked vending
   id: VendingMachineSec
   name: SecTech
   description: A vending machine containing Security equipment. A label reads SECURITY PERSONNEL ONLY.
@@ -1261,9 +1261,8 @@
     rotateWhileAnchored: false
     rotateWhilePulling: true
 
-
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineSeedsUnlocked
   name: MegaSeed Servitor
   description: For when you need seeds fast. Hands down the best seed selection on the station!
@@ -1306,7 +1305,7 @@
     access: [["Hydroponics"]]
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineSnack
   name: Getmore Chocolate Corp
   description: A snack machine courtesy of the Getmore Chocolate Corporation, based out of Mars.
@@ -1469,7 +1468,7 @@
     autoRot: true
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineSovietSoda
   name: BODA
   description: An old vending machine containing sweet water.
@@ -1513,7 +1512,7 @@
   - type: RussianAccent
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineTheater
   name: AutoDrobe
   description: A vending machine containing costumes.
@@ -1560,7 +1559,7 @@
     - DroneUsable # Goobstation
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineVendomat
   name: Vendomat
   description: Only the finest robust equipment in space!
@@ -1600,7 +1599,7 @@
     rotateWhilePulling: true
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Science  # Invicta: department-linked vending
   id: VendingMachineRobotics
   name: Robotech Deluxe
   description: All the tools you need to create your own robot army.
@@ -1645,7 +1644,7 @@
     - Robotics
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Engineering  # Invicta: department-linked vending
   id: VendingMachineYouTool
   name: YouTool
   description: "A vending machine containing standard tools. A label reads: Tools for tools."
@@ -1684,7 +1683,7 @@
     - DroneUsable # Goobstation
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineGames
   name: Good Clean Fun
   description: Vends things that the Captain and Head of Personnel are probably not going to appreciate you fiddling with instead of your job...
@@ -1724,7 +1723,7 @@
     rotateWhilePulling: true
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineChang
   name: Mr. Chang
   description: A self-serving Chinese food machine, for all your Chinese food needs.
@@ -1766,7 +1765,7 @@
     rotateWhilePulling: true
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Cargo  # Invicta: department-linked vending
   id: VendingMachineSalvage
   name: Salvage Vendor
   description: A dwarf's best friend!
@@ -1825,7 +1824,7 @@
     - Salvage
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineDonut
   name: Monkin' Donuts
   description: A donut vendor provided by Robust Industries, LLC.
@@ -1883,7 +1882,7 @@
     rotateWhilePulling: true
 
 - type: entity
-  parent: VendingMachineWallmount
+  parent: VendingMachineWallMedical-NT-Medical  # Invicta: department-linked vending
   id: VendingMachineWallMedical
   name: NanoMed
   description: "It's a wall-mounted medical equipment dispenser. Natural chemicals only!"
@@ -1926,7 +1925,7 @@
 # job clothing
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineHydrobe
   name: HyDrobe
   description: A machine with a catchy name. It dispenses botany related clothing and gear.
@@ -1958,7 +1957,7 @@
     access: [["Hydroponics"]]
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Command  # Invicta: department-linked vending
   id: VendingMachineLawDrobe
   name: LawDrobe
   description: Objection! This wardrobe dispenses the rule of law... and lawyer clothing..
@@ -1986,7 +1985,7 @@
     access: [["Lawyer"]]
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Security  # Invicta: department-linked vending
   id: VendingMachineSecDrobe
   name: SecDrobe
   description: A vending machine for security and security-related clothing!
@@ -2018,7 +2017,7 @@
     access: [["Security"]]
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingBarDrobe
   name: BarDrobe
   description: A stylish vendor to dispense the most stylish bar clothing!
@@ -2046,7 +2045,7 @@
     access: [["Bar"]]
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineChapel
   name: PietyVend
   components:
@@ -2076,7 +2075,7 @@
     autoRot: true
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Cargo  # Invicta: department-linked vending
   id: VendingMachineCargoDrobe
   name: CargoDrobe
   description: A highly advanced vending machine for buying cargo related clothing for free.
@@ -2108,7 +2107,7 @@
     access: [["Cargo"]]
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Medical  # Invicta: department-linked vending
   id: VendingMachineMediDrobe
   name: MediDrobe
   description: A vending machine rumoured to be capable of dispensing clothing for medical personnel.
@@ -2136,7 +2135,7 @@
     access: [["Medical"]]
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Medical  # Invicta: department-linked vending
   id: VendingMachineChemDrobe
   name: ChemDrobe
   description: A vending machine for dispensing chemistry related clothing.
@@ -2164,7 +2163,7 @@
     access: [["Chemistry"]]
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineCuraDrobe
   name: CuraDrobe
   description: A lowstock vendor only capable of vending clothing for curators and librarians.
@@ -2192,7 +2191,7 @@
     access: [["Service"]]
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Engineering  # Invicta: department-linked vending
   id: VendingMachineAtmosDrobe
   name: AtmosDrobe
   description: This relatively unknown vending machine delivers clothing for Atmospherics Technicians, an equally unknown job.
@@ -2224,7 +2223,7 @@
     access: [["Engineering"]]
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Engineering  # Invicta: department-linked vending
   id: VendingMachineEngiDrobe
   name: EngiDrobe
   description: A vending machine renowned for vending industrial grade clothing.
@@ -2256,7 +2255,7 @@
     access: [["Engineering"]]
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineChefDrobe
   name: ChefDrobe
   description: This vending machine might not dispense meat, but it certainly dispenses chef related clothing.
@@ -2284,7 +2283,7 @@
     access: [["Kitchen"]]
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Security  # Invicta: department-linked vending
   id: VendingMachineDetDrobe
   name: DetDrobe
   description: A machine for all your detective needs, as long as you need clothes.
@@ -2312,7 +2311,7 @@
     access: [["Detective"]]
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineJaniDrobe
   name: JaniDrobe
   description: A self cleaning vending machine capable of dispensing clothing for janitors.
@@ -2346,7 +2345,7 @@
     autoRot: true
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Science  # Invicta: department-linked vending
   id: VendingMachineSciDrobe
   name: SciDrobe
   description: A simple vending machine suitable to dispense well tailored science clothing. Endorsed by Space Cubans.
@@ -2406,7 +2405,7 @@
     access: [["NuclearOperative"], ["SyndicateAgent"]]
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Science  # Invicta: department-linked vending
   id: VendingMachineRoboDrobe
   name: RoboDrobe
   description: A vending machine designed to dispense clothing known only to roboticists.
@@ -2434,7 +2433,7 @@
     access: [["Research"]]
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Science  # Invicta: department-linked vending
   id: VendingMachineGeneDrobe
   name: GeneDrobe
   description: A machine for dispensing clothing related to genetics.
@@ -2462,7 +2461,7 @@
     access: [["Medical"]]
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Medical  # Invicta: department-linked vending
   id: VendingMachineViroDrobe
   name: ViroDrobe
   description: An unsterilized machine for dispending virology related clothing.
@@ -2490,7 +2489,7 @@
     access: [["Medical"]]
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-CentCom  # Invicta: department-linked vending
   id: VendingMachineCentDrobe
   name: CentDrobe
   description: A one-of-a-kind vending machine for all your centcomm aesthetic needs!
@@ -2520,7 +2519,7 @@
     access: [["CentralCommand"]]
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Service  # Invicta: department-linked vending
   id: VendingMachineHappyHonk
   name: Happy Honk Dispenser
   description: A happy honk meal box dispenser made by honk! co.
@@ -2623,7 +2622,7 @@
     - state: dispensereng
 
 - type: entity
-  parent: VendingMachine
+  parent: VendingMachine-NT-Medical  # Invicta: department-linked vending
   id: VendingMachineChemicals
   name: ChemVend
   description: Probably not the coffee machine.

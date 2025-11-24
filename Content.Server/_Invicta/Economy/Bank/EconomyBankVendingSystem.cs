@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Content.Server.Cargo.Systems;
 using Content.Server.Power.Components;
@@ -10,7 +10,6 @@ using Content.Shared.Emag.Components;
 using Content.Shared.Storage.Components;
 using Content.Shared.VendingMachines;
 using Robust.Shared.Localization;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Invicta.Economy.Bank;
@@ -29,7 +28,92 @@ public sealed class EconomyBankVendingSystem : EntitySystem
 
     public override void Initialize()
     {
-        // Invicta: pricing hooks disabled pending API alignment.
+        SubscribeLocalEvent<VendingMachineComponent, VendingMachineSelectAttemptEvent>(OnVendingSelect);
+        SubscribeLocalEvent<VendingMachineComponent, VendingMachineRecalculatePriceEvent>(OnRecalculatePrice);
+    }
+
+    private void OnVendingSelect(EntityUid uid, VendingMachineComponent component, VendingMachineSelectAttemptEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        if (!TryComp<EconomyBankTerminalComponent>(uid, out var terminal))
+            return;
+
+        if (HasComp<EmaggedComponent>(uid))
+            return;
+
+        if (args.Entry is not { } entry || entry.Price == 0)
+            return;
+
+        var itemName = args.ID;
+        if (_prototypeManager.TryIndex<EntityPrototype>(args.ID, out var productProto))
+            itemName = productProto.Name;
+
+        _bankAccountSystem.UpdateTerminal((uid, terminal),
+            entry.Price,
+            Loc.GetString("economyBankTerminal-component-vending-reason", ("itemName", itemName)));
+
+        terminal.PendingItemId = args.ID;
+        terminal.PendingInventoryType = args.Type;
+        args.Handled = true;
+    }
+
+    private void OnRecalculatePrice(EntityUid uid, VendingMachineComponent component, ref VendingMachineRecalculatePriceEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        EnsureWholesaleMap();
+
+        double baseTotal = 0;
+
+        foreach (var entry in component.Inventory.Values)
+        {
+            if (!_prototypeManager.TryIndex<EntityPrototype>(entry.ID, out var prototype))
+                continue;
+
+            var estimate = GetPrototypeEstimate(prototype, new HashSet<string>());
+            if (estimate <= 0)
+                continue;
+
+            baseTotal += estimate * entry.Amount;
+        }
+
+        if (baseTotal <= 0)
+            return;
+
+        var factor = 1 + StationMarginRate;
+
+        if (_inventoryWholesaleCost.TryGetValue(component.PackPrototypeId, out var wholesaleCost) && wholesaleCost > 0)
+            factor = (wholesaleCost * (1 + StationMarginRate)) / baseTotal;
+
+        var dirty = false;
+
+        foreach (var entry in _vendingMachineSystem.GetAllInventory(uid, component))
+        {
+            if (entry == null)
+                continue;
+
+            if (!_prototypeManager.TryIndex<EntityPrototype>(entry.ID, out var prototype))
+                continue;
+
+            var estimate = GetPrototypeEstimate(prototype, new HashSet<string>());
+            if (estimate <= 0)
+                continue;
+
+            var price = (ulong) Math.Max(1, Math.Ceiling(estimate * factor));
+            if (entry.Price == price)
+                continue;
+
+            entry.Price = price;
+            dirty = true;
+        }
+
+        if (dirty)
+            Dirty(uid, component);
+
+        args.Handled = true;
     }
 
     private double GetPrototypeEstimate(EntityPrototype prototype, HashSet<string> visited)

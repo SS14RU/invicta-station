@@ -38,4 +38,16 @@ namespace Content.Shared.VendingMachines
         [DataField("contrabandInventory", customTypeSerializer:typeof(PrototypeIdDictionarySerializer<uint, EntityPrototype>))]
         public Dictionary<string, uint>? ContrabandInventory { get; private set; }
     }
+
+    // Invicta: vending prices prototype
+    [Serializable, NetSerializable, Prototype("vendingMachineInventoryPricing")]
+    public sealed partial class VendingMachineInventoryPricingPrototype : IPrototype
+    {
+        [ViewVariables]
+        [IdDataField]
+        public string ID { get; private set; } = default!;
+
+        [DataField(customTypeSerializer: typeof(PrototypeIdDictionarySerializer<ulong, EntityPrototype>))]
+        public Dictionary<string, ulong> EntsPricing { get; private set; } = new();
+    }
 }

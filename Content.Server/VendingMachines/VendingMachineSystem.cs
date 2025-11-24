@@ -117,11 +117,39 @@ namespace Content.Server.VendingMachines
 
             SubscribeLocalEvent<VendingMachineComponent, ActivatableUIOpenAttemptEvent>(OnActivatableUIOpenAttempt);
 
+            // Invicta: selection message routed through banking flow
+            Subs.BuiEvents<VendingMachineComponent>(VendingMachineUiKey.Key, subs =>
+            {
+                subs.Event<VendingMachineSelectMessage>(OnSelectMessage);
+            });
+
             SubscribeLocalEvent<VendingMachineComponent, VendingMachineSelfDispenseEvent>(OnSelfDispense);
 
             SubscribeLocalEvent<VendingMachineComponent, RestockDoAfterEvent>(OnDoAfter);
 
             SubscribeLocalEvent<VendingMachineRestockComponent, PriceCalculationEvent>(OnPriceCalculation);
+        }
+
+        // Invicta: allow dynamic price recalc and broadcast for banking
+        protected override void RecalculateEntriesPrice(EntityUid uid, VendingMachineComponent component)
+        {
+            base.RecalculateEntriesPrice(uid, component);
+            RaiseLocalEvent(uid, new VendingMachineRecalculatePriceEvent(uid, component));
+        }
+
+        private void OnSelectMessage(EntityUid uid, VendingMachineComponent component, VendingMachineSelectMessage args)
+        {
+            var entry = GetEntry(uid, args.ID, args.Type, component);
+            var ev = new VendingMachineSelectAttemptEvent(args.Actor, args.Type, args.ID, entry);
+            RaiseLocalEvent(uid, ev);
+
+            if (ev.Handled)
+                return;
+
+            if (args.Actor is not { Valid: true } actor)
+                return;
+
+            AuthorizedVend(uid, actor, args.Type, args.ID, component);
         }
 
         private void OnVendingPrice(EntityUid uid, VendingMachineComponent component, ref PriceCalculationEvent args)
@@ -343,6 +371,7 @@ namespace Content.Server.VendingMachines
                 return;
 
             RestockInventoryFromPrototype(uid, vendComponent);
+            RecalculateEntriesPrice(uid, vendComponent);
 
             Dirty(uid, vendComponent);
             TryUpdateVisualState((uid, vendComponent));

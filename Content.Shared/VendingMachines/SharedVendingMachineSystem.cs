@@ -160,6 +160,24 @@ public abstract partial class SharedVendingMachineSystem : EntitySystem
     protected virtual void OnMapInit(EntityUid uid, VendingMachineComponent component, MapInitEvent args)
     {
         RestockInventoryFromPrototype(uid, component, component.InitialStockQuality);
+        RecalculateEntriesPrice(uid, component);
+    }
+
+    // Invicta: vending pricing by prototype list
+    protected virtual void RecalculateEntriesPrice(EntityUid uid, VendingMachineComponent component)
+    {
+        if (!PrototypeManager.TryIndex<VendingMachineInventoryPricingPrototype>("AllEntsPricing", out var prototype))
+            return;
+
+        var inventory = GetAllInventory(uid, component);
+        foreach (var entry in inventory)
+        {
+            if (entry is null)
+                continue;
+
+            if (prototype.EntsPricing.TryGetValue(entry.ID, out var price))
+                entry.Price = price;
+        }
     }
 
     protected virtual void EjectItem(EntityUid uid, VendingMachineComponent? vendComponent = null, bool forceEject = false) { }

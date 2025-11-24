@@ -31,6 +31,12 @@ public sealed partial class NameIdentifierGroupPrototype : IPrototype
     public LocId? Format;
 
     /// <summary>
+    /// Optional prefix to prepend when Format is not provided (e.g., "ENG-500").
+    /// </summary>
+    [DataField]
+    public string? Prefix;
+
+    /// <summary>
     /// The maximal value appearing in an identifier.
     /// </summary>
     [DataField]

@@ -60,6 +60,12 @@ namespace Content.Shared.VendingMachines
         public Dictionary<string, VendingMachineInventoryEntry> ContrabandInventory = new();
 
         /// <summary>
+        /// Invicta: whether this vending machine should calculate prices for its inventory.
+        /// </summary>
+        [DataField]
+        public bool PriceEligible = true;
+
+        /// <summary>
         /// If true then unlocks the <see cref="ContrabandInventory"/>
         /// </summary>
         [DataField]
@@ -218,6 +224,9 @@ namespace Content.Shared.VendingMachines
         public InventoryType Type;
         [ViewVariables(VVAccess.ReadWrite)]
         public string ID;
+        // Invicta: price in Thalers for economy vending
+        [ViewVariables(VVAccess.ReadWrite)]
+        public ulong Price = 0;
         [ViewVariables(VVAccess.ReadWrite)]
         public uint Amount;
         public VendingMachineInventoryEntry(InventoryType type, string id, uint amount)
@@ -232,6 +241,7 @@ namespace Content.Shared.VendingMachines
             Type = entry.Type;
             ID = entry.ID;
             Amount = entry.Amount;
+            Price = entry.Price;
         }
     }
 

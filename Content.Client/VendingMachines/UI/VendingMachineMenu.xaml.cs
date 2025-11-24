@@ -128,6 +128,7 @@ namespace Content.Client.VendingMachines.UI
         private readonly Dictionary<EntProtoId, EntityUid> _dummies = [];
         private readonly Dictionary<EntProtoId, (ListContainerButton Button, VendingMachineItem Item)> _listItems = new();
         private readonly Dictionary<EntProtoId, uint> _amounts = new();
+        private readonly Dictionary<EntProtoId, ulong> _prices = new(); // Invicta: cache item prices for display
 
         /// <summary>
         /// Whether the vending machine is able to be interacted with or not.
@@ -196,6 +197,7 @@ namespace Content.Client.VendingMachines.UI
             _enabled = enabled;
             _listItems.Clear();
             _amounts.Clear();
+            _prices.Clear();
 
             if (inventory.Count == 0 && VendingContents.Visible)
             {
@@ -239,6 +241,13 @@ namespace Content.Client.VendingMachines.UI
 
                 var itemName = Identity.Name(dummy, _entityManager);
                 var itemText = $"{itemName} [{entry.Amount}]";
+                // Invicta: show price if available
+                if (entry.Price > 0)
+                {
+                    itemText += $" [{Loc.GetString("economybanksystem-vending-cost-label", ("amount", entry.Price), ("currencyName", "Th"))}]";
+                    _prices[entry.ID] = entry.Price;
+                }
+
                 _amounts[entry.ID] = entry.Amount;
 
                 if (itemText.Length > longestEntry.Length)
@@ -272,17 +281,22 @@ namespace Content.Client.VendingMachines.UI
                     continue;
                 var amount = entry.Amount;
                 // Could be better? Problem is all inventory entries get squashed.
-                var text = GetItemText(dummy, amount);
+                var price = _prices.GetValueOrDefault(proto);
+                var text = GetItemText(dummy, amount, price);
 
                 button.Item.SetText(text);
                 button.Button.Disabled = !enabled || amount == 0;
             }
         }
 
-        private string GetItemText(EntityUid dummy, uint amount)
+        private string GetItemText(EntityUid dummy, uint amount, ulong price = 0)
         {
             var itemName = Identity.Name(dummy, _entityManager);
-            return $"{itemName} [{amount}]";
+            var text = $"{itemName} [{amount}]";
+            // Invicta: show price in updates as well
+            if (price > 0)
+                text += $" [{Loc.GetString("economybanksystem-vending-cost-label", ("amount", price), ("currencyName", "Th"))}]";
+            return text;
         }
 
         private void SetSizeAfterUpdate(int longestEntryLength, int contentCount)

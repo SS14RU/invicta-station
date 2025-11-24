@@ -95,9 +95,7 @@ public sealed class NameIdentifierSystem : EntitySystem
         randomVal = set[^1];
         set.RemoveAt(set.Count - 1);
 
-        return proto.Format is not null
-            ? Loc.GetString(proto.Format, ("number", randomVal))
-            : $"{randomVal}";
+        return FormatIdentifier(proto, randomVal);
     }
 
     private void OnMapInit(Entity<NameIdentifierComponent> ent, ref MapInitEvent args)
@@ -117,9 +115,7 @@ public sealed class NameIdentifierSystem : EntitySystem
             ids.Remove(ent.Comp.Identifier))
         {
             id = ent.Comp.Identifier;
-            uniqueName = group.Format is not null
-                ? Loc.GetString(group.Format, ("number", id))
-                : $"{id}";
+            uniqueName = FormatIdentifier(group, id);
         }
         else
         {
@@ -151,6 +147,20 @@ public sealed class NameIdentifierSystem : EntitySystem
         // We apply the modifier with a low priority to keep it near the base name
         // "Beep (Si-4562) the zombie" instead of "Beep the zombie (Si-4562)"
         args.AddModifier(format, -10, ("identifier", ent.Comp.FullIdentifier));
+    }
+
+    private string FormatIdentifier(NameIdentifierGroupPrototype proto, int number)
+    {
+        if (proto.Format is not null)
+            return Loc.GetString(proto.Format, ("number", number));
+
+        var width = Math.Max(1, (int)Math.Log10(Math.Max(proto.MaxValue - 1, 1)) + 1);
+        var formatted = number.ToString($"D{width}");
+
+        if (!string.IsNullOrEmpty(proto.Prefix))
+            return $"{proto.Prefix}-{formatted}";
+
+        return formatted;
     }
 
     private void InitialSetupPrototypes()

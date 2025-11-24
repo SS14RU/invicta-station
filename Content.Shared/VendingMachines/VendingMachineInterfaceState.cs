@@ -20,6 +20,19 @@ namespace Content.Shared.VendingMachines
         }
     }
 
+    // Invicta: selection message separated from eject to hook banking flow
+    [Serializable, NetSerializable]
+    public sealed class VendingMachineSelectMessage : BoundUserInterfaceMessage
+    {
+        public readonly InventoryType Type;
+        public readonly string ID;
+        public VendingMachineSelectMessage(InventoryType type, string id)
+        {
+            Type = type;
+            ID = id;
+        }
+    }
+
     [Serializable, NetSerializable]
     public enum VendingMachineUiKey
     {
