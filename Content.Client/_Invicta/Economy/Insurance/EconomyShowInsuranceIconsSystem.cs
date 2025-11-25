@@ -64,6 +64,17 @@ public sealed class EconomyShowInsuranceIconsSystem : EquipmentHudSystem<Economy
             }
         }
 
+        // Fallback: if we can actually see the person's identity (not masked/unknown), use the insurance component on the mob.
+        var seeIdentity = new SeeIdentityAttemptEvent();
+        RaiseLocalEvent(ent, seeIdentity);
+        if (seeIdentity.Cancelled)
+            return null;
+
+        if (TryComp<EconomyInsuranceComponent>(ent, out var selfComp) &&
+            selfComp.InsuranceInfoId > 0 &&
+            !string.IsNullOrEmpty(selfComp.IconPrototype.Id))
+            return selfComp;
+
         return null;
     }
 

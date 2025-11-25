@@ -224,7 +224,12 @@ public sealed class EconomyInsuranceSystem : EconomyInsuranceSystemShared
         var insuranceComponent = EnsureComp<EconomyInsuranceComponent>(cardUid);
         insuranceComponent.InsuranceInfoId = economyInsuranceInfo.Id;
 
+        // Also mirror the insurance info on the player entity so HUDs can fall back if the card is missing.
+        var playerInsurance = EnsureComp<EconomyInsuranceComponent>(playerUid);
+        playerInsurance.InsuranceInfoId = economyInsuranceInfo.Id;
+
         UpdateIcon((cardUid, insuranceComponent));
+        UpdateIcon((playerUid, playerInsurance));
     }
 
     private PreparedInsurerData? PerformPrepareData(EntityUid playerUid, HumanoidCharacterProfile profile, ProtoId<JobPrototype>? job)

@@ -115,6 +115,7 @@
   components:
   - type: ShowHealthBars
   - type: ShowHealthIcons
+  - type: EconomyShowInsuranceIcons
 
 - type: entity
   parent: ClothingEyesBase

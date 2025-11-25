@@ -45,6 +45,7 @@
     - type: NpcFactionMember
       factions:
         - NanoTrasen
+    - type: EconomyInsuranceServer
 
 - type: entity
   id: StandardNanotrasenStation

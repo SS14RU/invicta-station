@@ -9,33 +9,33 @@
   parent: InsuranceIcon
   id: NonStatus
   icon:
-    sprite: _Invicta/economy/insurance.rsi
+    sprite: /Textures/_Invicta/economy/insurance.rsi
     state: NonStatus
 
 - type: insuranceIcon
   parent: InsuranceIcon
   id: Copper
   icon: 
-    sprite: _Invicta/economy/insurance.rsi
+    sprite: /Textures/_Invicta/economy/insurance.rsi
     state: Copper
 
 - type: insuranceIcon
   parent: InsuranceIcon
   id: Silver
   icon:
-    sprite: _Invicta/economy/insurance.rsi
+    sprite: /Textures/_Invicta/economy/insurance.rsi
     state: Silver
 
 - type: insuranceIcon
   parent: InsuranceIcon
   id: Gold
   icon:
-    sprite: _Invicta/economy/insurance.rsi
+    sprite: /Textures/_Invicta/economy/insurance.rsi
     state: Gold
 
 - type: insuranceIcon
   parent: InsuranceIcon
   id: Platinum
   icon:
-    sprite: _Invicta/economy/insurance.rsi
+    sprite: /Textures/_Invicta/economy/insurance.rsi
     state: Platinum
