@@ -143,8 +143,8 @@ namespace Content.Server.Cargo.Systems;
         private List<(EntityUid, CargoPalletComponent, TransformComponent)> _pads = new();
 
         partial void InitializeInvictaBridge();
-        partial void BeforeCargoBankUpdate(EntityUid station, StationBankAccountComponent component, ref int amount, ref bool handled);
-        partial void AfterCargoBankUpdate(EntityUid station, StationBankAccountComponent component, int amount, bool handled);
+        partial void BeforeCargoBankUpdate(EntityUid station, StationBankAccountComponent component, Dictionary<ProtoId<CargoAccountPrototype>, double> accountDistribution, ref int amount, ref bool handled);
+        partial void AfterCargoBankUpdate(EntityUid station, StationBankAccountComponent component, Dictionary<ProtoId<CargoAccountPrototype>, double> accountDistribution, int amount, bool handled);
         partial void EnsureInvictaBalanceSync(EntityUid station);
         partial void ShouldSkipCargoPassiveIncome(EntityUid station, StationBankAccountComponent bank, ref bool skip);
         partial void AdjustCargoInterfaceState(EntityUid station, StationCargoOrderDatabaseComponent orderDatabase, StationBankAccountComponent bankAccount, ref CargoConsoleInterfaceState state);
@@ -206,11 +206,11 @@ namespace Content.Server.Cargo.Systems;
 
         var amount = balanceAdded;
         var handled = false;
-        BeforeCargoBankUpdate(ent.Owner, ent.Comp, ref amount, ref handled);
+        BeforeCargoBankUpdate(ent.Owner, ent.Comp, accountDistribution, ref amount, ref handled);
 
         if (handled)
         {
-            AfterCargoBankUpdate(ent.Owner, ent.Comp, amount, true);
+            AfterCargoBankUpdate(ent.Owner, ent.Comp, accountDistribution, amount, true);
             return;
         }
 
@@ -229,6 +229,6 @@ namespace Content.Server.Cargo.Systems;
             return;
 
         Dirty(ent);
-        AfterCargoBankUpdate(ent.Owner, ent.Comp, amount, false);
+        AfterCargoBankUpdate(ent.Owner, ent.Comp, accountDistribution, amount, false);
     }
 }

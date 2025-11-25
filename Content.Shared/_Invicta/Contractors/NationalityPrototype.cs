@@ -3,7 +3,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._Invicta.Contractors;
 
 /// <summary>
-/// Простая заглушка под национальности из AWS-контента.
+/// Простая заглушка под национальности из Invicta-контента.
 /// Пока логика не интегрирована, класс нужен только, чтобы прототипы успешно грузились.
 /// </summary>
 [Prototype("nationality")]

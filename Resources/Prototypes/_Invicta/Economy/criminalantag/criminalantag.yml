@@ -101,7 +101,7 @@
   - type: RoleRequirement
     roles:
       mindRoles:
-      - CriminalAntagRole
+      - MindRoleCriminalAntag
 
 - type: entity
   parent: [BaseObjective, BaseLivingObjective]
@@ -119,5 +119,5 @@
   - type: RoleRequirement
     roles:
       mindRoles:
-      - CriminalAntagRole
+      - MindRoleCriminalAntag
 

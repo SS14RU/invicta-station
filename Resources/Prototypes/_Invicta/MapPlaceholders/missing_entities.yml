@@ -364,7 +364,7 @@
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: OverlordCircuitBoard
+  id: OverlordCircuitBoardPlaceholder
 
 - type: entity
   parent: InvictaMapPlaceholderBase

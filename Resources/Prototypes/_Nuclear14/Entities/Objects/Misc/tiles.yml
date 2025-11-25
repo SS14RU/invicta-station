@@ -155,7 +155,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorMetalPurpleSolid
+      - N14FloorMetalPurpleSolid
   - type: Stack
     stackType: FloorTileMetalPurpleSolid
     
@@ -235,7 +235,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorMetalWhite
+      - N14FloorMetalWhite
   - type: Stack
     stackType: FloorTileMetalWhite
     
@@ -251,7 +251,7 @@
   - type: FloorTile
     outputs:
       - Plating
-      - FloorMetalWhiteSolid
+      - N14FloorMetalWhiteSolid
   - type: Stack
     stackType: FloorTileMetalWhiteSolid
     

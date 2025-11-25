@@ -135,7 +135,7 @@
   weather: true
 
 - type: tile
-  id: FloorMetalPurpleSolid
+  id: N14FloorMetalPurpleSolid
   name: metal purple solid
   sprite: /Textures/_Nuclear14/Tiles/metalpurplesolid.png
   baseTurf: Plating
@@ -210,7 +210,7 @@
   weather: true
 
 - type: tile
-  id: FloorMetalWhite
+  id: N14FloorMetalWhite
   name: metal white
   sprite: /Textures/_Nuclear14/Tiles/metalwhite.png
   baseTurf: Plating
@@ -225,7 +225,7 @@
   weather: true
 
 - type: tile
-  id: FloorMetalWhiteSolid
+  id: N14FloorMetalWhiteSolid
   name: metal white solid
   sprite: /Textures/_Nuclear14/Tiles/metalwhitesolid.png
   baseTurf: Plating
@@ -1740,7 +1740,7 @@
   weather: true
 
 - type: tile
-  id: FloorDirtIndoors
+  id: N14FloorDirtIndoors
   name: dirt indoors
   sprite: /Textures/_Nuclear14/Tiles/Dirt/dirt.png
   edgeSpritePriority: 1
@@ -1853,7 +1853,7 @@
   indestructible: true
 
 - type: tile
-  id: WaterShallow
+  id: N14FloorWaterShallow
   name: water shallow
   sprite: /Textures/_Nuclear14/Tiles/ms13/Water/water_shallow.png
   friction: 0.01

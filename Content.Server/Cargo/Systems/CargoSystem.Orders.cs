@@ -232,7 +232,13 @@ namespace Content.Server.Cargo.Systems
             {
                 if (Timing.CurTime < bank.NextIncomeTime)
                     continue;
+
                 bank.NextIncomeTime += bank.IncomeDelay;
+
+                var skipPassiveIncome = false;
+                ShouldSkipCargoPassiveIncome(uid, bank, ref skipPassiveIncome);
+                if (skipPassiveIncome)
+                    continue;
 
                 var balanceToAdd = (int) Math.Round(bank.IncreasePerSecond * bank.IncomeDelay.TotalSeconds);
                 UpdateBankAccount((uid, bank), balanceToAdd, bank.RevenueDistribution);
@@ -556,21 +562,25 @@ namespace Content.Server.Cargo.Systems
             if (!TryComp<CargoOrderConsoleComponent>(consoleUid, out var console))
                 return;
 
-            if (!TryComp<StationCargoOrderDatabaseComponent>(station, out var orderDatabase))
+            if (!TryComp<StationCargoOrderDatabaseComponent>(station, out var orderDatabase) ||
+                !TryComp<StationBankAccountComponent>(station, out var bankAccount))
                 return;
+
+            EnsureInvictaBalanceSync(station.Value);
 
             if (_uiSystem.HasUi(consoleUid, CargoConsoleUiKey.Orders))
             {
-                _uiSystem.SetUiState(consoleUid,
-                    CargoConsoleUiKey.Orders,
-                    new CargoConsoleInterfaceState(
+                var state = new CargoConsoleInterfaceState(
                     MetaData(station.Value).EntityName,
                     GetOutstandingOrderCount((station!.Value, orderDatabase), console.Account),
                     orderDatabase.Capacity,
                     GetNetEntity(station.Value),
                     RelevantOrders((station!.Value, orderDatabase), (consoleUid, console)),
-                    GetAvailableProducts((consoleUid, console))
-                ));
+                    GetAvailableProducts((consoleUid, console)));
+
+                AdjustCargoInterfaceState(station.Value, orderDatabase, bankAccount, ref state);
+
+                _uiSystem.SetUiState(consoleUid, CargoConsoleUiKey.Orders, state);
             }
         }
 

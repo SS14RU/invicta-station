@@ -69,6 +69,7 @@ namespace Content.Client.Cargo.UI
         private string? _category;
 
         public List<ProtoId<CargoProductPrototype>> ProductCatalogue = new();
+        private bool _showFundsTab = true;
 
         public CargoConsoleMenu(EntityUid owner, IEntityManager entMan, IPrototypeManager protoManager, SpriteSystem spriteSystem)
         {
@@ -126,6 +127,15 @@ namespace Content.Client.Cargo.UI
             };
 
             OnMenuConstructed();
+        }
+
+        public void SetFundsTabVisible(bool visible)
+        {
+            _showFundsTab = visible;
+            TabContainer.SetTabVisible(1, visible);
+
+            if (!visible && TabContainer.CurrentTab == 1)
+                TabContainer.CurrentTab = 0;
         }
 
         private void OnCategoryItemSelected(OptionButton.ItemSelectedEventArgs args)

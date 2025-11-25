@@ -66,6 +66,7 @@
   abstract: true
   components:
     - type: StationData
+    - type: EconomyCargoAccount
 
 - type: entity
   id: BaseStationCargo

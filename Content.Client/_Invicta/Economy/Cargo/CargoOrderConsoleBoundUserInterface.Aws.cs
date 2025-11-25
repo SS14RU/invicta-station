@@ -30,6 +30,7 @@ public sealed partial class CargoOrderConsoleBoundUserInterface
                 _menu.PopulateCategories();
                 _menu.PopulateOrders(invictaState.Orders);
                 _menu.PopulateAccountActions();
+                _menu.SetFundsTabVisible(false);
             }
 
             _menu?.SetCurrency(_InvictaCurrencyId);
@@ -37,6 +38,10 @@ public sealed partial class CargoOrderConsoleBoundUserInterface
         }
 
         _InvictaCurrencyId = null;
-        _menu?.SetCurrency(_InvictaCurrencyId);
+        if (_menu != null)
+        {
+            _menu.SetFundsTabVisible(true);
+            _menu.SetCurrency(_InvictaCurrencyId);
+        }
     }
 }

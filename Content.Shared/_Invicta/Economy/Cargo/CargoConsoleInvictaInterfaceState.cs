@@ -7,14 +7,8 @@ using Robust.Shared.Serialization;
 namespace Content.Shared._Invicta.Economy.Cargo;
 
 [NetSerializable, Serializable]
-public sealed class CargoConsoleInvictaInterfaceState : BoundUserInterfaceState
+public sealed class CargoConsoleInvictaInterfaceState : CargoConsoleInterfaceState
 {
-    public string Name;
-    public int Count;
-    public int Capacity;
-    public NetEntity Station;
-    public List<CargoOrderData> Orders;
-    public List<ProtoId<CargoProductPrototype>> Products;
     public string? CurrencyPrototype;
 
     public CargoConsoleInvictaInterfaceState(
@@ -25,13 +19,8 @@ public sealed class CargoConsoleInvictaInterfaceState : BoundUserInterfaceState
         List<CargoOrderData> orders,
         List<ProtoId<CargoProductPrototype>> products,
         string? currencyPrototype)
+        : base(name, count, capacity, station, orders, products)
     {
-        Name = name;
-        Count = count;
-        Capacity = capacity;
-        Station = station;
-        Orders = orders;
-        Products = products;
         CurrencyPrototype = currencyPrototype;
     }
 }

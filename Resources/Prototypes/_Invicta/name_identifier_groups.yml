@@ -1,4 +1,4 @@
-# Invicta: department/name identifiers from AWS build
+# Invicta: department/name identifiers from Invicta build
 - type: nameIdentifierGroup
   id: Service
   prefix: СРВ
