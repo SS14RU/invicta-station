@@ -27,6 +27,7 @@
 
 using Content.Goobstation.Common.DoAfter;
 using Content.Shared.Actions;
+using Content.Shared.Actions.Components;
 using Content.Shared.Input;
 using Content.Shared.Mind;
 using Content.Shared.MouseRotator;
@@ -43,6 +44,7 @@ namespace Content.Shared.CombatMode;
 public abstract class SharedCombatModeSystem : EntitySystem
 {
     [Dependency] protected readonly IGameTiming Timing = default!;
+    [Dependency] private   readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private   readonly SharedPopupSystem _popup = default!;
     [Dependency] private   readonly SharedMindSystem  _mind = default!;
 
@@ -50,6 +52,7 @@ public abstract class SharedCombatModeSystem : EntitySystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<CombatModeComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<CombatModeComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<CombatModeComponent, ToggleCombatActionEvent>(OnActionPerform);
         SubscribeAllEvent<ToggleCombatModeRequestEvent>(OnToggleCombatModeRequest);
@@ -66,8 +69,16 @@ public abstract class SharedCombatModeSystem : EntitySystem
         CommandBinds.Unregister<SharedCombatModeSystem>();
     }
 
+    private void OnMapInit(EntityUid uid, CombatModeComponent component, MapInitEvent args)
+    {
+        _actionsSystem.AddAction(uid, ref component.CombatToggleActionEntity, component.CombatToggleAction);
+        Dirty(uid, component);
+    }
+
     private void OnShutdown(EntityUid uid, CombatModeComponent component, ComponentShutdown args)
     {
+        _actionsSystem.RemoveAction(uid, component.CombatToggleActionEntity);
+
         SetMouseRotatorComponents(uid, false);
     }
 
@@ -93,6 +104,13 @@ public abstract class SharedCombatModeSystem : EntitySystem
 
         if (!component.Enable)
             return;
+
+        if (component.CombatToggleActionEntity != null &&
+            TryComp<ActionComponent>(component.CombatToggleActionEntity.Value, out var action) &&
+            !action.Enabled)
+        {
+            return;
+        }
 
         SetInCombatMode(uid, !component.IsInCombatMode, component);
     }
@@ -143,6 +161,9 @@ public abstract class SharedCombatModeSystem : EntitySystem
 
         component.IsInCombatMode = value;
         Dirty(entity, component);
+
+        if (component.CombatToggleActionEntity != null)
+            _actionsSystem.SetToggled(component.CombatToggleActionEntity, component.IsInCombatMode);
 
         // Goobstation start
         var ev = new CombatModeToggledEvent(entity, value);

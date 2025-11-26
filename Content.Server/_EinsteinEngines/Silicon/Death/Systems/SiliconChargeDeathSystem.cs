@@ -8,6 +8,7 @@ using Content.Server.Power.Components;
 using Content.Shared._EinsteinEngines.Silicon.Systems;
 using Content.Shared.Bed.Sleep;
 using Content.Server._EinsteinEngines.Silicon.Charge;
+using Content.Shared.Actions;
 using Content.Server.Humanoid;
 using Content.Shared.Humanoid;
 using Content.Shared.StatusEffectNew;
@@ -31,6 +32,7 @@ public sealed class SiliconDeathSystem : SharedSiliconDeathSystem
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidAppearanceSystem = default!;
     // Goobstation Start - Energycrit
     [Dependency] private readonly SharedCombatModeSystem _combat = default!;
+    [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!;
     // Goobstation End - Energycrit
 
@@ -119,6 +121,7 @@ public sealed class SiliconDeathSystem : SharedSiliconDeathSystem
         {
             _combat.SetInCombatMode(uid, false);
             _combat.SetEnable(uid, combatMode, false);
+            _actions.SetEnabled(combatMode.CombatToggleActionEntity, false);
         }
 
         // Knock down
@@ -162,7 +165,10 @@ public sealed class SiliconDeathSystem : SharedSiliconDeathSystem
 
         // Enable combat mode
         if (TryComp<CombatModeComponent>(uid, out var combatMode))
+        {
             _combat.SetEnable(uid, combatMode, true);
+            _actions.SetEnabled(combatMode.CombatToggleActionEntity, true);
+        }
 
         // Let you stand again
         RemComp<KnockedDownComponent>(uid);

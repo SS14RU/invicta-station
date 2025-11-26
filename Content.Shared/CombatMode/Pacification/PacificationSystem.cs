@@ -60,6 +60,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Alert;
+using Content.Shared.Actions;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction.Events;
@@ -74,6 +75,7 @@ public sealed class PacificationSystem : EntitySystem
 {
     [Dependency] private readonly AlertsSystem _alertsSystem = default!;
     [Dependency] private readonly SharedCombatModeSystem _combatSystem = default!;
+    [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
@@ -172,6 +174,7 @@ public sealed class PacificationSystem : EntitySystem
         {
             _combatSystem.SetInCombatMode(uid, false, combatMode);
             _combatSystem.SetEnable(uid, combatMode, false);
+            _actionsSystem.SetEnabled(combatMode.CombatToggleActionEntity, false);
         }
 
         _alertsSystem.ShowAlert(uid, component.PacifiedAlert);
@@ -186,6 +189,7 @@ public sealed class PacificationSystem : EntitySystem
             _combatSystem.SetCanDisarm(uid, true, combatMode);
 
         _combatSystem.SetEnable(uid, combatMode, true);
+        _actionsSystem.SetEnabled(combatMode.CombatToggleActionEntity, true);
         _alertsSystem.ClearAlert(uid, component.PacifiedAlert);
     }
 
