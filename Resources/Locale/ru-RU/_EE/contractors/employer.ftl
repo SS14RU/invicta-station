@@ -1,5 +1,3 @@
-﻿humanoid-profile-editor-employer-label = Работодатель
-
 # character-employer-requirement = Вам{$inverted ->
 #     [true]{" "}нельзя
 #     *[other]{""}

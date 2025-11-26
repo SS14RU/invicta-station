@@ -1,5 +1,3 @@
-humanoid-profile-editor-lifepath-label = Жизненный путь
-
 character-lifepath-requirement = Вы{$inverted ->
     [true]{" "}не можете
     *[other]{" "}должны

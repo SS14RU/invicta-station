@@ -1,5 +1,3 @@
-humanoid-profile-editor-lifepath-label = Lifepath
-
 character-lifepath-requirement = You must{$inverted ->
     [true]{" "}not
     *[other]{""}

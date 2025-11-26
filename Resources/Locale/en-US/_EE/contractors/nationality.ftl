@@ -1,5 +1,3 @@
-﻿humanoid-profile-editor-nationality-label = Nationality
-
 character-nationality-requirement = You must{$inverted ->
     [true]{" "}not
     *[other]{""}

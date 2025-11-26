@@ -1,5 +1,3 @@
-humanoid-profile-editor-employer-label = Employer
-
 # character-employer-requirement = You must{$inverted ->
 #     [true]{" "}not
 #     *[other]{""}
