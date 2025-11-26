@@ -1,4 +1,5 @@
-﻿using Content.Server.Objectives;
+using Content.Server.GameTicking;
+using Content.Server.Objectives;
 using Content.Shared._Invicta.CriminalAntag;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
@@ -12,6 +13,7 @@ namespace Content.Server._Invicta.CriminalAntag;
 
 public sealed class StealMoneyConditionSystem : EntitySystem
 {
+    [Dependency] private readonly GameTicker _ticker = default!;
     [Dependency] private readonly CriminalAntagLeaderboardSystem _leaderboard = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedObjectivesSystem _objectives = default!;
@@ -43,7 +45,7 @@ public sealed class StealMoneyConditionSystem : EntitySystem
 
         _metaData.SetEntityName(condition.Owner, title, args.Meta);
         _metaData.SetEntityDescription(condition.Owner, description, args.Meta);
-        _objectives.SetIcon(condition.Owner, new SpriteSpecifier.Rsi(new ResPath("/Textures/Invicta/economy/moneyholder.rsi"), "icon"), args.Objective);
+        _objectives.SetIcon(condition.Owner, new SpriteSpecifier.Rsi(new ResPath("/Textures/_Invicta/economy/moneyholder.rsi"), "icon"), args.Objective);
     }
 
     private void OnGetProgress(Entity<StealMoneyConditionComponent> condition, ref ObjectiveGetProgressEvent args)
@@ -53,6 +55,9 @@ public sealed class StealMoneyConditionSystem : EntitySystem
 
     private float GetProgress(EntityUid mindUid, MindComponent mind)
     {
+        if (_ticker.RunLevel != GameRunLevel.PostRound)
+            return 0f;
+
         return _leaderboard.HasTopMoney(mindUid, mind) ? 1f : 0f;
     }
 }

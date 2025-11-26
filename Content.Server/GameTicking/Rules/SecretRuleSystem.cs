@@ -44,6 +44,7 @@ public sealed class SecretRuleSystem : GameRuleSystem<SecretRuleComponent>
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
 
+    private static readonly EntProtoId CriminalAntagSecretRuleId = "CriminalAntagSecret"; // Invicta: secret preset criminal rule id
     private string _ruleCompName = default!;
 
     public override void Initialize()
@@ -81,6 +82,9 @@ public sealed class SecretRuleSystem : GameRuleSystem<SecretRuleComponent>
 
             component.AdditionalGameRules.Add(ruleEnt);
         }
+
+        // Invicta: ensure secret also runs criminal antag
+        TryAddCriminalAntagRule(component, preset);
     }
 
     protected override void Ended(EntityUid uid, SecretRuleComponent component, GameRuleComponent gameRule, GameRuleEndedEvent args)
@@ -190,4 +194,23 @@ public sealed class SecretRuleSystem : GameRuleSystem<SecretRuleComponent>
 
         return true;
     }
+
+    // Invicta: begin add criminal antag rule to secret
+    private void TryAddCriminalAntagRule(SecretRuleComponent component, GamePresetPrototype preset)
+    {
+        if (preset.Rules.Contains(CriminalAntagSecretRuleId))
+            return;
+
+        if (!_prototypeManager.TryIndex<EntityPrototype>(CriminalAntagSecretRuleId, out _))
+            return;
+
+        EntityUid ruleEnt;
+        if (GameTicker.RunLevel <= GameRunLevel.InRound)
+            ruleEnt = GameTicker.AddGameRule(CriminalAntagSecretRuleId);
+        else
+            GameTicker.StartGameRule(CriminalAntagSecretRuleId, out ruleEnt);
+
+        component.AdditionalGameRules.Add(ruleEnt);
+    }
+    // Invicta: end add criminal antag rule to secret
 }

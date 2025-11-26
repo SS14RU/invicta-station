@@ -88,6 +88,7 @@ using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Zombies;
 using Content.Shared.Administration;
+using Content.Shared._Invicta.CriminalAntag; // Invicta: criminal antag admin verb dependency
 using Content.Server.Clothing.Systems;
 using Content.Shared.Database;
 using Content.Shared.Humanoid;
@@ -112,6 +113,7 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId DefaultNukeOpRule = "LoneOpsSpawn";
     private static readonly EntProtoId DefaultRevsRule = "Revolutionary";
     private static readonly EntProtoId DefaultThiefRule = "Thief";
+    private static readonly EntProtoId DefaultCriminalAntagRule = "CriminalAntag"; // Invicta: criminal antag rule id for admin verb
     private static readonly ProtoId<StartingGearPrototype> PirateGearId = "PirateGear";
 
     private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
@@ -237,6 +239,23 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", thiefName, Loc.GetString("admin-verb-make-thief")),
         };
         args.Verbs.Add(thief);
+
+        // Invicta: begin criminal antag admin verb
+        var criminalName = Loc.GetString("admin-verb-text-make-criminal-antag");
+        Verb criminalAntag = new()
+        {
+            Text = criminalName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Misc/job_icons.rsi"), "Detective"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<CriminalAntagRuleComponent>(targetPlayer, DefaultCriminalAntagRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", criminalName, Loc.GetString("admin-verb-make-criminal-antag")),
+        };
+        args.Verbs.Add(criminalAntag);
+        // Invicta: end criminal antag admin verb
 
         var paradoxCloneName = Loc.GetString("admin-verb-text-make-paradox-clone");
         Verb paradox = new()

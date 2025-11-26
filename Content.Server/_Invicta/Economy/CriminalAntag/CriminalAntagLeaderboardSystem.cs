@@ -119,8 +119,10 @@ public sealed class CriminalAntagLeaderboardSystem : EntitySystem
     {
         entry = default;
 
-        if (!TryGetCriminalFinancials(mindUid, mind, requireEscape: true, out var body, out var money, out var escaped))
+        if (!TryGetCriminalFinancials(mindUid, mind, requireEscape: false, out var body, out var money, out var escaped))
             return false;
+
+        escaped |= HasCompletedEscapeObjective(mindUid, mind);
 
         entry = new CriminalAntagLeaderboardEntry(
             mindUid,

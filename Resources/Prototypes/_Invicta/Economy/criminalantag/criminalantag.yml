@@ -105,6 +105,8 @@
 - type: entity
   parent: [BaseObjective, BaseLivingObjective]
   id: CriminalAntagEscapeObjective
+  name: objective-condition-escape-shuttle-title
+  description: objective-condition-escape-shuttle-description
   components:
   - type: Objective
     issuer: economy-criminalantag-agent-name
@@ -115,7 +117,32 @@
       sprite: Structures/Furniture/chairs.rsi
       state: shuttle
   - type: EscapeShuttleCondition
-  - type: RoleRequirement
-    roles:
-    - CriminalAntagRole
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseCriminalAntagRule
+  id: CriminalAntagSecret
+  components:
+  - type: GameRule
+    minPlayers: 5
+  - type: CriminalAntagRule
+  - type: AntagObjectives
+    objectives:
+    - CriminalAntagObjective
+    - CriminalAntagEscapeObjective
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ CriminalAntag ]
+      min: 1
+      max: 2
+      playerRatio: 10
+      blacklist:
+        components:
+        - AntagImmune
+      lateJoinAdditional: false
+      mindRoles:
+      - MindRoleCriminalAntag
+      briefing:
+        text: economy-criminalantag-briefing
+        sound: "/Audio/Misc/thief_greeting.ogg"
 

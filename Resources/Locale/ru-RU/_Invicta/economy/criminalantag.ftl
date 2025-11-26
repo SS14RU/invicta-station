@@ -5,12 +5,20 @@ economy-criminalantag-objective-desc =
     Украдите как можно больше талеров на станции.
     Другие преступники тоже не сидят без дела, победит только самый богатый.
 economy-criminalantag-briefing =
-    Вам нужно как можно больше денег - из жадности или долга, это не важно.
+    Вам нужны деньги — жадность или долги, неважно. Заберите их любыми способами.
 
-    У вас нет магазина и какой-либо помощи. Создайте банду, воруйте, грабьте, стройте коррупционные схемы.
+    У вас нет лавки и помощи извне. Соберите банду, воруйте, грабьте и стройте коррупционные схемы.
 
-    В конце раунда будет список всех преступников, почет только самому богатому.
+    В конце смены объявят рейтинг преступников, и славу получит только самый богатый.
 economy-criminalantag-agent-name = [color=crimson]Преступник[/color]
 economy-criminalantag-round-end-header = [color=crimson]Рейтинг преступников[/color]
 economy-criminalantag-round-end-entry = { $index }. { $name } - { $money } талеров
 economy-criminalantag-round-end-unknown = Неизвестный преступник
+
+# Escape objective (fallback for display)
+objective-condition-escape-shuttle-title = Улетите на эвакуационном шаттле живым и без наручников.
+objective-condition-escape-shuttle-description = Доберитесь до эвакуационного шаттла живым и не в наручниках.
+
+# Entity names/descriptions for objectives (mirrors traitor escape)
+ent-CriminalAntagEscapeObjective = Сбегите на ЦК живым и без наручников.
+    .desc = Доберитесь до ЦК живым и не в наручниках, улетев на эвакуационном шаттле.

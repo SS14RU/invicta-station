@@ -14,3 +14,11 @@ economy-criminalantag-agent-name = [color=crimson]Criminal[/color]
 economy-criminalantag-round-end-header = [color=crimson]Criminal leaderboard[/color]
 economy-criminalantag-round-end-entry = { $index }. { $name } - { $money } thalers
 economy-criminalantag-round-end-unknown = Unknown criminal
+
+# Escape objective (fallback for display)
+objective-condition-escape-shuttle-title = Escape alive and uncuffed on the evacuation shuttle.
+objective-condition-escape-shuttle-description = Reach the evacuation shuttle alive and not in cuffs.
+
+# Entity names/descriptions for objectives (mirrors traitor escape)
+ent-CriminalAntagEscapeObjective = Escape to CentCom alive and uncuffed.
+    .desc = Reach CentCom alive and not in cuffs by leaving on the evacuation shuttle.
