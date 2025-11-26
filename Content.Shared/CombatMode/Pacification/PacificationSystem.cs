@@ -59,7 +59,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Diagnostics.CodeAnalysis;
-using Content.Shared.Actions;
 using Content.Shared.Alert;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.IdentityManagement;
@@ -74,7 +73,6 @@ namespace Content.Shared.CombatMode.Pacification;
 public sealed class PacificationSystem : EntitySystem
 {
     [Dependency] private readonly AlertsSystem _alertsSystem = default!;
-    [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly SharedCombatModeSystem _combatSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -173,7 +171,7 @@ public sealed class PacificationSystem : EntitySystem
         if (component.DisallowAllCombat)
         {
             _combatSystem.SetInCombatMode(uid, false, combatMode);
-            _actionsSystem.SetEnabled(combatMode.CombatToggleActionEntity, false);
+            _combatSystem.SetEnable(uid, combatMode, false);
         }
 
         _alertsSystem.ShowAlert(uid, component.PacifiedAlert);
@@ -187,7 +185,7 @@ public sealed class PacificationSystem : EntitySystem
         if (combatMode.CanDisarm != null)
             _combatSystem.SetCanDisarm(uid, true, combatMode);
 
-        _actionsSystem.SetEnabled(combatMode.CombatToggleActionEntity, true);
+        _combatSystem.SetEnable(uid, combatMode, true);
         _alertsSystem.ClearAlert(uid, component.PacifiedAlert);
     }
 

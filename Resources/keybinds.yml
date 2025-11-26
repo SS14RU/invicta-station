@@ -183,6 +183,9 @@ binds:
 - function: ToggleStanding
   type: State
   key: R
+- function: ToggleCombatMode
+  type: State
+  key: MouseMiddle
 - function: ResistGrab
   type: State
   key: B

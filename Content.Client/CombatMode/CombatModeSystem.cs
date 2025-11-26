@@ -33,6 +33,7 @@ using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.Player;
 using Robust.Shared.Configuration;
+using Robust.Shared.Player;
 
 namespace Content.Client.CombatMode;
 
@@ -52,12 +53,20 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
     /// Raised whenever combat mode changes.
     /// </summary>
     public event Action<bool>? LocalPlayerCombatModeUpdated;
+    public event Action<CombatModeComponent>? LocalPlayerCombatModeAdded;
+    public event Action? LocalPlayerCombatModeRemoved;
+    public event Action<bool>? LocalPlayerCombatModeEnabledChanged;
+
+    private bool _hasLocalCombatMode;
+    private bool _localCombatEnabled;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<CombatModeComponent, AfterAutoHandleStateEvent>(OnHandleState);
+        SubscribeLocalEvent<CombatModeComponent, LocalPlayerAttachedEvent>(OnLocalCombatAttached);
+        SubscribeLocalEvent<CombatModeComponent, LocalPlayerDetachedEvent>(OnLocalPlayerDetached);
 
         Subs.CVar(_cfg, CCVars.CombatModeIndicatorsPointShow, OnShowCombatIndicatorsChanged, true);
 
@@ -67,7 +76,39 @@ public sealed class CombatModeSystem : SharedCombatModeSystem
 
     private void OnHandleState(EntityUid uid, CombatModeComponent component, ref AfterAutoHandleStateEvent args)
     {
+        if (_playerManager.LocalEntity == uid)
+        {
+            if (!_hasLocalCombatMode)
+            {
+                _hasLocalCombatMode = true;
+                _localCombatEnabled = component.Enable;
+                LocalPlayerCombatModeAdded?.Invoke(component);
+            }
+            else if (_localCombatEnabled != component.Enable)
+            {
+                _localCombatEnabled = component.Enable;
+                LocalPlayerCombatModeEnabledChanged?.Invoke(component.Enable);
+            }
+        }
+
         UpdateHud(uid);
+    }
+
+    private void OnLocalCombatAttached(EntityUid uid, CombatModeComponent component, LocalPlayerAttachedEvent args)
+    {
+        if (_hasLocalCombatMode)
+            return;
+
+        _hasLocalCombatMode = true;
+        _localCombatEnabled = component.Enable;
+        LocalPlayerCombatModeAdded?.Invoke(component);
+        UpdateHud(uid);
+    }
+
+    private void OnLocalPlayerDetached(EntityUid uid, CombatModeComponent component, LocalPlayerDetachedEvent args)
+    {
+        _hasLocalCombatMode = false;
+        LocalPlayerCombatModeRemoved?.Invoke();
     }
 
     public override void Shutdown()

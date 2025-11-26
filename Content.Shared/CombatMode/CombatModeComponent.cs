@@ -80,5 +80,11 @@ namespace Content.Shared.CombatMode
         /// </summary>
         [DataField, AutoNetworkedField]
         public bool ToggleMouseRotator = true;
+
+        /// <summary>
+        ///     Whether the entity is allowed to enter combat mode at all (used to disable for pacification/IPC power loss).
+        /// </summary>
+        [DataField, AutoNetworkedField]
+        public bool Enable = true;
     }
 }

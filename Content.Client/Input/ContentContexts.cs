@@ -151,6 +151,7 @@ namespace Content.Client.Input
             human.AddFunction(ContentKeyFunctions.SmartEquipBack); // Goobstation - Smart equip to back
             human.AddFunction(ContentKeyFunctions.OpenBackpack);
             human.AddFunction(ContentKeyFunctions.OpenBelt);
+            human.AddFunction(ContentKeyFunctions.ToggleCombatMode);
             human.AddFunction(ContentKeyFunctions.MouseMiddle);
             human.AddFunction(ContentKeyFunctions.RotateObjectClockwise);
             human.AddFunction(ContentKeyFunctions.RotateObjectCounterclockwise);
