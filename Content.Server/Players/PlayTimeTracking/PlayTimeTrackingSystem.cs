@@ -82,6 +82,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System;
 using System.Linq;
 using Content.Server.Administration;
 using Content.Server.Administration.Managers;
@@ -273,8 +274,15 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
 
     public bool IsAllowed(ICommonSession player, string role)
     {
-        if (!_prototypes.TryIndex<JobPrototype>(role, out var job) ||
-            !_cfg.GetCVar(CCVars.GameRoleTimers))
+        if (!_prototypes.TryIndex<JobPrototype>(role, out var job))
+            return true;
+
+        var profile = (HumanoidCharacterProfile?) _preferencesManager.GetPreferences(player.UserId).SelectedCharacter;
+
+        if (profile?.GetBlockedJobs(_prototypes, _cfg).Contains(job.ID) == true)
+            return false;
+
+        if (!_cfg.GetCVar(CCVars.GameRoleTimers))
             return true;
 
         if (!_tracking.TryGetTrackerTimes(player, out var playTimes))
@@ -283,12 +291,15 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
             playTimes = new Dictionary<string, TimeSpan>();
         }
 
-        return JobRequirements.TryRequirementsMet(job, playTimes, out _, EntityManager, _prototypes, (HumanoidCharacterProfile?) _preferencesManager.GetPreferences(player.UserId).SelectedCharacter);
+        return JobRequirements.TryRequirementsMet(job, playTimes, out _, EntityManager, _prototypes, profile);
     }
 
     public HashSet<ProtoId<JobPrototype>> GetDisallowedJobs(ICommonSession player)
     {
         var roles = new HashSet<ProtoId<JobPrototype>>();
+        var profile = (HumanoidCharacterProfile?) _preferencesManager.GetPreferences(player.UserId).SelectedCharacter;
+        roles.UnionWith(profile?.GetBlockedJobs(_prototypes, _cfg) ?? Array.Empty<ProtoId<JobPrototype>>());
+
         if (!_cfg.GetCVar(CCVars.GameRoleTimers))
             return roles;
 
@@ -300,7 +311,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
 
         foreach (var job in _prototypes.EnumeratePrototypes<JobPrototype>())
         {
-            if (JobRequirements.TryRequirementsMet(job, playTimes, out _, EntityManager, _prototypes, (HumanoidCharacterProfile?) _preferencesManager.GetPreferences(player.UserId).SelectedCharacter))
+            if (!JobRequirements.TryRequirementsMet(job, playTimes, out _, EntityManager, _prototypes, profile))
                 roles.Add(job.ID);
         }
 
@@ -309,6 +320,16 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
 
     public void RemoveDisallowedJobs(NetUserId userId, List<ProtoId<JobPrototype>> jobs)
     {
+        var profile = (HumanoidCharacterProfile?) _preferencesManager.GetPreferences(userId).SelectedCharacter;
+        var blockedJobs = profile?.GetBlockedJobs(_prototypes, _cfg);
+
+        for (var i = jobs.Count - 1; i >= 0; i--)
+        {
+            var jobId = jobs[i];
+            if (blockedJobs?.Contains(jobId) == true)
+                jobs.RemoveSwap(i);
+        }
+
         if (!_cfg.GetCVar(CCVars.GameRoleTimers))
             return;
 
@@ -323,7 +344,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
         for (var i = 0; i < jobs.Count; i++)
         {
             if (_prototypes.TryIndex(jobs[i], out var job)
-                && JobRequirements.TryRequirementsMet(job, playTimes, out _, EntityManager, _prototypes, (HumanoidCharacterProfile?) _preferencesManager.GetPreferences(userId).SelectedCharacter))
+                && JobRequirements.TryRequirementsMet(job, playTimes, out _, EntityManager, _prototypes, profile))
             {
                 continue;
             }

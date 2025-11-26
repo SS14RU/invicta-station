@@ -1,0 +1,69 @@
+- type: employer
+  id: NanoTrasen
+  nameKey: employer_name_nanotrasen
+  descriptionKey: employer_description_nanotrasen
+  primaryColour: "#3d4f66"
+  secondaryColour: "#282828"
+  rivals:
+  - Contractors
+  blockingJobs:
+  - Quartermaster
+  - Chaplain
+  - Lawyer
+  - ServiceWorker
+  - Captain
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - Detective
+  - HeadOfSecurity
+  - SecurityCadet
+  - SecurityOfficer
+  - SeniorOfficer
+  - Warden
+  - Reporter
+  - Zookeeper
+
+- type: employer
+  id: Government
+  nameKey: employer_name_government
+  descriptionKey: employer_description_government
+  primaryColour: "#1a3e6e"
+  secondaryColour: "#c9d8ee"
+  blockingJobs:
+  - Quartermaster
+  - Chaplain
+  - Librarian
+  - ServiceWorker
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - ResearchAssistant
+  - ResearchDirector
+  - Roboticist
+  - Scientist
+  - SeniorResearcher
+  - Reporter
+  - Zookeeper
+
+- type: employer
+  id: Contractors
+  nameKey: employer_name_contractors
+  descriptionKey: employer_description_contractors
+  primaryColour: "#4e4a41"
+  secondaryColour: "#d0a85c"
+  blockingJobs:
+  - Captain
+  - Detective
+  - HeadOfPersonnel
+  - HeadOfSecurity
+  - Lawyer
+  - Librarian
+  - ResearchAssistant
+  - ResearchDirector
+  - Roboticist
+  - Scientist
+  - SecurityCadet
+  - SecurityOfficer
+  - SeniorOfficer
+  - SeniorResearcher
+  - Warden

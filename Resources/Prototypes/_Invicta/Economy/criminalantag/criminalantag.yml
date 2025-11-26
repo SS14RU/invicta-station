@@ -100,8 +100,7 @@
   - type: StealMoneyCondition
   - type: RoleRequirement
     roles:
-      mindRoles:
-      - MindRoleCriminalAntag
+    - CriminalAntagRole
 
 - type: entity
   parent: [BaseObjective, BaseLivingObjective]
@@ -118,6 +117,5 @@
   - type: EscapeShuttleCondition
   - type: RoleRequirement
     roles:
-      mindRoles:
-      - MindRoleCriminalAntag
+    - CriminalAntagRole
 

@@ -354,6 +354,18 @@ namespace Content.Server.Database
                 voice = SharedHumanoidAppearanceSystem.DefaultSexVoice[sex];
             // CorvaxGoob-TTS-End
 
+            var nationality = string.IsNullOrWhiteSpace(profile.Nationality)
+                ? SharedHumanoidAppearanceSystem.DefaultNationality
+                : profile.Nationality;
+
+            var employer = string.IsNullOrWhiteSpace(profile.Employer)
+                ? SharedHumanoidAppearanceSystem.DefaultEmployer
+                : profile.Employer;
+
+            var lifepath = string.IsNullOrWhiteSpace(profile.Lifepath)
+                ? SharedHumanoidAppearanceSystem.DefaultLifepath
+                : profile.Lifepath;
+
             // ReSharper disable once ConditionalAccessQualifierIsNonNullableAccordingToAPIContract
             var markingsRaw = profile.Markings?.Deserialize<List<string>>();
 
@@ -398,6 +410,9 @@ namespace Content.Server.Database
                 profile.CharacterName,
                 profile.FlavorText,
                 profile.Species,
+                nationality,
+                employer,
+                lifepath,
                 voice, // CorvaxGoob-TTS
                 profile.Age,
                 sex,
@@ -449,6 +464,9 @@ namespace Content.Server.Database
             profile.Markings = markings;
             profile.Slot = slot;
             profile.PreferenceUnavailable = (DbPreferenceUnavailableMode) humanoid.PreferenceUnavailable;
+            profile.Nationality = humanoid.Nationality;
+            profile.Employer = humanoid.Employer;
+            profile.Lifepath = humanoid.Lifepath;
 
             profile.Jobs.Clear();
             profile.Jobs.AddRange(

@@ -406,6 +406,9 @@ namespace Content.Server.Database
         public string Sex { get; set; } = null!;
         public string Gender { get; set; } = null!;
         public string Species { get; set; } = null!;
+        public string Nationality { get; set; } = null!;
+        public string Employer { get; set; } = null!;
+        public string Lifepath { get; set; } = null!;
         public string Voice { get; set; } = null!; // Corvax-TTS
         [Column(TypeName = "jsonb")] public JsonDocument? Markings { get; set; } = null!;
         public string HairName { get; set; } = null!;

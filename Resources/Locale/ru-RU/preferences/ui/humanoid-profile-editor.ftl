@@ -55,3 +55,10 @@ humanoid-profile-editor-trait-count-hint = Доступно очков: [{ $curr
 trait-category-disabilities = Ограничения
 trait-category-speech = Черты речи
 trait-category-quirks = Причуды
+
+# Backgrounds
+
+humanoid-profile-editor-background-tab = Предыстории
+humanoid-profile-editor-nationality-label = Национальность:
+humanoid-profile-editor-employer-label = Работодатель:
+humanoid-profile-editor-lifepath-label = Путь жизни:

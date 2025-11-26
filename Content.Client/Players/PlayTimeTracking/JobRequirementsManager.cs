@@ -195,6 +195,10 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
 
     public bool CheckRoleRequirements(JobPrototype job, HumanoidCharacterProfile? profile, [NotNullWhen(false)] out FormattedMessage? reason)
     {
+        reason = profile?.GetBackgroundBlockedMessage(job.ID, _prototypes, _cfg);
+        if (reason != null)
+            return false;
+
         var reqs = _entManager.System<SharedRoleSystem>().GetJobRequirement(job);
         return CheckRoleRequirements(reqs, profile, out reason);
     }

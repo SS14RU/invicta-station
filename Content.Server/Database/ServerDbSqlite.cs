@@ -70,7 +70,9 @@ using Content.Server.IP;
 using Content.Server.Preferences.Managers;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using System.Data.Common;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Utility;
@@ -110,6 +112,7 @@ namespace Content.Server.Database
             if (synchronous)
             {
                 prefsCtx.Database.Migrate();
+                EnsureBackgroundColumns(prefsCtx);
                 _dbReadyTask = Task.CompletedTask;
                 prefsCtx.Dispose();
             }
@@ -118,6 +121,7 @@ namespace Content.Server.Database
                 _dbReadyTask = Task.Run(() =>
                 {
                     prefsCtx.Database.Migrate();
+                    EnsureBackgroundColumns(prefsCtx);
                     prefsCtx.Dispose();
                 });
             }
@@ -607,6 +611,42 @@ namespace Content.Server.Database
         {
             DebugTools.Assert(time.Kind == DateTimeKind.Unspecified);
             return DateTime.SpecifyKind(time, DateTimeKind.Utc);
+        }
+
+        private static void EnsureBackgroundColumns(SqliteServerDbContext ctx)
+        {
+            var connection = ctx.Database.GetDbConnection();
+            var shouldClose = connection.State != System.Data.ConnectionState.Open;
+            if (shouldClose)
+                connection.Open();
+
+            try
+            {
+                static bool HasColumn(DbConnection conn, string column)
+                {
+                    using var cmd = conn.CreateCommand();
+                    cmd.CommandText = "SELECT 1 FROM pragma_table_info('profile') WHERE name = $name LIMIT 1;";
+                    var param = cmd.CreateParameter();
+                    param.ParameterName = "$name";
+                    param.Value = column;
+                    cmd.Parameters.Add(param);
+                    return cmd.ExecuteScalar() is not null;
+                }
+
+                if (!HasColumn(connection, "nationality"))
+                    ctx.Database.ExecuteSqlRaw("ALTER TABLE profile ADD COLUMN nationality TEXT NOT NULL DEFAULT '';");
+
+                if (!HasColumn(connection, "employer"))
+                    ctx.Database.ExecuteSqlRaw("ALTER TABLE profile ADD COLUMN employer TEXT NOT NULL DEFAULT '';");
+
+                if (!HasColumn(connection, "lifepath"))
+                    ctx.Database.ExecuteSqlRaw("ALTER TABLE profile ADD COLUMN lifepath TEXT NOT NULL DEFAULT '';");
+            }
+            finally
+            {
+                if (shouldClose)
+                    connection.Close();
+            }
         }
 
         private async Task<DbGuardImpl> GetDbImpl(

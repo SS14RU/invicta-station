@@ -53,6 +53,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Content.Shared.CCVar;
 using Content.Shared._CorvaxGoob.TTS;
+using Content.Shared._EE.Contractors.Prototypes;
 using Content.Shared.Dataset;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
@@ -128,6 +129,15 @@ namespace Content.Shared.Preferences
         [DataField]
         public ProtoId<SpeciesPrototype> Species { get; set; } = SharedHumanoidAppearanceSystem.DefaultSpecies;
 
+        [DataField]
+        public ProtoId<NationalityPrototype> Nationality { get; set; } = SharedHumanoidAppearanceSystem.DefaultNationality;
+
+        [DataField]
+        public ProtoId<EmployerPrototype> Employer { get; set; } = SharedHumanoidAppearanceSystem.DefaultEmployer;
+
+        [DataField]
+        public ProtoId<LifepathPrototype> Lifepath { get; set; } = SharedHumanoidAppearanceSystem.DefaultLifepath;
+
         // CorvaxGoob-TTS-Start
         [DataField]
         public string Voice { get; set; } = SharedHumanoidAppearanceSystem.DefaultVoice;
@@ -184,6 +194,9 @@ namespace Content.Shared.Preferences
             string name,
             string flavortext,
             string species,
+            string nationality,
+            string employer,
+            string lifepath,
             string voice, // CorvaxGoob-TTS
             int age,
             Sex sex,
@@ -200,6 +213,9 @@ namespace Content.Shared.Preferences
             Name = name;
             FlavorText = flavortext;
             Species = species;
+            Nationality = nationality;
+            Employer = employer;
+            Lifepath = lifepath;
             Voice = voice; // CorvaxGoob-TTS
             Age = age;
             Sex = sex;
@@ -232,6 +248,9 @@ namespace Content.Shared.Preferences
             : this(other.Name,
                 other.FlavorText,
                 other.Species,
+                other.Nationality,
+                other.Employer,
+                other.Lifepath,
                 other.Voice, // CorvaxGoob-TTS
                 other.Age,
                 other.Sex,
@@ -267,6 +286,9 @@ namespace Content.Shared.Preferences
             return new()
             {
                 Species = species,
+                Nationality = SharedHumanoidAppearanceSystem.DefaultNationality,
+                Employer = SharedHumanoidAppearanceSystem.DefaultEmployer,
+                Lifepath = SharedHumanoidAppearanceSystem.DefaultLifepath,
             };
         }
 
@@ -333,6 +355,9 @@ namespace Content.Shared.Preferences
                 Age = age,
                 Gender = gender,
                 Species = species,
+                Nationality = SharedHumanoidAppearanceSystem.DefaultNationality,
+                Employer = SharedHumanoidAppearanceSystem.DefaultEmployer,
+                Lifepath = SharedHumanoidAppearanceSystem.DefaultLifepath,
                 Voice = voiceId, // CorvaxGoob-TTS
                 Appearance = HumanoidCharacterAppearance.Random(species, sex),
             };
@@ -361,6 +386,21 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile WithGender(Gender gender)
         {
             return new(this) { Gender = gender };
+        }
+
+        public HumanoidCharacterProfile WithNationality(string nationality)
+        {
+            return new(this) { Nationality = nationality };
+        }
+
+        public HumanoidCharacterProfile WithEmployer(string employer)
+        {
+            return new(this) { Employer = employer };
+        }
+
+        public HumanoidCharacterProfile WithLifepath(string lifepath)
+        {
+            return new(this) { Lifepath = lifepath };
         }
 
         public HumanoidCharacterProfile WithSpecies(string species)
@@ -544,6 +584,9 @@ namespace Content.Shared.Preferences
             if (Sex != other.Sex) return false;
             if (Gender != other.Gender) return false;
             if (Species != other.Species) return false;
+            if (Nationality != other.Nationality) return false;
+            if (Employer != other.Employer) return false;
+            if (Lifepath != other.Lifepath) return false;
             // if (Height != other.Height) return false; // Goobstation: port EE height/width sliders // CorvaxGoob-Clearing
             // if (Width != other.Width) return false; // Goobstation: port EE height/width sliders // CorvaxGoob-Clearing
             if (PreferenceUnavailable != other.PreferenceUnavailable) return false;
@@ -556,10 +599,149 @@ namespace Content.Shared.Preferences
             return Appearance.MemberwiseEquals(other.Appearance);
         }
 
+        public FormattedMessage? GetBackgroundBlockedMessage(
+            ProtoId<JobPrototype> jobId,
+            IPrototypeManager prototypeManager,
+            IConfigurationManager configManager)
+        {
+            if (!BackgroundBlockingEnabled(configManager))
+                return null;
+
+            var reasons = new List<string>(capacity: 3);
+
+            AppendBackgroundRequiredMessage<NationalityPrototype>(
+                Nationality,
+                jobId,
+                prototypeManager,
+                "contractor-background-type-nationality",
+                static proto => proto.BlockingJobs,
+                static proto => proto.NameKey,
+                reasons);
+
+            AppendBackgroundRequiredMessage<EmployerPrototype>(
+                Employer,
+                jobId,
+                prototypeManager,
+                "contractor-background-type-employer",
+                static proto => proto.BlockingJobs,
+                static proto => proto.NameKey,
+                reasons);
+
+            AppendBackgroundRequiredMessage<LifepathPrototype>(
+                Lifepath,
+                jobId,
+                prototypeManager,
+                "contractor-background-type-lifepath",
+                static proto => proto.BlockingJobs,
+                static proto => proto.NameKey,
+                reasons);
+
+            if (reasons.Count == 0)
+                return null;
+
+            var backgrounds = string.Join(", ", reasons);
+            var text = Loc.GetString("contractor-background-job-blocked", ("backgrounds", backgrounds));
+            return FormattedMessage.FromMarkup(text);
+        }
+
+        public IReadOnlyCollection<ProtoId<JobPrototype>> GetBlockedJobs(
+            IPrototypeManager prototypeManager,
+            IConfigurationManager configManager)
+        {
+            var blocked = new HashSet<ProtoId<JobPrototype>>();
+
+            if (!BackgroundBlockingEnabled(configManager))
+                return blocked;
+
+            CollectBlockedJobs<NationalityPrototype>(
+                Nationality,
+                prototypeManager,
+                blocked,
+                static proto => proto.BlockingJobs);
+
+            CollectBlockedJobs<EmployerPrototype>(
+                Employer,
+                prototypeManager,
+                blocked,
+                static proto => proto.BlockingJobs);
+
+            CollectBlockedJobs<LifepathPrototype>(
+                Lifepath,
+                prototypeManager,
+                blocked,
+                static proto => proto.BlockingJobs);
+
+            return blocked;
+        }
+
+        private static bool BackgroundBlockingEnabled(IConfigurationManager configManager)
+        {
+            return configManager.GetCVar(CCVars.ContractorsEnabled)
+                   && configManager.GetCVar(CCVars.ContractorsCharacterRequirementsEnabled);
+        }
+
+        private static void AppendBackgroundRequiredMessage<TPrototype>(
+            string? prototypeId,
+            ProtoId<JobPrototype> jobId,
+            IPrototypeManager prototypeManager,
+            string typeLoc,
+            Func<TPrototype, IEnumerable<ProtoId<JobPrototype>>> blockingSelector,
+            Func<TPrototype, string> nameSelector,
+            ICollection<string> output)
+            where TPrototype : class, IPrototype
+        {
+            if (string.IsNullOrWhiteSpace(prototypeId))
+                return;
+
+            if (!prototypeManager.TryIndex(prototypeId, out TPrototype? current))
+                return;
+
+            if (!blockingSelector(current).Contains(jobId))
+                return;
+
+            var typeName = Loc.GetString(typeLoc);
+            var allowed = prototypeManager.EnumeratePrototypes<TPrototype>()
+                .Where(p => !blockingSelector(p).Contains(jobId))
+                .Select(nameSelector)
+                .Select(Loc.GetString)
+                .ToList();
+
+            if (allowed.Count == 0)
+                return;
+
+            var backgrounds = string.Join(", ", allowed);
+            output.Add($"{typeName}: {backgrounds}");
+        }
+
+        private static void CollectBlockedJobs<TPrototype>(
+            string? prototypeId,
+            IPrototypeManager prototypeManager,
+            ISet<ProtoId<JobPrototype>> blocked,
+            Func<TPrototype, IEnumerable<ProtoId<JobPrototype>>> blockingSelector)
+            where TPrototype : class, IPrototype
+        {
+            if (string.IsNullOrWhiteSpace(prototypeId))
+                return;
+
+            if (!prototypeManager.TryIndex(prototypeId, out TPrototype? prototype))
+                return;
+
+            blocked.UnionWith(blockingSelector(prototype));
+        }
+
         public void EnsureValid(ICommonSession session, IDependencyCollection collection, string[] sponsorPrototypes)
         {
             var configManager = collection.Resolve<IConfigurationManager>();
             var prototypeManager = collection.Resolve<IPrototypeManager>();
+
+            if (!prototypeManager.HasIndex<NationalityPrototype>(Nationality))
+                Nationality = SharedHumanoidAppearanceSystem.DefaultNationality;
+
+            if (!prototypeManager.HasIndex<EmployerPrototype>(Employer))
+                Employer = SharedHumanoidAppearanceSystem.DefaultEmployer;
+
+            if (!prototypeManager.HasIndex<LifepathPrototype>(Lifepath))
+                Lifepath = SharedHumanoidAppearanceSystem.DefaultLifepath;
 
             if (!prototypeManager.TryIndex(Species, out var speciesPrototype) || speciesPrototype.RoundStart == false)
             {
@@ -817,6 +999,9 @@ namespace Content.Shared.Preferences
             hashCode.Add(Name);
             hashCode.Add(FlavorText);
             hashCode.Add(Species);
+            hashCode.Add(Nationality);
+            hashCode.Add(Employer);
+            hashCode.Add(Lifepath);
             // hashCode.Add(Height); // Goobstation: port EE height/width sliders // CorvaxGoob-Clearing
             // hashCode.Add(Width); // Goobstation: port EE height/width sliders // CorvaxGoob-Clearing
             hashCode.Add(Age);

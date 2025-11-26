@@ -24,6 +24,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
          xmlns:humanoid="clr-namespace:Content.Client.Humanoid"
          xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
          xmlns:ui="clr-namespace:Content.Client.Lobby.UI"
+         x:Class="Content.Client.Lobby.UI.HumanoidProfileEditor"
          HorizontalExpand="True">
         <!-- Left side -->
         <BoxContainer Orientation="Vertical" Margin="10 10 10 10" HorizontalExpand="True">
@@ -129,6 +130,40 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                                 <Label Text="{Loc 'humanoid-profile-editor-eyes-label'}" />
                                 <humanoid:EyeColorPicker Name="EyeColorPicker" />
                             </BoxContainer>
+                        </BoxContainer>
+                    </ScrollContainer>
+                </BoxContainer>
+                <BoxContainer Name="BackgroundTab" Orientation="Vertical" Margin="30 10 30 10">
+                    <ScrollContainer VerticalExpand="True">
+                        <BoxContainer Orientation="Vertical" VerticalExpand="True">
+                        <!-- Nationality -->
+                        <PanelContainer HorizontalExpand="True" VerticalExpand="True" Margin="0 0 0 6" SizeFlagsStretchRatio="2" StyleClasses="background-panel">
+                            <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="6 6 6 6">
+                                <BoxContainer HorizontalExpand="True">
+                                    <Label Text="{Loc 'humanoid-profile-editor-nationality-label'}" />
+                                    <OptionButton Name="NationalityButton" Margin="8 0 0 0" />
+                                    <TextureButton Name="NationalityInfoButton" Scale="0.3 0.3" Margin="8 0 0 0" VerticalAlignment="Center"
+                                                   ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
+                                </BoxContainer>
+                                <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False">
+                                    <RichTextLabel Name="NationalityDescriptionLabel" Text="" HorizontalExpand="True" VerticalExpand="True" MaxWidth="900"/>
+                                </ScrollContainer>
+                            </BoxContainer>
+                        </PanelContainer>
+                        <!-- Employer -->
+                        <PanelContainer HorizontalExpand="True" VerticalExpand="True" Margin="0 0 0 6" SizeFlagsStretchRatio="1" StyleClasses="background-panel">
+                            <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="6 6 6 6">
+                                <BoxContainer HorizontalExpand="True">
+                                    <Label Text="{Loc 'humanoid-profile-editor-employer-label'}" />
+                                    <OptionButton Name="EmployerButton" Margin="8 0 0 0" />
+                                    <TextureButton Name="EmployerInfoButton" Scale="0.3 0.3" Margin="8 0 0 0" VerticalAlignment="Center"
+                                                   ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
+                                </BoxContainer>
+                                <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False">
+                                    <RichTextLabel Name="EmployerDescriptionLabel" Text="" HorizontalExpand="True" VerticalExpand="True" MaxWidth="900"/>
+                                </ScrollContainer>
+                            </BoxContainer>
+                        </PanelContainer>
                         </BoxContainer>
                     </ScrollContainer>
                 </BoxContainer>

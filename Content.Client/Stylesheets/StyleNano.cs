@@ -569,6 +569,14 @@ namespace Content.Client.Stylesheets
             var tabContainerBoxInactive = new StyleBoxFlat { BackgroundColor = new Color(32, 32, 32) };
             tabContainerBoxInactive.SetContentMarginOverride(StyleBox.Margin.Horizontal, 5);
 
+            var backgroundPanel = new StyleBoxFlat
+            {
+                BackgroundColor = new Color(0.03f, 0.03f, 0.05f),
+                BorderColor = new Color(0.20f, 0.20f, 0.25f),
+                BorderThickness = new Thickness(2f)
+            };
+            backgroundPanel.SetContentMarginOverride(StyleBox.Margin.All, 6);
+
             var progressBarBackground = new StyleBoxFlat
             {
                 BackgroundColor = new Color(0.25f, 0.25f, 0.25f)
@@ -1796,6 +1804,9 @@ namespace Content.Client.Stylesheets
                 Element<RichTextLabel>().Class("PaperWrittenText")
                     .Prop(Label.StylePropertyFont, notoSans12)
                     .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#111111")),
+
+                Element<PanelContainer>().Class("background-panel")
+                    .Prop(PanelContainer.StylePropertyPanel, backgroundPanel),
 
                 Element<RichTextLabel>().Class("LabelSubText")
                     .Prop(Label.StylePropertyFont, notoSans10)
