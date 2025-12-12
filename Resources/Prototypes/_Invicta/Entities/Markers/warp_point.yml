@@ -1,0 +1,140 @@
+# SPDX-FileCopyrightText: 2024 Invicta Station contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Warp points ported from DeltaV for Invicta maps
+
+- type: entity
+  id: WarpPointBridge
+  parent: WarpPoint
+  suffix: Bridge
+  components:
+  - type: WarpPoint
+    location: Bridge
+
+- type: entity
+  id: WarpPointVault
+  parent: WarpPoint
+  suffix: Vault
+  components:
+  - type: WarpPoint
+    location: Vault
+
+- type: entity
+  id: WarpPointDetective
+  parent: WarpPoint
+  suffix: Detective
+  components:
+  - type: WarpPoint
+    location: Detective
+
+- type: entity
+  id: WarpPointCourt
+  parent: WarpPoint
+  suffix: Courtroom
+  components:
+  - type: WarpPoint
+    location: Courtroom
+
+- type: entity
+  id: WarpPointMedical
+  parent: WarpPoint
+  suffix: Medical
+  components:
+  - type: WarpPoint
+    location: Medical
+
+- type: entity
+  id: WarpPointMorgue
+  parent: WarpPoint
+  suffix: Morgue
+  components:
+  - type: WarpPoint
+    location: Morgue
+
+- type: entity
+  id: WarpPointEpistemics
+  parent: WarpPoint
+  suffix: Epistemics
+  components:
+  - type: WarpPoint
+    location: Epistemics
+
+- type: entity
+  id: WarpPointLogistics
+  parent: WarpPoint
+  suffix: Logistics
+  components:
+  - type: WarpPoint
+    location: Logistics
+
+- type: entity
+  id: WarpPointSalvage
+  parent: WarpPoint
+  suffix: Salvage
+  components:
+  - type: WarpPoint
+    location: Salvage
+
+- type: entity
+  id: WarpPointHOP
+  parent: WarpPoint
+  suffix: HoP
+  components:
+  - type: WarpPoint
+    location: HoP
+
+- type: entity
+  id: WarpPointJanitor
+  parent: WarpPoint
+  suffix: Janitor
+  components:
+  - type: WarpPoint
+    location: Janitor
+
+- type: entity
+  id: WarpPointLawyer
+  parent: WarpPoint
+  suffix: Lawyer
+  components:
+  - type: WarpPoint
+    location: Lawyer
+
+- type: entity
+  id: WarpPointLibrary
+  parent: WarpPoint
+  suffix: Library
+  components:
+  - type: WarpPoint
+    location: Library
+
+- type: entity
+  id: WarpPointArrivals
+  parent: WarpPoint
+  suffix: Arrivals
+  components:
+  - type: WarpPoint
+    location: Arrivals
+
+- type: entity
+  id: WarpPointEvac
+  parent: WarpPoint
+  suffix: Evac
+  components:
+  - type: WarpPoint
+    location: Evac
+
+- type: entity
+  id: WarpPointDisposals
+  parent: WarpPoint
+  suffix: Disposals
+  components:
+  - type: WarpPoint
+    location: Disposals
+
+- type: entity
+  id: WarpPointChapel
+  parent: WarpPoint
+  suffix: Chapel
+  components:
+  - type: WarpPoint
+    location: Chapel

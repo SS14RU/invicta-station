@@ -72,6 +72,26 @@
     containers:
       board: [ DoorElectronicsTheatre ]
 
+#Invicta-start
+- type: entity
+  parent: AirlockServiceLocked
+  id: AirlockClownLocked
+  suffix: Clown, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsClown ]
+
+- type: entity
+  parent: AirlockServiceLocked
+  id: AirlockMimeLocked
+  suffix: Mime, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMime ]
+#Invicta-end
+
 - type: entity
   parent: AirlockServiceLocked
   id: AirlockServiceTheatreLocked
@@ -522,6 +542,26 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsTheatre ]
+
+#Invicta-start
+- type: entity
+  parent: AirlockServiceGlassLocked
+  id: AirlockClownGlassLocked
+  suffix: Clown, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsClown ]
+
+- type: entity
+  parent: AirlockServiceGlassLocked
+  id: AirlockMimeGlassLocked
+  suffix: Mime, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMime ]
+#Invicta-end
 
 - type: entity
   parent: AirlockServiceGlassLocked
@@ -1012,6 +1052,22 @@
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+#Invicta-start
+- type: entity
+  parent: AirlockClownLocked
+  id: AirlockMaintClownLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+
+- type: entity
+  parent: AirlockMimeLocked
+  id: AirlockMaintMimeLocked
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+#Invicta-end
 
 - type: entity
   parent: AirlockServiceTheatreLocked
