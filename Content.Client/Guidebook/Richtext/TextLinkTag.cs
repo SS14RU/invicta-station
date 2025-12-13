@@ -21,13 +21,17 @@ public sealed class TextLinkTag : IMarkupTagHandler
     /// <inheritdoc/>
     public bool TryCreateControl(MarkupNode node, [NotNullWhen(true)] out Control? control)
     {
-        if (!node.Value.TryGetString(out var text)
-            || !node.Attributes.TryGetValue("link", out var linkParameter)
+        if (!node.Attributes.TryGetValue("link", out var linkParameter) // Invicta
             || !linkParameter.TryGetString(out var link))
         {
             control = null;
             return false;
         }
+
+        // Invicta: Allow both parameter form: [textlink="Text" link="Id"] and block form: [textlink link="Id"]Text[/textlink]
+        // Invicta: Fall back to showing the link id if no text was provided.
+        if (!node.Value.TryGetString(out var text) || string.IsNullOrWhiteSpace(text))
+            text = link;
 
         var label = new Label();
         label.Text = text;
