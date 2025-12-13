@@ -83,6 +83,8 @@ public sealed partial class IdCardConsoleComponent : Component
         "Salvage",
         "Security",
         "Service",
+        "Clown", //Invicta-add
+        "Mime", //Invicta-add
         "Theatre",
         "Robotics", //Goob
     };

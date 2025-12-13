@@ -104,11 +104,11 @@ selectable-set-syndicate-builder-description =
     Содержит: 2 одноразовые баллистические турели, упакованный телекристальный майнер,
     немного инструментов и материалов для начала, а также ключ шифрования Синдиката.
 
-# Blueshield
+# СКН
 
-selectable-set-blueshield-shield-name = набор Синего Щита
+selectable-set-blueshield-shield-name = набор СКН
 selectable-set-blueshield-shield-description =
-    Знаковое снаряжение этих солдат.
+    Знаковое снаряжение бойцов Службы корпоративного надзора.
     Включает: Большой щит и кастомизированную дубинку DT-4 Atrocity.
 selectable-set-blueshield-revolver-name = набор револьвера
 selectable-set-blueshield-revolver-description =
@@ -136,11 +136,11 @@ selectable-set-blueshield-syringe-description =
     Идеально для лечения союзников или отравления врагов.
     Включает: боевой шприц и несколько флаконов с лекарствами.
 
-# Синий щит скафандры
+# СКН скафандры
 
 selectable-set-blueshield-hardsuit-light-name = бронированный боевой костюм
 selectable-set-blueshield-hardsuit-light-description = Бронированный боевой костюм, дающий больше скорости за счет меньшей защиты.
-selectable-set-blueshield-modsuit-name = MOD Синего Щита
+selectable-set-blueshield-modsuit-name = MOD СКН
 selectable-set-blueshield-modsuit-description = MOD требующий питания.
 
 # ERT

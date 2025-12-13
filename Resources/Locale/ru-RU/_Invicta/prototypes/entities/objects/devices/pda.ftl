@@ -1,7 +1,11 @@
-﻿ent-CorporationsPDA = КПК сотрудника корпорации
-    .desc = КПК сотрудника корпорации NanoTrasen.
+﻿ent-CnsRepresentativePDA = КПК представителя корпорации
+    .desc = КПК представителя корпорации.
     .suffix = { "" }
 
-ent-CorporationsComPDA = КПК командира корпорации
-    .desc = КПК старшего сотрудника корпорации NanoTrasen.
+ent-CnsCommanderPDA = КПК командира скн
+    .desc = КПК командира скн.
+    .suffix = { "" }
+
+ent-CnsOfficerPDA = КПК офицера скн
+    .desc = КПК офицера скн.
     .suffix = { "" }

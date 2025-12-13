@@ -38,7 +38,6 @@
       - EncryptionKeyMedical
       - EncryptionKeyScience
       - EncryptionKeyService
-      - EncryptionKeyPrison
   - type: Sprite
     sprite: DeltaV/Clothing/Ears/Headsets/adminassistant.rsi
   - type: Clothing

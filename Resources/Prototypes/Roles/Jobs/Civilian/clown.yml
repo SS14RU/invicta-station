@@ -131,6 +131,7 @@
   access:
   - Theatre
   - Maintenance
+  - Clown #Invicta-add
   special:
   - !type:AddComponentSpecial
     components:
