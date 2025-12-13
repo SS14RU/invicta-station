@@ -34,7 +34,7 @@
   canBeAntag: false
   access:
   # - Security
-  # - Brig
+  - Brig
   - External
   - Cryogenics
   - Maintenance

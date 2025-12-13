@@ -1,11 +1,11 @@
-ent-CnsRepresentativePDA = corporate representative PDA
-    .desc = PDA of a corporate representative.
+ent-CnsRepresentativePDA = SKN representative PDA
+    .desc = PDA of an SKN representative.
     .suffix = { "" }
 
-ent-CnsCommanderPDA = corporate commander PDA
-    .desc = PDA of a senior corporate staff member.
+ent-CnsCommanderPDA = SKN commander PDA
+    .desc = PDA of the SKN commander.
     .suffix = { "" }
 
-ent-CnsOfficerPDA = corporate officer PDA
-    .desc = PDA of a junior corporate staff member.
+ent-CnsOfficerPDA = SKN officer PDA
+    .desc = PDA of an SKN officer.
     .suffix = { "" }

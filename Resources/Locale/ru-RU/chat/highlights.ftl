@@ -11,7 +11,7 @@ highlights-head-of-security = Глава Службы безопасности, 
 highlights-quartermaster = Квартирмейстер, "КМ", "Карго", Каргония, Мостик, Командование
 highlights-research-director = Научный Руководитель, "НР", "РД", Научный, "Ученый", "Ученые", "РНД", Робототехника, "Робо", Мостик, Командование
 highlights-nanotrasen-representative = Представитель NanoTrasen, Представитель
-highlights-blueshield-officer = Офицер Синего Щита, Синий Щит, "ОСЩ", Мостик, Командование
+highlights-blueshield-officer = Офицер СКН, Служба корпоративного надзора, Корпорации, Мостик, Командование
 # Security
 highlights-detective = Детектив, "Дек", Служба безопасности, Бриг, "СБ", "КЗ"
 highlights-security-cadet = Кадет, Офицер Службы безопасности, Офицер, Служба Безопасности, Бриг, "СБ", "КЗ"

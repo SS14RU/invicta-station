@@ -1,8 +1,3 @@
-# SPDX-FileCopyrightText: 2024 Invicta Station contributors
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
-# Warp points ported from DeltaV for Invicta maps
-
 - type: entity
   id: WarpPointBridge
   parent: WarpPoint

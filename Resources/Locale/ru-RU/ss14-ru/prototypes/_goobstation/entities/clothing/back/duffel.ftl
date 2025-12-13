@@ -1,2 +1,2 @@
-ent-ClothingBackpackDuffelBlueshield = вещмешок Синего Щита
-    .desc = Очень защитная дорожная вещмешок с запахом энергетического пистолета.
+ent-ClothingBackpackDuffelBlueshield = вещмешок СКН
+    .desc = Очень защитный дорожный вещмешок с запахом энергетического пистолета.
