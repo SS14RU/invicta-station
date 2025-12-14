@@ -87,7 +87,6 @@
   startingGear: ParamedicGear
   icon: "JobIconParamedic"
   supervisors: job-supervisors-cmo
-  #goobcoins: 20 #Goob content Corvax-Goob-coins
   skills: # CorvaxGoob-Skills
   - Surgery
   - MedicalEquipment
@@ -95,24 +94,43 @@
   - Medical
   - Maintenance
   - External # goobstation
+  - Paramedic #Invicta-add
   extendedAccess:
   - Chemistry
   # Shitmed change
   special:
   - !type:AddComponentSpecial
     components:
+    - type: CPRTraining #Invicta-add
     - type: SurgerySpeedModifier
-      speedModifier: 1.25     
+      speedModifier: 2 #Invicta-edit 1.25 -> 2
 
 - type: startingGear
   id: ParamedicGear
+  subGear:
+#Invicta-start
+  - ParamedicPlasmamanGear
   equipment:
+    jumpsuit: ClothingUniformJumpsuitParamedic
+    back: ClothingBackpackMedical
+    shoes: ClothingShoesColorBlue
+#Invicta-end
     id: ParamedicPDA
     ears: ClothingHeadsetMedical
-    belt: ClothingBeltMedicalEMTFilled
   storage:
     back:
     - EmergencyRollerBedSpawnFolded
+#Invicta-start
+    - BodyBagFolded
+
+- type: startingGear
+  id: ParamedicPlasmamanGear
+  parent: BasePlasmamanMaskGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitParamedic
+    head: ClothingHeadEnvirohelmParamedic
+    gloves: ClothingHandsGlovesEnviroglovesNitrile
+#Invicta-end
 
 - type: chameleonOutfit
   id: ParamedicChameleonOutfit
