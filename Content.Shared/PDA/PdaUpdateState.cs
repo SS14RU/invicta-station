@@ -31,6 +31,9 @@ namespace Content.Shared.PDA
         public bool HasPai;
         public PdaIdInfoText PdaOwnerInfo;
         public string? StationName;
+        // Invicta: department reward instruction overrides.
+        public string? Instructions;
+        public string? CopyInstructions;
         public bool HasUplink;
         public bool CanPlayMusic;
         public string? Address;
@@ -43,6 +46,9 @@ namespace Content.Shared.PDA
             bool hasPai,
             PdaIdInfoText pdaOwnerInfo,
             string? stationName,
+            // Invicta: department reward instruction overrides.
+            string? instructions,
+            string? copyInstructions,
             bool hasUplink = false,
             bool canPlayMusic = false,
             string? address = null)
@@ -55,6 +61,8 @@ namespace Content.Shared.PDA
             HasUplink = hasUplink;
             CanPlayMusic = canPlayMusic;
             StationName = stationName;
+            Instructions = instructions;
+            CopyInstructions = copyInstructions;
             Address = address;
         }
     }

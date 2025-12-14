@@ -45,7 +45,9 @@
     - type: NpcFactionMember
       factions:
         - NanoTrasen
+    # Invicta: department reward backend
     - type: EconomyInsuranceServer
+    - type: DepartmentRewardServer
 
 - type: entity
   id: StandardNanotrasenStation

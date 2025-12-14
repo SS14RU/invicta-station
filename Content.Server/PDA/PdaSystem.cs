@@ -292,6 +292,17 @@ namespace Content.Server.PDA
             // TODO: Update the level and name of the station with each call to UpdatePdaUi is only needed for latejoin players.
             // TODO: If someone can implement changing the level and name of the station when changing the PDA grid, this can be removed.
 
+            // Invicta: collect department reward PDA instructions.
+            string? instructions = null;
+            string? copyInstructions = null;
+            var instructionsEvent = new PdaCollectInstructionEvent();
+            RaiseLocalEvent(uid, ref instructionsEvent);
+            if (instructionsEvent.Handled)
+            {
+                instructions = instructionsEvent.DisplayText ?? instructionsEvent.CopyText;
+                copyInstructions = instructionsEvent.CopyText ?? instructionsEvent.DisplayText;
+            }
+
             // TODO don't make this depend on cartridge loader!?!?
             if (!TryComp(uid, out CartridgeLoaderComponent? loader))
                 return;
@@ -313,6 +324,8 @@ namespace Content.Server.PDA
                     StationAlertColor = pda.StationAlertColor
                 },
                 pda.StationName,
+                instructions,
+                copyInstructions,
                 showUplink,
                 hasInstrument,
                 address);

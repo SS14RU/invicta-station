@@ -69,6 +69,11 @@ SPDX-License-Identifier: AGPL-3.0-or-later
             <ContainerButton Name="StationTimeButton">
                 <RichTextLabel Name="StationTimeLabel" Access="Public"/>
             </ContainerButton>
+            <!-- Invicta: Department reward instructions -->
+            <ContainerButton Name="DepartmentRewardInstructionsButton" Visible="False">
+                <RichTextLabel Name="DepartmentRewardInstructions" Access="Public"/>
+            </ContainerButton>
+            <!-- Invicta END -->
             <ContainerButton Name="StationAlertLevelInstructionsButton">
                 <RichTextLabel Name="StationAlertLevelInstructions" Access="Public"/>
             </ContainerButton>

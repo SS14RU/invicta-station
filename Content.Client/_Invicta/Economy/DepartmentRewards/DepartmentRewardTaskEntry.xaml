@@ -1,0 +1,32 @@
+<PanelContainer xmlns="https://spacestation14.io"
+                StyleClasses="LowDivider"
+                HorizontalExpand="True">
+    <BoxContainer Orientation="Vertical"
+                  Margin="8"
+                  SeparationOverride="4"
+                  HorizontalExpand="True">
+        <RichTextLabel Name="StageTitleLabel"
+                       HorizontalExpand="True" />
+        <RichTextLabel Name="RewardLabel"
+                       StyleClasses="LabelSubText"
+                       HorizontalExpand="True" />
+        <RichTextLabel Name="DescriptionLabel"
+                       HorizontalExpand="True" />
+        <RichTextLabel Name="StatusLabel"
+                       HorizontalExpand="True" />
+        <BoxContainer Name="ButtonsContainer"
+                      Orientation="Horizontal"
+                      HorizontalExpand="True"
+                      SeparationOverride="6"
+                      Visible="False">
+            <Button Name="FailButton"
+                    StyleClasses="ButtonDanger"
+                    HorizontalExpand="True"
+                    Text="{Loc 'department-reward-console-fail-button'}" />
+            <Button Name="ConfirmButton"
+                    StyleClasses="ButtonSuccess"
+                    HorizontalExpand="True"
+                    Text="{Loc 'department-reward-console-confirm-button'}" />
+        </BoxContainer>
+    </BoxContainer>
+</PanelContainer>
