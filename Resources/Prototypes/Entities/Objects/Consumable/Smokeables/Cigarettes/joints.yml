@@ -54,7 +54,7 @@
   - type: RandomMetadata
     nameSegments: [NamesRollie]
   - type: StaticPrice #Goobstation
-    price: 300        #Goobstation
+    price: 5
 
 - type: entity
   id: JointRainbow

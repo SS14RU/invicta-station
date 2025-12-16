@@ -323,7 +323,7 @@
       delay: 4 # has to be the same as the FlashingTime datafield in FlashComponent
     - type: UseDelayOnMeleeHit
     - type: StaticPrice
-      price: 40
+      price: 18
     - type: Appearance
     - type: GenericVisualizer
       visuals:

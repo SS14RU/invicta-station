@@ -208,7 +208,7 @@
     materialComposition:
       Steel: 100
   - type: StaticPrice
-    price: 30
+    price: 5
   - type: Retractor # Shitmed
     speed: 0.35
   - type: Hemostat # Shitmed
@@ -275,7 +275,7 @@
     materialComposition:
       Steel: 100
   - type: StaticPrice
-    price: 30
+    price: 5
   - type: Retractor # Shitmed
     speed: 0.45
   - type: Tending # Shitmed
@@ -337,7 +337,7 @@
     materialComposition:
       Steel: 100
   - type: StaticPrice
-    price: 22
+    price: 5
   - type: GuideHelp
     guides:
     - Construction
@@ -397,7 +397,7 @@
       Steel: 100
       Plastic: 100
   - type: StaticPrice
-    price: 56
+    price: 15
   - type: GuideHelp
     guides:
     - Networking
@@ -451,7 +451,7 @@
         enum.NetworkConfiguratorUiKey.Link:
           type: NetworkConfiguratorBoundUserInterface
     - type: StaticPrice
-      price: 56
+      price: 12
     - type: GuideHelp
       guides:
       - Networking

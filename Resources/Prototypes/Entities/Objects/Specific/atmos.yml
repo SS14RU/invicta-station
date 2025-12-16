@@ -52,7 +52,7 @@
     tags:
       - DroneUsable # Goobstation
   - type: StaticPrice
-    price: 80
+    price: 20
   - type: PhysicalComposition #Goobstation - Recycle update
     materialComposition:
       Steel: 200

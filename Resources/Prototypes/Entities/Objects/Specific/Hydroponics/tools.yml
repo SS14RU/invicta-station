@@ -119,7 +119,7 @@
     slots:
     - back
   - type: StaticPrice
-    price: 40
+    price: 25
   - type: PhysicalComposition
     materialComposition:
       Steel: 100

@@ -454,7 +454,7 @@
     materialComposition:
       Glass: 50
   - type: StaticPrice
-    price: 20
+    price: 18
 
 - type: entity
   name: cryostasis beaker
@@ -550,7 +550,7 @@
     inHandsMaxFillLevels: 1
     inHandsFillBaseName: -fill-
   - type: StaticPrice
-    price: 40
+    price: 6
   - type: DnaSubstanceTrace
   - type: Tag
     tags:
