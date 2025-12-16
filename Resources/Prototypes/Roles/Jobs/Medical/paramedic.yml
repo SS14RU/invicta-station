@@ -91,12 +91,35 @@
   - Surgery
   - MedicalEquipment
   access:
+#Invicta-start
+  - Command
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - ResearchDirector
+  - Quartermaster
+  - Bar
+  - Service
+  - Janitor
+  - Theatre
+  - Kitchen
+  - Hydroponics
+  - Cryogenics
+  - Lawyer
+  - Cargo
+  - Clown
+  - Mime
+  - Atmospherics
+  - Chemistry
+  - Chapel
+  - Engineering
+  - Research
+  - Salvage
+#Invicta-end
   - Medical
   - Maintenance
   - External # goobstation
   - Paramedic #Invicta-add
-  extendedAccess:
-  - Chemistry
   # Shitmed change
   special:
   - !type:AddComponentSpecial
@@ -108,29 +131,17 @@
 - type: startingGear
   id: ParamedicGear
   subGear:
-#Invicta-start
-  - ParamedicPlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitParamedic
-    back: ClothingBackpackMedical
-    shoes: ClothingShoesColorBlue
-#Invicta-end
     id: ParamedicPDA
     ears: ClothingHeadsetMedical
   storage:
     back:
+    - UndeterminedVoidsuitParamedic
     - EmergencyRollerBedSpawnFolded
-#Invicta-start
     - BodyBagFolded
-
-- type: startingGear
-  id: ParamedicPlasmamanGear
-  parent: BasePlasmamanMaskGear
-  equipment:
-    jumpsuit: ClothingUniformEnvirosuitParamedic
-    head: ClothingHeadEnvirohelmParamedic
-    gloves: ClothingHandsGlovesEnviroglovesNitrile
-#Invicta-end
+    - WeaponSubMachineGunAtreides
+    - MagazinePistolSubMachineGun
+    - MagazinePistolSubMachineGun
 
 - type: chameleonOutfit
   id: ParamedicChameleonOutfit
