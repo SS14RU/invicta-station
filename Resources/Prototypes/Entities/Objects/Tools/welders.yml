@@ -221,7 +221,7 @@
     materialComposition:
       Steel: 200
   - type: StaticPrice
-    price: 40
+    price: 20
   - type: IgnitionSource
     temperature: 700
   - type: Cautery # Shitmed

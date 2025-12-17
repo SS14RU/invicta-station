@@ -145,6 +145,8 @@
   - type: GuideHelp
     guides:
     - MedicalDoctor
+  - type: StaticPrice
+    price: 12
 
 - type: entity
   id: HandheldHealthAnalyzer

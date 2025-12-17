@@ -56,7 +56,9 @@ namespace Content.Client.PDA
         private string _jobTitle = Loc.GetString("comp-pda-ui-unassigned");
         private string _stationName = Loc.GetString("comp-pda-ui-unknown");
         private string _alertLevel = Loc.GetString("comp-pda-ui-unknown");
-        private string _instructions = Loc.GetString("comp-pda-ui-unknown");
+        // Invicta: department reward instruction overrides.
+        private string _instructionsDisplay = Loc.GetString("comp-pda-ui-unknown");
+        private string _instructionsCopy = Loc.GetString("comp-pda-ui-unknown");
         
 
         private int _currentView;
@@ -139,6 +141,12 @@ namespace Content.Client.PDA
                 _clipboard.SetText(_alertLevel);
             };
 
+            // Invicta: copy custom department reward instructions.
+            DepartmentRewardInstructionsButton.OnPressed += _ =>
+            {
+                _clipboard.SetText(_instructionsCopy);
+            };
+
             StationTimeButton.OnPressed += _ =>
             {
                 var stationTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
@@ -147,7 +155,7 @@ namespace Content.Client.PDA
 
             StationAlertLevelInstructionsButton.OnPressed += _ =>
             {
-                _clipboard.SetText(_instructions);
+                _clipboard.SetText(_instructionsCopy);
             };
 
             
@@ -207,11 +215,28 @@ namespace Content.Client.PDA
                 ("color", alertColor),
                 ("level", _alertLevel)
             ));
-            _instructions = Loc.GetString($"{alertLevelKey}-instructions");
-            StationAlertLevelInstructions.SetMarkup(Loc.GetString(
-                "comp-pda-ui-station-alert-level-instructions",
-                ("instructions", _instructions))
-            );
+            // Invicta: allow overriding station instructions with department reward tasks.
+            var defaultInstructions = Loc.GetString($"{alertLevelKey}-instructions");
+            var hasCustomInstructions = state.Instructions != null || state.CopyInstructions != null;
+            _instructionsDisplay = state.Instructions ?? defaultInstructions;
+            _instructionsCopy = state.CopyInstructions ?? state.Instructions ?? defaultInstructions;
+
+            if (hasCustomInstructions)
+            {
+                DepartmentRewardInstructionsButton.Visible = true;
+                DepartmentRewardInstructions.SetMarkup(_instructionsDisplay);
+                StationAlertLevelInstructionsButton.Visible = false;
+            }
+            else
+            {
+                DepartmentRewardInstructionsButton.Visible = false;
+                StationAlertLevelInstructionsButton.Visible = true;
+                // Standard station alert instructions block.
+                StationAlertLevelInstructions.SetMarkup(Loc.GetString(
+                    "comp-pda-ui-station-alert-level-instructions",
+                    ("instructions", _instructionsDisplay))
+                );
+            }
 
             AddressLabel.Text = state.Address?.ToUpper() ?? " - ";
 

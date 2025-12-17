@@ -164,6 +164,7 @@ using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Sprite;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.Guidebook;
+using Content.Client.Guidebook.RichText;
 using Content.Shared._CorvaxGoob.CCCVars;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
@@ -199,7 +200,7 @@ using Content.Shared._CorvaxGoob; // CorvaxGoob-TTS
 namespace Content.Client.Lobby.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class HumanoidProfileEditor : BoxContainer
+    public sealed partial class HumanoidProfileEditor : BoxContainer, ILinkClickHandler
     {
         private readonly IClientPreferencesManager _preferencesManager;
         private readonly IConfigurationManager _cfgManager;
@@ -2215,6 +2216,15 @@ namespace Content.Client.Lobby.UI
                 EndExport();
                 await file.Value.fileStream.DisposeAsync();
             }
+        }
+
+        // INV: Open guidebook entries directly from background/nationality text links.
+        public void HandleClick(string link)
+        {
+            if (!_prototypeManager.HasIndex<GuideEntryPrototype>(link))
+                return;
+
+            OnOpenGuidebook?.Invoke(new() { new ProtoId<GuideEntryPrototype>(link) });
         }
 
         private void StartExport()

@@ -122,7 +122,7 @@
     stackType: Ointment
     count: 15 #Was 10, Buffed due to limb damage changes (Goobstation)
   - type: StackPrice
-    price: 5
+    price: 0.533333
 
 - type: entity
   id: Ointment1
@@ -233,7 +233,7 @@
     stackType: Brutepack
     count: 15 #Was 10, Buffed due to limb damage changes (Goobstation)
   - type: StackPrice
-    price: 5
+    price: 0.533333
 
 - type: entity
   id: Brutepack1
@@ -360,7 +360,7 @@
     stackType: Bloodpack
     count: 15 #Was 10, Buffed due to limb damage changes (Goobstation)
   - type: StackPrice
-    price: 10
+    price: 1.2
 
 - type: entity
   parent: Bloodpack
@@ -435,7 +435,7 @@
     stackType: Gauze
     count: 15 #Was 10, Buffed due to limb damage changes (Goobstation)
   - type: StackPrice
-    price: 10
+    price: 1
 
 - type: entity
   id: Gauze1

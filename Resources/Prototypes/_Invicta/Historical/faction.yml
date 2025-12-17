@@ -10,20 +10,9 @@
   name: historical-name-faction-Central-Government-of-the-Solar-System
   description: historical-description-Faction-Central-Government-of-the-Solar-System
   historyType: Faction
-  container:
-    skills: {}
-    defaultSkillLevels: {}
-    unblockedSkillLevels: {}
-    blockedSkillLevels: {}
-    additionalSkillPoints: 5
 
 - type: history
   id: faction-Free-Trade-Union
   name: historical-name-faction-Free-Trade-Union
   description: historical-description-Faction-Free-Trade-Union
   historyType: Faction
-  container:
-    defaultSkillLevels:
-      economy: enum.SkillLevel.Basic
-    unblockedSkillLevels:
-      economy: [enum.SkillLevel.Master]

@@ -30,7 +30,7 @@
   - type: Signaller
   - type: UseDelay
   - type: StaticPrice
-    price: 40
+    price: 25
   - type: DeviceLinkSource
     ports:
       - Pressed

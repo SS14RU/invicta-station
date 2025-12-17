@@ -6,7 +6,7 @@ character-nationality-requirement = You must{$inverted ->
 
 nationality_name_nanotrasen = Arrival at the NanoTrasen Station
 nationality_description_nanotrasen =
-  Welcome to the NanoTrasen Research Station-the largest hub of innovation on the edge of charted space!
+  Welcome to the [textlink="NanoTrasen" link="NanotrasenTest"] Research Station-the largest hub of innovation on the edge of charted space!
 
  ==================================================================
 
@@ -114,4 +114,3 @@ nationality_description_military-base =
  Graduates of these installations can field-strip equipment blindfolded, coordinate squads under fire, and maintain discipline in the face of chaos. Off-hours culture is tight-knit-mess hall stories, sparring leagues, and memorial walls for those who never rotated home.
 
  NanoTrasen counts on this dependability to safeguard high-value assets. Security posts, emergency response teams, and command support all benefit from professionals who have already lived through worst-case scenarios and still show up for the next briefing.
-

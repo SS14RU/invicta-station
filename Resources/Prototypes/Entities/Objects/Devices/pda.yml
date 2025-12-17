@@ -180,6 +180,8 @@
   name: PDA
   description: Personal Data Assistant.
   components:
+  # Invicta: enable department reward PDA instructions
+  - type: DepartmentRewardPda
   - type: Appearance
     appearanceDataInit:
      enum.PdaVisuals.PdaType:
@@ -650,6 +652,8 @@
   id: QuartermasterPDA
   description: PDA for the guy that orders the guns.
   components:
+  # Invicta: enable department reward PDA instructions
+  - type: DepartmentRewardPda
   - type: Pda
     id: QuartermasterIDCard
   - type: Appearance
@@ -678,6 +682,8 @@
   name: cargo PDA
   description: PDA for the guys that order the pizzas.
   components:
+  # Invicta: enable department reward PDA instructions
+  - type: DepartmentRewardPda
   - type: Pda
     id: CargoIDCard
   - type: Appearance

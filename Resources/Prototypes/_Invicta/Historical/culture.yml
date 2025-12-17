@@ -10,14 +10,9 @@
   name: historical-name-Culture-Marsman
   description: historical-description-Culture-Marsman
   historyType: Culture
-  container:
-    blockedSkillLevels:
-      piloting: [enum.SkillLevel.Experienced]
 
 - type: history
   id: culture-Lunaman
   name: historical-name-Culture-Lunaman
   description: historical-description-Culture-Lunaman
   historyType: Culture
-  container:
-    additionalSkillPoints: 5

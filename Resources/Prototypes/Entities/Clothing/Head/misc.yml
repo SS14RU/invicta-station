@@ -279,7 +279,7 @@
     materialComposition:
       Plastic: 50
   - type: StaticPrice
-    price: 25
+    price: 5
 
 - type: entity
   parent: ClothingHeadBase

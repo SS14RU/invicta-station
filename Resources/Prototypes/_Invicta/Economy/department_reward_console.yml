@@ -1,0 +1,63 @@
+﻿- type: entity
+  id: DepartmentRewardConsoleBase
+  parent: BaseComputer
+  abstract: true
+  name: ent-DepartmentRewardConsoleBase
+  description: ent-DepartmentRewardConsoleBase.desc
+  components:
+  - type: ActivatableUI
+    singleUser: true
+    key: enum.DepartmentRewardConsoleUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.DepartmentRewardConsoleUiKey.Key:
+        type: DepartmentRewardConsoleBoundUserInterface
+  - type: ItemSlots
+  - type: DepartmentRewardConsole
+    departmentId: NT-Generic
+    cardSlot:
+      ejectSound: /Audio/Machines/id_swipe.ogg
+      insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+      ejectOnBreak: true
+      swap: false
+      whitelist:
+        components:
+        - IdCard
+
+- type: entity
+  id: DepartmentRewardConsoleCargo
+  parent: DepartmentRewardConsoleBase
+  name: ent-DepartmentRewardConsoleCargo
+  suffix: Cargo
+  components:
+  - type: DepartmentRewardConsole
+    departmentId: NT-Cargo
+    departmentNameLocId: department-reward-department-cargo
+
+- type: entity
+  id: DepartmentRewardConsoleEngineering
+  parent: DepartmentRewardConsoleBase
+  name: ent-DepartmentRewardConsoleEngineering
+  suffix: Engineering
+  components:
+  - type: DepartmentRewardConsole
+    departmentId: NT-Engineering
+    departmentNameLocId: department-reward-department-engineering
+
+- type: entity
+  id: DepartmentRewardConsoleMaster
+  parent: BaseComputer
+  name: ent-DepartmentRewardConsoleMaster
+  suffix: Command
+  components:
+  - type: ActivatableUI
+    key: enum.DepartmentRewardMasterConsoleUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.DepartmentRewardMasterConsoleUiKey.Key:
+        type: DepartmentRewardMasterConsoleBoundUserInterface
+  - type: DepartmentRewardMasterConsole
+  - type: AccessReader
+    access:
+    - - Captain
