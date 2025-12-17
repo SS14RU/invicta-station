@@ -6,81 +6,84 @@
   - type: Transform
   - type: MetaData
 
+# Шлюзы начало
+# - type: entity
+#   parent: InvictaMapPlaceholderBase
+#   id: AirlockClownLocked
+#   # Mapping/mapping_templates.yml
+
+# - type: entity
+#   parent: InvictaMapPlaceholderBase
+#   id: AirlockMailGlassLocked
+#   # Mapping/mapping_templates.yml
+
+# - type: entity
+#   parent: InvictaMapPlaceholderBase
+#   id: AirlockMaintMimeLocked
+#   # Mapping/mapping_templates.yml
+# # Шлюзы конец
+
+# - type: entity
+#   parent: InvictaMapPlaceholderBase
+#   id: CapacitorStockPart # конденсатор
+#   # tags.yml / Mapping/mapping_templates.yml
+
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: AirlockClownLocked
+  id: ClothingNeckHeadphones # наушники
   # Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: AirlockMailGlassLocked
-  # Mapping/mapping_templates.yml
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: AirlockMaintMimeLocked
-  # Mapping/mapping_templates.yml
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: CapacitorStockPart
-  # tags.yml / Mapping/mapping_templates.yml
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: ClothingNeckHeadphones
-  # Mapping/mapping_templates.yml
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: DefaultStationBeaconMetempsychosis
+  id: DefaultStationBeaconMetempsychosis # маяк клонерка
   # DeltaV/Entities/Objects/Devices/station_beacon.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: EpinephrineChemistryBottle
+  id: EpinephrineChemistryBottle # адреналин
   # Entities/Objects/Specific/chemistry-bottles.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: GlimmerProber
+  id: GlimmerProber # глиммер пробер
   # Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: GunSafeEnergyGunMini
+  id: GunSafeEnergyGunMini  # сейф с миниганом
   # DeltaV/Catalog/Fills/Lockers/security.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: KitchenDeepFryer
+  id: KitchenDeepFryer  # фритюрница
   # Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: MatterBinStockPart
+  id: MatterBinStockPart  # контейнер материи
   # tags.yml / Mapping/mapping_templates.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: PosterContrabandBustyBackdoorExoBabes6
+  id: PosterContrabandBustyBackdoorExoBabes6 #Постер
   # Entities/Structures/Wallmounts/Signs/posters.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: PosterContrabandLustyExomorph
+  id: PosterContrabandLustyExomorph #Постер
   # Entities/Structures/Wallmounts/Signs/posters.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: PoweredLightBlueInterior
+  id: PoweredLightBlueInterior # Светильник синий
   # Nyanotrasen/Entities/Structures/Lighting/base_lighting.yml
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ReverseEngineeringMachine
+  id: ReverseEngineeringMachine # Машина реверс инжиниринга
   # Mapping/mapping_templates.yml
 
+# Ведущие роли и медборг начало
 - type: entity
   parent: InvictaMapPlaceholderBase
   id: SpawnPointMailCarrier
@@ -110,7 +113,9 @@
   parent: InvictaMapPlaceholderBase
   id: SpawnPointSeniorResearcher
   # Entities/Markers/Spawners/jobs.yml
+# Ведущие роли и медбор конец
 
+# Вендинговые машины начало
 - type: entity
   parent: InvictaMapPlaceholderBase
   id: VendingMachineBoozeUnlocked
@@ -120,6 +125,7 @@
   parent: InvictaMapPlaceholderBase
   id: VendingMachineBoxingDrobe
   # Nyanotrasen/Entities/Structures/Machines/vending_machines.yml
+# Вендинговые машины конец
 
 - type: entity
   parent: InvictaMapPlaceholderBase
@@ -130,51 +136,54 @@
   parent: InvictaMapPlaceholderBase
   id: VendingMachineMNKDrobe
   # Nyanotrasen/Entities/Structures/Machines/vending_machines.yml
+# Вендинговые машины конец
 
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: WarpPointArrivals
-  # Mapping/mapping_templates.yml
+#Варп поинты начало
+# - type: entity
+#   parent: InvictaMapPlaceholderBase
+#   id: WarpPointArrivals
+#   # Mapping/mapping_templates.yml
 
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: WarpPointDetective
-  # Mapping/mapping_templates.yml
+# - type: entity
+#   parent: InvictaMapPlaceholderBase
+#   id: WarpPointDetective
+#   # Mapping/mapping_templates.yml
 
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: WarpPointDisposals
-  # DeltaV/Entities/Markers/warp_point.yml
+# - type: entity
+#   parent: InvictaMapPlaceholderBase
+#   id: WarpPointDisposals
+#   # DeltaV/Entities/Markers/warp_point.yml
 
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: WarpPointEpistemics
-  # Mapping/mapping_templates.yml
+# - type: entity
+#   parent: InvictaMapPlaceholderBase
+#   id: WarpPointEpistemics
+#   # Mapping/mapping_templates.yml
 
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: WarpPointHOP
-  # DeltaV/Entities/Markers/warp_point.yml
+# - type: entity
+#   parent: InvictaMapPlaceholderBase
+#   id: WarpPointHOP
+#   # DeltaV/Entities/Markers/warp_point.yml
 
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: WarpPointJanitor
-  # Mapping/mapping_templates.yml
+# - type: entity
+#   parent: InvictaMapPlaceholderBase
+#   id: WarpPointJanitor
+#   # Mapping/mapping_templates.yml
 
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: WarpPointLawyer
-  # Mapping/mapping_templates.yml
+# - type: entity
+#   parent: InvictaMapPlaceholderBase
+#   id: WarpPointLawyer
+#   # Mapping/mapping_templates.yml
 
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: WarpPointLibrary
-  # Mapping/mapping_templates.yml
+# - type: entity
+#   parent: InvictaMapPlaceholderBase
+#   id: WarpPointLibrary
+#   # Mapping/mapping_templates.yml
 
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: WarpPointMorgue
-  # Mapping/mapping_templates.yml
+# - type: entity
+#   parent: InvictaMapPlaceholderBase
+#   id: WarpPointMorgue
+#   # Mapping/mapping_templates.yml
+#Варп поинты конец
 
 - type: entity
   parent: InvictaMapPlaceholderBase
@@ -192,215 +201,217 @@
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: AugustineCircuitBoard
+  id: AugustineCircuitBoard # Плата законов Августина
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: BlackBarrel
+  id: BlackBarrel # Черная бочка
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ButtonFrameCautionSecurity2
+  id: ButtonFrameCautionSecurity2 # Кнопка тревоги
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: CCTVCircuitBoard
+  id: CCTVCircuitBoard # Плата камер
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ChaplainCircuitBoard
+  id: ChaplainCircuitBoard # Плата законов капеллана
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ClosetCabinetWood
+  id: ClosetCabinetWood # Деревянный шкаф
+
+#Одежда начало
+- type: entity
+  parent: InvictaMapPlaceholderBase
+  id: ClothingBeltUtilityAtmos # Атмос пояс
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ClothingBeltUtilityAtmos
+  id: ClothingHeadHatBeretOfficer # Фуражка офицера
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ClothingHeadHatBeretOfficer
+  id: ClothingNeckCrucifixGoldSaintPeter # Крест святого Петра
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ClothingNeckCrucifixGoldSaintPeter
+  id: ClothingNeckNecklacePendantSilverLarge # Серебряный кулон
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ClothingNeckNecklacePendantSilverLarge
+  id: ClothingOuterHardsuitBlueshield # Броня блюшилда
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ClothingOuterHardsuitBlueshield
+  id: ClothingShoesBootsMagSec # Магбутсы секьюрити
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ClothingShoesBootsMagSec
+  id: ClothingShoesBootsWinterClown # Зимние ботинки клоуна
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ClothingShoesBootsWinterClown
+  id: ClothingShoesBootsWinterMime # Зимние ботинки мима
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ClothingShoesBootsWinterMime
+  id: ClothingUniformJumpskirtPencilSkirtGymBra # Юбка и спорт бра
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ClothingUniformJumpskirtPencilSkirtGymBra
+  id: ClothingUniformJumpsuitYogaGymBra # Спорт бра и комбинезон йога
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ClothingUniformJumpsuitYogaGymBra
+  id: ClothingUniformMNKGymBra # Спорт бра МНК
+#Одежда конец
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ClothingUniformMNKGymBra
+  id: ClownCircuitBoard # Плата законов клоуна
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ClownCircuitBoard
+  id: ComputerPsionicsRecords # Компьютер с записями по психонике
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ComputerPsionicsRecords
+  id: ComputerSupermatter # Компьютер с данными по супермолекуле
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ComputerSupermatter
+  id: CowboyCircuitBoard # Плата законов ковбоя
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: CowboyCircuitBoard
+  id: CrateWooden # Деревянный ящик
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: CrateWooden
+  id: CrewsimovCircuitBoard # Плата законов Крюсимова
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: CrewsimovCircuitBoard
+  id: DecorBarrels # Декоративные бочки
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: DecorBarrels
+  id: DruidCircuitBoard # Плата законов друида
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: DruidCircuitBoard
+  id: EngineerCircuitBoard # Плата законов инженера
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: EngineerCircuitBoard
+  id: FlagNanoTrasen # Флаг НаноТрасен
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: FlagNanoTrasen
+  id: FoodPizzaCorncob # Пицца с кукурузой
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: FoodPizzaCorncob
+  id: GasOutletInjectorHighFlow # Газовый инжектор высокого потока
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: GasOutletInjectorHighFlow
+  id: GasVentScrubberHighFlow # Газовый скруббер высокого потока
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: GasVentScrubberHighFlow
+  id: GasVolumePumpHighFlow # Газовый насос высокого потока
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: GasVolumePumpHighFlow
+  id: HighSecEngineeringLocked # Высокосекретный инженерный шлюз
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: HighSecEngineeringLocked
+  id: HolopadCargoMail # Холопад грузового и почтового отделения
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: HolopadCargoMail
+  id: HolopadSecurityCorpsman # Холопад секьюрити и медбора
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: HolopadSecurityCorpsman
+  id: JanitorCircuitBoard # Плата законов уборщика
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: JanitorCircuitBoard
+  id: LockerBartenderFilled # Шкафчик бармена
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: LockerBartenderFilled
+  id: LunchboxEngineering # Ланчбокс инженера
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: LunchboxEngineering
+  id: MedicalCircuitBoard # Плата законов медика
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: MedicalCircuitBoard
+  id: MotherDroneCircuitBoard # Плата материнского дрона
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: MotherDroneCircuitBoard
+  id: NTAgressiveCircuitBoard # Плата агрессивного НТ
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: NTAgressiveCircuitBoard
+  id: OilJarCorn # Банка кукурузного масла
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: OilJarCorn
+  id: OilJarGhee # Банка топленого масла
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: OilJarGhee
+  id: OracleSpawner # Спавнер оракула
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: OracleSpawner
+  id: OverlordCircuitBoardPlaceholder # Плата законов оверлорда
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: OverlordCircuitBoardPlaceholder
+  id: PlushieOrangeFox # Плюшевая оранжевая лиса
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: PlushieOrangeFox
+  id: PoweredLightColoredFrostyBlue # Светильник ледяной синий
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: PoweredLightColoredFrostyBlue
+  id: QuarantineCircuitBoard # Плата законов карантина
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: QuarantineCircuitBoard
+  id: ReagentContainerChocolate # Контейнер с шоколадным реагентом
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ReagentContainerChocolate
+  id: RedBarrel # Красная бочка
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: RedBarrel
+  id: ResearchCircuitBoard # Плата законов исследователя
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: ResearchCircuitBoard
+  id: Shower # Душ
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: Shower
+  id: SophicScribeSpawner # Спавнер Софик Скриб
 
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: SophicScribeSpawner
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: SpawnMobBatonBot
+  id: SpawnMobBatonBot # Спавнер бота с электрошокером
 
 - type: entity
   parent: InvictaMapPlaceholderBase
@@ -413,39 +424,39 @@
 - type: entity
   parent: InvictaMapPlaceholderBase
   id: TyrantCircuitBoard
+#Warp points точки варта
+# - type: entity
+#   parent: InvictaMapPlaceholderBase
+#   id: WarpPointBridge
 
+# - type: entity
+#   parent: InvictaMapPlaceholderBase
+#   id: WarpPointChapel
+
+# - type: entity
+#   parent: InvictaMapPlaceholderBase
+#   id: WarpPointCourt
+
+# - type: entity
+#   parent: InvictaMapPlaceholderBase
+#   id: WarpPointEvac
+
+# - type: entity
+#   parent: InvictaMapPlaceholderBase
+#   id: WarpPointLogistics
+
+# - type: entity
+#   parent: InvictaMapPlaceholderBase
+#   id: WarpPointMedical
+
+# - type: entity
+#   parent: InvictaMapPlaceholderBase
+#   id: WarpPointSalvage
+
+# - type: entity
+#   parent: InvictaMapPlaceholderBase
+#   id: WarpPointVault
+#Варп поинты конец
 - type: entity
   parent: InvictaMapPlaceholderBase
-  id: WarpPointBridge
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: WarpPointChapel
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: WarpPointCourt
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: WarpPointEvac
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: WarpPointLogistics
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: WarpPointMedical
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: WarpPointSalvage
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: WarpPointVault
-
-- type: entity
-  parent: InvictaMapPlaceholderBase
-  id: WeaponEnergyGunMiniSecurity
+  id: WeaponEnergyGunMiniSecurity # Миниган секьюрити

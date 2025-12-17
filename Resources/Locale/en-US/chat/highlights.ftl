@@ -32,7 +32,7 @@ highlights-technical-assistant = Technical Assistant, Tech Assistant, Engineerin
 highlights-chemist = Chemist, Chemistry, "Chem", MedBay, "Med"
 highlights-medical-doctor = Medical Doctor, Doctor, "Doc", MedBay, "Med"
 highlights-medical-intern = Medical Intern, "Doc", Intern, MedBay, "Med"
-highlights-paramedic = Paramedic, "Para", MedBay, "Med"
+highlights-paramedic = Field medical specialist, \"Para\", MedBay, \"Med\"
 
 # Science
 highlights-scientist = Scientist, Science, "Sci"

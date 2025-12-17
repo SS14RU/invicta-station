@@ -36,6 +36,16 @@
   id: Theatre
   name: id-card-access-level-theatre
 
+#Invicta-start
+- type: accessLevel
+  id: Clown
+  name: id-card-access-level-clown
+
+- type: accessLevel
+  id: Mime
+  name: id-card-access-level-mime
+#Invicta-end
+
 - type: accessLevel
   id: Chapel
   name: id-card-access-level-chapel
@@ -54,5 +64,7 @@
   - Service
   - Janitor
   - Theatre
+  - Clown #Invicta-add
+  - Mime #Invicta-add
   - Chapel
   - Lawyer
