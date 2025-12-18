@@ -1,0 +1,60 @@
+- type: roleLoadout
+  id: JobCnsRepresentative
+  groups:
+  - Inventory
+  - GroupTankHarness
+  - NanotrasenRepresentativeHead
+  - NanotrasenRepresentativeJumpsuit
+  - NanotrasenRepresentativeBackpack
+  - NanotrasenRepresentativeNeck
+  - NanotrasenRepresentativeShoes
+  - NanotrasenRepresentativeBelt
+  - Glasses
+  - Trinkets
+  - Animals
+  - GroupSpeciesBreathTool
+  - Survival
+  - NanotrasenRepresentativeGloves
+  - NanotrasenRepresentativeEnvirohelm
+  - NanotrasenRepresentativeEnvirosuit
+  - NanotrasenRepresentativeEnvirogloves
+
+- type: roleLoadout
+  id: JobCnsOfficer
+  groups:
+  - Inventory
+  - BlueshieldOfficerHead
+  - BlueshieldOfficerJumpsuit
+  - BlueshieldOfficerBackpack
+  - BlueshieldOfficerOuter
+  - BlueshieldOfficerNeck
+  - BlueshieldOfficerMask
+  - BlueshieldOfficerShoes
+  - Trinkets
+  - Animals
+  - GroupSpeciesBreathTool
+  - SurvivalSecurity
+  - BlueshieldOfficerEnvirohelm
+  - BlueshieldOfficerEnvirosuit
+  - BlueshieldOfficerEnvirogloves
+  - BlueshieldOfficerGloves
+
+- type: roleLoadout
+  id: JobCnsCommander
+  groups:
+  - Inventory
+  - BlueshieldOfficerHead
+  - BlueshieldOfficerJumpsuit
+  - BlueshieldOfficerBackpack
+  - BlueshieldOfficerOuter
+  - BlueshieldOfficerNeck
+  - BlueshieldOfficerMask
+  - BlueshieldOfficerShoes
+  - Trinkets
+  - Animals
+  - GroupSpeciesBreathTool
+  - SurvivalSecurity
+  - BlueshieldOfficerEnvirohelm
+  - BlueshieldOfficerEnvirosuit
+  - BlueshieldOfficerEnvirogloves
+  - BlueshieldOfficerGloves

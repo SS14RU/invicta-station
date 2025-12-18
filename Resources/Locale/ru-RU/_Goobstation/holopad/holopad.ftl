@@ -6,5 +6,5 @@
 
 # Command-adjacent
 holopad-command-ntr = Командование — Представитель ЦК
-holopad-command-bso = Командование — Офицер Синего Щита
+holopad-command-bso = Командование - Офицер СКН
 holopad-centcomm = ЦентКом

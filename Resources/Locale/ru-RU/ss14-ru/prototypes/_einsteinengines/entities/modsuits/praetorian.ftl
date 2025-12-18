@@ -9,5 +9,5 @@ ent-ClothingModsuitChestplatePraetorian = Нагрудник модсьюта п
 ent-ClothingModsuitBootsPraetorian = ботинки скафандра "Преторианец"
     .desc = Передовая пара магнитных ботинок для скафандра "Преторианец".
 ent-SuitStoragePraetorian = { ent-SuitStorageBase }
-    .suffix = модульный скафандр "Преторианец", Синий Щит
+    .suffix = модульный скафандр "Преторианец", СКН
     .desc = { ent-SuitStorageBase.desc }

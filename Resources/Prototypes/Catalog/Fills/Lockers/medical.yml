@@ -152,7 +152,7 @@
   id: LockerFillParamedic
   table: !type:AllSelector
     children:
-    - id: ClothingOuterHardsuitVoidParamed
+    # - id: ClothingOuterHardsuitVoidParamed #Перенос в рюкзак #Invicta-edit
     - id: OxygenTankFilled
     - id: NitrogenTankFilled
     - id: ClothingOuterCoatParamedicWB
@@ -175,7 +175,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: UndeterminedVoidsuitParamedic # Goob edit
+      # - id: UndeterminedVoidsuitParamedic #Перенос в рюкзак #Invicta-edit
       - id: OxygenTankFilled
       - id: NitrogenTankFilled
       - id: ClothingOuterCoatParamedicWB

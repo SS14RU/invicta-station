@@ -132,6 +132,7 @@
   access:
   - Theatre
   - Maintenance
+  - Mime #Invicta-add
   special:
   - !type:AddComponentSpecial
     components:

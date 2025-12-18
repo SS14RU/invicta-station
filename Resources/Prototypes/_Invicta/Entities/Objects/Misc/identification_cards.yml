@@ -1,8 +1,7 @@
-# Corporations
 - type: entity
   parent: IDCardStandard
-  id: CorporationsIDCard
-  name: Corporations officer ID card
+  id: CnsRepresentativeIDCard
+  name: corporate representative ID card
   components:
   - type: Sprite
     layers:
@@ -10,7 +9,7 @@
   - type: Item
     heldPrefix:
   - type: PresetIdCard
-    job: CnsOfficer
+    job: CnsRepresentative
   - type: EconomyAccountHolder
     accountIdByProto: Nanotrasen
     moneyHolderEntId: ThalerHolder
@@ -20,13 +19,29 @@
         - Personal
   - type: Access
     tags:
+    - Security
+    - Brig
+    - External
+    - Cryogenics
+    - Maintenance
+    - Engineering
+    - Medical
+    - Research
+    - Lawyer
+    - Cargo
+    - Command
     - CentralCommand
     - BlueshieldOfficer
+    - Service
+    - Hydroponics
+    - Kitchen
+    - Theatre
+    - NanotrasenRepresentative
 
 - type: entity
   parent: IDCardStandard
-  id: CorporationsComIDCard
-  name: Corporations command ID card
+  id: CnsCommanderIDCard
+  name: corporate commander ID card
   components:
   - type: Sprite
     layers:
@@ -44,5 +59,48 @@
         - Personal
   - type: Access
     tags:
+    - Security
+    - Brig
+    - External
+    - Cryogenics
+    - Maintenance
+    - Engineering
+    - Medical
+    - Research
+    - Lawyer
+    - Cargo
+    - Command
     - CentralCommand
+    - BlueshieldOfficer
+
+- type: entity
+  parent: IDCardStandard
+  id: CnsOfficerIDCard
+  name: corporate officer ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+  - type: Item
+    heldPrefix:
+  - type: PresetIdCard
+    job: CnsOfficer
+  - type: EconomyAccountHolder
+    accountIdByProto: Nanotrasen
+    moneyHolderEntId: ThalerHolder
+    accountSetup:
+      allowedCurrency: Thaler
+      accountTags:
+        - Personal
+  - type: Access
+    tags:
+    - Security
+    - Brig
+    - External
+    - Cryogenics
+    - Maintenance
+    - Engineering
+    - Medical
+    - Research
+    - Cargo
     - BlueshieldOfficer

@@ -1,7 +1,7 @@
 - type: gameMap
   id: SS14RUCyberiad
   mapName: 'Cyberiad Station'
-  mapPath: /Maps/_SS14RU/SS14RUcyberiad.yml
+  mapPath: /Maps/_SS14RU/SS14RUcyberiad_Broken.yml
   minPlayers: 0
   maxPlayers: 90
   stations:

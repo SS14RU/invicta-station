@@ -76,6 +76,24 @@
   - type: AccessReader
     access: [["Theatre"]]
 
+#Invicta-start
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsClown
+  suffix: Clown, Locked
+  components:
+  - type: AccessReader
+    access: [["Clown"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsMime
+  suffix: Mime, Locked
+  components:
+  - type: AccessReader
+    access: [["Mime"]]
+#Invicta-end
+
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsKitchen
