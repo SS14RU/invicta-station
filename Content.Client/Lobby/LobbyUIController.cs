@@ -104,6 +104,7 @@ using Robust.Client.ResourceManagement;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
+using Robust.Shared.ContentPack;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -119,6 +120,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
+    [Dependency] private readonly IResourceManager _resourceManager = default!;
     [Dependency] private readonly IStateManager _stateManager = default!;
     [Dependency] private readonly JobRequirementsManager _requirements = default!;
     [Dependency] private readonly MarkingManager _markings = default!;
@@ -355,6 +357,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             LogManager,
             _playerManager,
             _prototypeManager,
+            _resourceManager,
             _resourceCache,
             _requirements,
             _markings);

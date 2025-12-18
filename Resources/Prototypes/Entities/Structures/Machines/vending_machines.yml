@@ -1282,7 +1282,6 @@
   parent: VendingMachineSeedsUnlocked
   id: VendingMachineSeeds
   suffix: Hydroponics
-  components:
 
 - type: entity
   parent: VendingMachine-NT-Service  # Invicta: department-linked vending
@@ -2593,4 +2592,3 @@
     normalState: normal
     denyState: deny
     ejectDelay: 2
-

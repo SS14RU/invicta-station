@@ -24,6 +24,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
          xmlns:humanoid="clr-namespace:Content.Client.Humanoid"
          xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
          xmlns:ui="clr-namespace:Content.Client.Lobby.UI"
+         xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
          x:Class="Content.Client.Lobby.UI.HumanoidProfileEditor"
          HorizontalExpand="True">
         <!-- Left side -->
@@ -133,39 +134,40 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                         </BoxContainer>
                     </ScrollContainer>
                 </BoxContainer>
-                <BoxContainer Name="BackgroundTab" Orientation="Vertical" Margin="30 10 30 10">
-                    <ScrollContainer VerticalExpand="True">
-                        <BoxContainer Orientation="Vertical" VerticalExpand="True">
-                        <!-- Nationality -->
-                        <PanelContainer HorizontalExpand="True" VerticalExpand="True" Margin="0 0 0 6" SizeFlagsStretchRatio="2" StyleClasses="background-panel">
-                            <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="6 6 6 6">
-                                <BoxContainer HorizontalExpand="True">
-                                    <Label Text="{Loc 'humanoid-profile-editor-nationality-label'}" />
-                                    <OptionButton Name="NationalityButton" Margin="8 0 0 0" />
-                                    <TextureButton Name="NationalityInfoButton" Scale="0.3 0.3" Margin="8 0 0 0" VerticalAlignment="Center"
-                                                   ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
-                                </BoxContainer>
-                                <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False">
-                                    <RichTextLabel Name="NationalityDescriptionLabel" Text="" HorizontalExpand="True" VerticalExpand="True" MaxWidth="900"/>
+                <BoxContainer Name="BackgroundTab" Orientation="Horizontal" Margin="20 10 20 10" SeparationOverride="10">
+                    <!-- Left: categories and options -->
+                    <BoxContainer Orientation="Vertical" MinWidth="240" SeparationOverride="6">
+                        <Button Name="BackgroundCategoryNationality" Text="{Loc 'humanoid-profile-editor-nationality-label'}" ToggleMode="True" Pressed="True" HorizontalExpand="True" ClipText="False" />
+                        <Button Name="BackgroundCategoryEmployer" Text="{Loc 'humanoid-profile-editor-employer-label'}" ToggleMode="True" HorizontalExpand="True" ClipText="False" />
+                        <Button Name="BackgroundCategoryLifepath" Text="{Loc 'humanoid-profile-editor-lifepath-label'}" ToggleMode="True" HorizontalExpand="True" ClipText="False" />
+                        <Control MinHeight="6" />
+                        <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
+                            <BoxContainer Name="BackgroundOptions" Orientation="Vertical" SeparationOverride="4" />
+                        </ScrollContainer>
+                    </BoxContainer>
+                    <!-- Right: description -->
+                    <PanelContainer HorizontalExpand="True" VerticalExpand="True" MinSize="640 360" StyleClasses="background-panel">
+                        <LayoutContainer HorizontalExpand="True" VerticalExpand="True">
+                            <TextureRect Name="BackgroundImage" TexturePath="/Textures/Interface/Nano/window_background.png" Stretch="KeepAspectCentered" HorizontalExpand="True" VerticalExpand="True"
+                                         LayoutContainer.AnchorLeft="0" LayoutContainer.AnchorTop="0" LayoutContainer.AnchorRight="1" LayoutContainer.AnchorBottom="1"/>
+                            <PanelContainer Name="BackgroundDimmer" HorizontalExpand="True" VerticalExpand="True"
+                                            LayoutContainer.AnchorLeft="0" LayoutContainer.AnchorTop="0" LayoutContainer.AnchorRight="1" LayoutContainer.AnchorBottom="1"
+                                            Visible="False"
+                                            MouseFilter="Ignore">
+                                <PanelContainer.PanelOverride>
+                                    <gfx:StyleBoxFlat BackgroundColor="#000000CC" />
+                                </PanelContainer.PanelOverride>
+                            </PanelContainer>
+                            <BoxContainer Orientation="Vertical" Margin="10 10 10 10" VerticalExpand="True"
+                                          LayoutContainer.AnchorLeft="0" LayoutContainer.AnchorTop="0" LayoutContainer.AnchorRight="1" LayoutContainer.AnchorBottom="1">
+                                <Label Name="BackgroundTitleLabel" FontColorOverride="White" />
+                                <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
+                                    <RichTextLabel Name="BackgroundDescriptionLabel" HorizontalExpand="True" VerticalExpand="True" MaxWidth="900" />
                                 </ScrollContainer>
+                                <Button Name="BackgroundToggleTextButton" Text="{Loc 'humanoid-profile-editor-toggle-background-text-hide'}" HorizontalAlignment="Right" />
                             </BoxContainer>
-                        </PanelContainer>
-                        <!-- Employer -->
-                        <PanelContainer HorizontalExpand="True" VerticalExpand="True" Margin="0 0 0 6" SizeFlagsStretchRatio="1" StyleClasses="background-panel">
-                            <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="6 6 6 6">
-                                <BoxContainer HorizontalExpand="True">
-                                    <Label Text="{Loc 'humanoid-profile-editor-employer-label'}" />
-                                    <OptionButton Name="EmployerButton" Margin="8 0 0 0" />
-                                    <TextureButton Name="EmployerInfoButton" Scale="0.3 0.3" Margin="8 0 0 0" VerticalAlignment="Center"
-                                                   ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
-                                </BoxContainer>
-                                <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False">
-                                    <RichTextLabel Name="EmployerDescriptionLabel" Text="" HorizontalExpand="True" VerticalExpand="True" MaxWidth="900"/>
-                                </ScrollContainer>
-                            </BoxContainer>
-                        </PanelContainer>
-                        </BoxContainer>
-                    </ScrollContainer>
+                        </LayoutContainer>
+                    </PanelContainer>
                 </BoxContainer>
                 <BoxContainer Orientation="Vertical">
                     <!-- Jobs -->

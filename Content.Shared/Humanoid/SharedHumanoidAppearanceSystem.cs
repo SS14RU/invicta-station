@@ -90,13 +90,13 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     public static readonly ProtoId<SpeciesPrototype> DefaultSpecies = "Human";
 
     [ValidatePrototypeId<EmployerPrototype>]
-    public const string DefaultEmployer = "NanoTrasen";
+    public const string DefaultEmployer = "AlphaCentauriAb";
 
     [ValidatePrototypeId<NationalityPrototype>]
-    public const string DefaultNationality = "Nanotrasen";
+    public const string DefaultNationality = "CentralSphere";
 
     [ValidatePrototypeId<LifepathPrototype>]
-    public const string DefaultLifepath = "Spacer";
+    public const string DefaultLifepath = "ColonialEmbryo";
 
     public override void Initialize()
     {
