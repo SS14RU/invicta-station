@@ -138,8 +138,11 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                     <!-- Left: categories and options -->
                     <BoxContainer Orientation="Vertical" MinWidth="240" SeparationOverride="6">
                         <Button Name="BackgroundCategoryNationality" Text="{Loc 'humanoid-profile-editor-nationality-label'}" ToggleMode="True" Pressed="True" HorizontalExpand="True" ClipText="False" />
+                        <Label Name="BackgroundSummaryNationalityValue" Margin="6 -2 0 2" FontColorOverride="#D0D0D0" />
                         <Button Name="BackgroundCategoryEmployer" Text="{Loc 'humanoid-profile-editor-employer-label'}" ToggleMode="True" HorizontalExpand="True" ClipText="False" />
+                        <Label Name="BackgroundSummaryEmployerValue" Margin="6 -2 0 2" FontColorOverride="#D0D0D0" />
                         <Button Name="BackgroundCategoryLifepath" Text="{Loc 'humanoid-profile-editor-lifepath-label'}" ToggleMode="True" HorizontalExpand="True" ClipText="False" />
+                        <Label Name="BackgroundSummaryLifepathValue" Margin="6 -2 0 2" FontColorOverride="#D0D0D0" />
                         <Control MinHeight="6" />
                         <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
                             <BoxContainer Name="BackgroundOptions" Orientation="Vertical" SeparationOverride="4" />

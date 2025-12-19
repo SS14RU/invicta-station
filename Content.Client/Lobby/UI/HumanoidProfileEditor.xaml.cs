@@ -1155,6 +1155,7 @@ namespace Content.Client.Lobby.UI
             _backgroundTextHidden = false;
             UpdateBackgroundTextVisibility();
             SetBackgroundCategory(_currentBackgroundCategory);
+            UpdateBackgroundSummary();
             ReloadPreview();
 
             if (Profile != null)
@@ -1654,6 +1655,7 @@ namespace Content.Client.Lobby.UI
             RefreshJobs();
             if (_currentBackgroundCategory == BackgroundCategory.Nationality)
                 UpdateBackgroundDescription();
+            UpdateBackgroundSummary();
         }
 
         private void SetLifepath(string lifepath)
@@ -1663,6 +1665,7 @@ namespace Content.Client.Lobby.UI
             RefreshJobs();
             if (_currentBackgroundCategory == BackgroundCategory.Lifepath)
                 UpdateBackgroundDescription();
+            UpdateBackgroundSummary();
         }
 
         private void SetEmployer(string employer)
@@ -1672,6 +1675,7 @@ namespace Content.Client.Lobby.UI
             RefreshJobs();
             if (_currentBackgroundCategory == BackgroundCategory.Employer)
                 UpdateBackgroundDescription();
+            UpdateBackgroundSummary();
         }
 
         private void SetName(string newName)
@@ -2284,6 +2288,25 @@ namespace Content.Client.Lobby.UI
             BackgroundTitleLabel.Text = string.Empty;
             BackgroundDescriptionLabel.SetMessage(FormattedMessage.Empty);
             UpdateBackgroundImage(null);
+        }
+
+        private void UpdateBackgroundSummary()
+        {
+            var nationalityText = string.Empty;
+            if (Profile != null && _prototypeManager.TryIndex<NationalityPrototype>(Profile.Nationality, out var natProto))
+                nationalityText = Loc.GetString(natProto.NameKey);
+
+            var employerText = string.Empty;
+            if (Profile != null && _prototypeManager.TryIndex<EmployerPrototype>(Profile.Employer, out var empProto))
+                employerText = Loc.GetString(empProto.NameKey);
+
+            var lifepathText = string.Empty;
+            if (Profile != null && _prototypeManager.TryIndex<LifepathPrototype>(Profile.Lifepath, out var lifeProto))
+                lifepathText = Loc.GetString(lifeProto.NameKey);
+
+            BackgroundSummaryNationalityValue.Text = nationalityText;
+            BackgroundSummaryEmployerValue.Text = employerText;
+            BackgroundSummaryLifepathValue.Text = lifepathText;
         }
 
         private static string WrapButtonText(string text, int maxCharsPerLine)
