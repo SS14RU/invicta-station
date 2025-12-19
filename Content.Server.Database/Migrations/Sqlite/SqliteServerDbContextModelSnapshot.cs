@@ -807,10 +807,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("flavor_text");
 
-                    b.Property<string>("Employer")
+                    b.Property<string>("Planet")
                         .IsRequired()
                         .HasColumnType("TEXT")
-                        .HasColumnName("employer");
+                        .HasColumnName("planet");
 
                     b.Property<string>("Gender")
                         .IsRequired()
@@ -827,19 +827,19 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("hair_name");
 
-                    b.Property<string>("Lifepath")
+                    b.Property<string>("Background")
                         .IsRequired()
                         .HasColumnType("TEXT")
-                        .HasColumnName("lifepath");
+                        .HasColumnName("background");
 
                     b.Property<byte[]>("Markings")
                         .HasColumnType("jsonb")
                         .HasColumnName("markings");
 
-                    b.Property<string>("Nationality")
+                    b.Property<string>("Citizenship")
                         .IsRequired()
                         .HasColumnType("TEXT")
-                        .HasColumnName("nationality");
+                        .HasColumnName("citizenship");
 
                     b.Property<int>("PreferenceId")
                         .HasColumnType("INTEGER")

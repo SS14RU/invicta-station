@@ -59,9 +59,10 @@ trait-category-quirks = Причуды
 # Backgrounds
 
 humanoid-profile-editor-background-tab = Предыстории
-humanoid-profile-editor-nationality-label = Гражданство:
-humanoid-profile-editor-employer-label = Планета:
-humanoid-profile-editor-lifepath-label = Предыстория:
+humanoid-profile-editor-citizenship-label = Гражданство:
+humanoid-profile-editor-planet-label = Планета:
+humanoid-profile-editor-background-label = Предыстория:
 humanoid-profile-editor-select-background = Выбрать предысторию
 humanoid-profile-editor-toggle-background-text-hide = Скрыть текст
 humanoid-profile-editor-toggle-background-text-show = Показать текст
+

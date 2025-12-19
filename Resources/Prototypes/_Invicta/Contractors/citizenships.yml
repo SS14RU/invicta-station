@@ -1,0 +1,11 @@
+- type: citizenship
+  id: CentralSphere
+  nameKey: citizenship_name_central-sphere
+  descriptionKey: citizenship_description_central-sphere
+  sortOrder: 0
+
+- type: citizenship
+  id: SecondSphere
+  nameKey: citizenship_name_second-sphere
+  descriptionKey: citizenship_description_second-sphere
+  sortOrder: 10

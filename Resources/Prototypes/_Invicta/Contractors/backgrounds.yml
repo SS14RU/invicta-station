@@ -1,0 +1,132 @@
+- type: background
+  id: ColonialEmbryo
+  nameKey: background_name_colonial-embryo
+  descriptionKey: background_description_colonial-embryo
+  allowedPlanets:
+    - AlphaCentauriAb
+
+- type: background
+  id: Unemployed
+  nameKey: background_name_unemployed
+  descriptionKey: background_description_unemployed
+  allowedPlanets:
+    - AlphaCentauriAb
+
+- type: background
+  id: AlphaCoordinator
+  nameKey: background_name_alpha-coordinator
+  descriptionKey: background_description_alpha-coordinator
+  allowedPlanets:
+    - AlphaCentauriAb
+
+- type: background
+  id: GSArchiveAnalyst
+  nameKey: background_name_gs-archive-analyst
+  descriptionKey: background_description_gs-archive-analyst
+  allowedPlanets:
+    - AlphaCentauriAb
+
+- type: background
+  id: BargeRecruiter
+  nameKey: background_name_barge-recruiter
+  descriptionKey: background_description_barge-recruiter
+  allowedPlanets:
+    - AlphaCentauriAb
+
+- type: background
+  id: ConcordService
+  nameKey: background_name_concord-service
+  descriptionKey: background_description_concord-service
+  allowedPlanets:
+    - BetaEden14
+
+- type: background
+  id: UndergroundMedtech
+  nameKey: background_name_underground-medtech
+  descriptionKey: background_description_underground-medtech
+  allowedPlanets:
+    - BetaEden14
+
+- type: background
+  id: OddJob
+  nameKey: background_name_odd-job
+  descriptionKey: background_description_odd-job
+  allowedPlanets:
+    - BetaEden14
+
+- type: background
+  id: EliteDockGuard
+  nameKey: background_name_elite-dock-guard
+  descriptionKey: background_description_elite-dock-guard
+  allowedPlanets:
+    - BetaEden14
+
+- type: background
+  id: RingDockLoader
+  nameKey: background_name_ring-dock-loader
+  descriptionKey: background_description_ring-dock-loader
+  allowedPlanets:
+    - DeltaArgo21
+
+- type: background
+  id: HydroponicsWorker
+  nameKey: background_name_hydroponics-worker
+  descriptionKey: background_description_hydroponics-worker
+  allowedPlanets:
+    - DeltaArgo21
+
+- type: background
+  id: SpireClimateEngineer
+  nameKey: background_name_spire-climate-engineer
+  descriptionKey: background_description_spire-climate-engineer
+  allowedPlanets:
+    - DeltaArgo21
+
+- type: background
+  id: ProductionManager
+  nameKey: background_name_production-manager
+  descriptionKey: background_description_production-manager
+  allowedPlanets:
+    - DeltaArgo21
+
+- type: background
+  id: NTInspector
+  nameKey: background_name_nt-inspector
+  descriptionKey: background_description_nt-inspector
+  allowedPlanets:
+    - DeltaArgo21
+
+- type: background
+  id: PartsFactoryEngineer
+  nameKey: background_name_parts-factory-engineer
+  descriptionKey: background_description_parts-factory-engineer
+  allowedPlanets:
+    - ZetaAurora28
+
+- type: background
+  id: PoliceOfficer
+  nameKey: background_name_police-officer
+  descriptionKey: background_description_police-officer
+  allowedPlanets:
+    - ZetaAurora28
+
+- type: background
+  id: ClinicDoctor
+  nameKey: background_name_clinic-doctor
+  descriptionKey: background_description_clinic-doctor
+  allowedPlanets:
+    - ZetaAurora28
+
+- type: background
+  id: DomeDispatcher
+  nameKey: background_name_dome-dispatcher
+  descriptionKey: background_description_dome-dispatcher
+  allowedPlanets:
+    - ZetaAurora28
+
+- type: background
+  id: UtilityWorker
+  nameKey: background_name_utility-worker
+  descriptionKey: background_description_utility-worker
+  allowedPlanets:
+    - ZetaAurora28

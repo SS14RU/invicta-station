@@ -11,21 +11,21 @@ namespace Content.Server.Database.Migrations.Postgres
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
-                name: "employer",
+                name: "planet",
                 table: "profile",
                 type: "text",
                 nullable: false,
                 defaultValue: "");
 
             migrationBuilder.AddColumn<string>(
-                name: "lifepath",
+                name: "background",
                 table: "profile",
                 type: "text",
                 nullable: false,
                 defaultValue: "");
 
             migrationBuilder.AddColumn<string>(
-                name: "nationality",
+                name: "citizenship",
                 table: "profile",
                 type: "text",
                 nullable: false,
@@ -36,15 +36,15 @@ namespace Content.Server.Database.Migrations.Postgres
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "employer",
+                name: "planet",
                 table: "profile");
 
             migrationBuilder.DropColumn(
-                name: "lifepath",
+                name: "background",
                 table: "profile");
 
             migrationBuilder.DropColumn(
-                name: "nationality",
+                name: "citizenship",
                 table: "profile");
         }
     }

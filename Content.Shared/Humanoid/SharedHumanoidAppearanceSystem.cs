@@ -38,7 +38,7 @@ using Content.Shared.Humanoid.Markings;
 using Content.Shared._Shitmed.Humanoid.Events; // Shitmed Change
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.IdentityManagement;
-using Content.Shared._EE.Contractors.Prototypes;
+using Content.Shared._Invicta.Contractors.Prototypes;
 using Content.Shared.Inventory;
 using Content.Shared.Preferences;
 using Content.Shared._EinsteinEngines.HeightAdjust;
@@ -89,14 +89,14 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     // CorvaxGoob-TTS-End
     public static readonly ProtoId<SpeciesPrototype> DefaultSpecies = "Human";
 
-    [ValidatePrototypeId<EmployerPrototype>]
-    public const string DefaultEmployer = "AlphaCentauriAb";
+    [ValidatePrototypeId<PlanetPrototype>]
+    public const string DefaultPlanet = "AlphaCentauriAb";
 
-    [ValidatePrototypeId<NationalityPrototype>]
-    public const string DefaultNationality = "CentralSphere";
+    [ValidatePrototypeId<CitizenshipPrototype>]
+    public const string DefaultCitizenship = "CentralSphere";
 
-    [ValidatePrototypeId<LifepathPrototype>]
-    public const string DefaultLifepath = "ColonialEmbryo";
+    [ValidatePrototypeId<BackgroundPrototype>]
+    public const string DefaultBackground = "ColonialEmbryo";
 
     public override void Initialize()
     {

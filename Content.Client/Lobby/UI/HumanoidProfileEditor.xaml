@@ -134,24 +134,26 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                         </BoxContainer>
                     </ScrollContainer>
                 </BoxContainer>
-                <BoxContainer Name="BackgroundTab" Orientation="Horizontal" Margin="20 10 20 10" SeparationOverride="10">
+                <!-- Background -->
+                <BoxContainer Name="BackgroundTab" Orientation="Horizontal" Margin="2 2 2 2" SeparationOverride="10">
                     <!-- Left: categories and options -->
-                    <BoxContainer Orientation="Vertical" MinWidth="240" SeparationOverride="6">
-                        <Button Name="BackgroundCategoryNationality" Text="{Loc 'humanoid-profile-editor-nationality-label'}" ToggleMode="True" Pressed="True" HorizontalExpand="True" ClipText="False" />
-                        <Label Name="BackgroundSummaryNationalityValue" Margin="6 -2 0 2" FontColorOverride="#D0D0D0" />
-                        <Button Name="BackgroundCategoryEmployer" Text="{Loc 'humanoid-profile-editor-employer-label'}" ToggleMode="True" HorizontalExpand="True" ClipText="False" />
-                        <Label Name="BackgroundSummaryEmployerValue" Margin="6 -2 0 2" FontColorOverride="#D0D0D0" />
-                        <Button Name="BackgroundCategoryLifepath" Text="{Loc 'humanoid-profile-editor-lifepath-label'}" ToggleMode="True" HorizontalExpand="True" ClipText="False" />
-                        <Label Name="BackgroundSummaryLifepathValue" Margin="6 -2 0 2" FontColorOverride="#D0D0D0" />
+                    <BoxContainer Orientation="Vertical" SeparationOverride="6" VerticalExpand="True" HorizontalExpand="true" SizeFlagsStretchRatio="1">
+                        <Button Name="BackgroundCategoryCitizenship" Text="{Loc 'humanoid-profile-editor-citizenship-label'}" ToggleMode="True" Pressed="True" HorizontalExpand="True" ClipText="False" />
+                        <Label Name="BackgroundSummaryCitizenshipValue" FontColorOverride="#D0D0D0" ClipText="False" HorizontalAlignment="Center" HorizontalExpand="True" MinHeight="36" MaxHeight="36" />
+                        <Button Name="BackgroundCategoryPlanet" Text="{Loc 'humanoid-profile-editor-planet-label'}" ToggleMode="True" HorizontalExpand="True" ClipText="False" />
+                        <Label Name="BackgroundSummaryPlanetValue" FontColorOverride="#D0D0D0" ClipText="False" HorizontalAlignment="Center" HorizontalExpand="True" MinHeight="36" MaxHeight="36"/>
+                        <Button Name="BackgroundCategoryBackground" Text="{Loc 'humanoid-profile-editor-background-label'}" ToggleMode="True" HorizontalExpand="True" ClipText="False" />
+                        <Label Name="BackgroundSummaryBackgroundValue" FontColorOverride="#D0D0D0" ClipText="False" HorizontalAlignment="Center" HorizontalExpand="True" MinHeight="36" MaxHeight="36"/>
                         <Control MinHeight="6" />
-                        <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
+                        <ScrollContainer VerticalExpand="True" HScrollEnabled="False" MinSize="0 360">
                             <BoxContainer Name="BackgroundOptions" Orientation="Vertical" SeparationOverride="4" />
                         </ScrollContainer>
                     </BoxContainer>
                     <!-- Right: description -->
-                    <PanelContainer HorizontalExpand="True" VerticalExpand="True" MinSize="640 360" StyleClasses="background-panel">
+                    <PanelContainer HorizontalExpand="True" VerticalExpand="True" MinSize="640 360" SizeFlagsStretchRatio="4" StyleClasses="background-panel">
                         <LayoutContainer HorizontalExpand="True" VerticalExpand="True">
                             <TextureRect Name="BackgroundImage" TexturePath="/Textures/Interface/Nano/window_background.png" Stretch="KeepAspectCentered" HorizontalExpand="True" VerticalExpand="True"
+                                         CanShrink="True" RectClipContent="True"
                                          LayoutContainer.AnchorLeft="0" LayoutContainer.AnchorTop="0" LayoutContainer.AnchorRight="1" LayoutContainer.AnchorBottom="1"/>
                             <PanelContainer Name="BackgroundDimmer" HorizontalExpand="True" VerticalExpand="True"
                                             LayoutContainer.AnchorLeft="0" LayoutContainer.AnchorTop="0" LayoutContainer.AnchorRight="1" LayoutContainer.AnchorBottom="1"
@@ -172,6 +174,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                         </LayoutContainer>
                     </PanelContainer>
                 </BoxContainer>
+                <!-- Background -->
                 <BoxContainer Orientation="Vertical">
                     <!-- Jobs -->
                     <OptionButton Name="PreferenceUnavailableButton" />

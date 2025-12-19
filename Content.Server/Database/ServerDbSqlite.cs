@@ -633,14 +633,20 @@ namespace Content.Server.Database
                     return cmd.ExecuteScalar() is not null;
                 }
 
-                if (!HasColumn(connection, "nationality"))
-                    ctx.Database.ExecuteSqlRaw("ALTER TABLE profile ADD COLUMN nationality TEXT NOT NULL DEFAULT '';");
+                if (HasColumn(connection, "nationality") && !HasColumn(connection, "citizenship"))
+                    ctx.Database.ExecuteSqlRaw("ALTER TABLE profile RENAME COLUMN nationality TO citizenship;");
+                if (!HasColumn(connection, "citizenship"))
+                    ctx.Database.ExecuteSqlRaw("ALTER TABLE profile ADD COLUMN citizenship TEXT NOT NULL DEFAULT '';");
 
-                if (!HasColumn(connection, "employer"))
-                    ctx.Database.ExecuteSqlRaw("ALTER TABLE profile ADD COLUMN employer TEXT NOT NULL DEFAULT '';");
+                if (HasColumn(connection, "employer") && !HasColumn(connection, "planet"))
+                    ctx.Database.ExecuteSqlRaw("ALTER TABLE profile RENAME COLUMN employer TO planet;");
+                if (!HasColumn(connection, "planet"))
+                    ctx.Database.ExecuteSqlRaw("ALTER TABLE profile ADD COLUMN planet TEXT NOT NULL DEFAULT '';");
 
-                if (!HasColumn(connection, "lifepath"))
-                    ctx.Database.ExecuteSqlRaw("ALTER TABLE profile ADD COLUMN lifepath TEXT NOT NULL DEFAULT '';");
+                if (HasColumn(connection, "lifepath") && !HasColumn(connection, "background"))
+                    ctx.Database.ExecuteSqlRaw("ALTER TABLE profile RENAME COLUMN lifepath TO background;");
+                if (!HasColumn(connection, "background"))
+                    ctx.Database.ExecuteSqlRaw("ALTER TABLE profile ADD COLUMN background TEXT NOT NULL DEFAULT '';");
             }
             finally
             {

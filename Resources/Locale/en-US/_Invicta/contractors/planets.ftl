@@ -1,0 +1,19 @@
+# character-planet-requirement = You must{$inverted ->
+#     [true]{" "}not
+#     *[other]{""}
+# } be employed by one of these: {$planets}
+
+planet_name_alpha-centauri-ab = Alpha Centauri A b
+planet_description_alpha-centauri-ab = Alpha Centauri A b is the first extrasolar colony and capital of the Federation, hosting parliament sessions. The planet is terraformed; cities are built in access layers from docks and services up to research campuses and offices. Routes are certified here, equipment is approved, and standards are issued for the outer worlds to follow. Bluespace makes comms costly and laggy, so critical decisions travel by courier.
+    Alpha's culture mixes showcase opulence with nostalgia for old Earth: upper sectors run museum seasons and vintage cinema, dressing sets in Earth eras. Every few years they celebrate a new [textlink="GS" link="GuideEntryGS"] and a week of parliamentary sessions—streets close, broadcasts run, receptions and awards fill the schedule. A special draw is rare open broadcasts from Earth; speech and fashion get calibrated against them, even when dates jump decades, once delivering congratulations from 2225. Below, life is simpler: markets, public cinemas, and quick service festivals praising those who never make the reports.
+    In 25 [textlink="GS" link="GuideEntryGS"] Alpha opened a route to Earth and folded it into the Federation as a protected autonomous subject without authority over colonies. Alpha's politics hinge on two forces: the Federation sets rules and can halt projects with a single decision, while corporations bargain for exceptions through contracts and infrastructure. Earth's protected status is a bargaining chip in access and priority talks because behind the wording lie budgets and reputation. Lobbying swirls around quotas, routes, and funding for comms and science—the best phrasing wins, not the loudest slogan.
+
+planet_name_beta-eden-14 = Beta-Eden-14
+planet_description_beta-eden-14 = Beta-Eden-14 is an elite Central Sphere resort and training ground for service. Climate is tuned for a perpetual warm day; beaches and forests look staged, and perfect weather is kept by pumps, filters, climate grids, and crews that repaint the postcard while guests believe it's natural. Under the postcard lie service zones and staff housing.
+
+planet_name_delta-argo-21 = Delta-Argo-21
+planet_description_delta-argo-21 = Delta-Argo-21 is a Central Sphere agri-world that feeds the richer hubs. Fields, canals, and cold stores run on tight norms; drones track sprouting and losses, and people step into the rows only when something jams or leaks. NT pushes contracts and borgs to drive people out of routine work, while local crews stall with negotiations and refusals.
+
+planet_name_zeta-aurora-28 = Zeta-Aurora-28
+planet_description_zeta-aurora-28 = Zeta-Aurora-28 is a domed world linked by tunnels and docks. The central dome holds administration, archives, and medcenters; ring domes house shops, housing, and rework. Panels are patched, lift lines cross mixed-era nodes, and outside air is nominally breathable but keeps life under glass. Logos change faster than maps, festivals track caravan arrivals, and crime is just another route on the schedule. Control is a three-way barter between administration, brigadier clans, and corporations; whoever controls the dock timetable controls the city.
+    Eden's culture revolves around hospitality and show service: gala nights, demonstration routines, error breakdowns in training halls. Those who break the facade or can't keep pace get moved to less prestigious posts. Politics is a balance of local forces: resort owners and administration sell safety and image, the undercity residents want water and decent work, and corporate security stands between them bargaining for authority.

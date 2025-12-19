@@ -1,13 +1,13 @@
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._EE.Contractors.Prototypes;
+namespace Content.Shared._Invicta.Contractors.Prototypes;
 
 /// <summary>
-/// Prototype representing a character's nationality.
+/// Prototype representing a character's background.
 /// </summary>
-[Prototype("nationality")]
-public sealed partial class NationalityPrototype : IPrototype
+[Prototype("background")]
+public sealed partial class BackgroundPrototype : IPrototype
 {
     [IdDataField, ViewVariables]
     public string ID { get; } = string.Empty;
@@ -18,13 +18,12 @@ public sealed partial class NationalityPrototype : IPrototype
     [DataField]
     public string DescriptionKey { get; } = string.Empty;
 
-    [DataField("sortOrder")]
-    [ViewVariables]
-    public int SortOrder { get; private set; }
-
     [DataField]
     public List<ProtoId<JobPrototype>> BlockingJobs { get; } = new();
 
-    [DataField("passportPrototype")]
-    public string? PassportPrototype { get; private set; }
+    /// <summary>
+    /// Planets that allow this background. Empty = no restriction.
+    /// </summary>
+    [DataField]
+    public List<ProtoId<PlanetPrototype>> AllowedPlanets { get; } = new();
 }

@@ -1,0 +1,35 @@
+- type: planet
+  id: AlphaCentauriAb
+  nameKey: planet_name_alpha-centauri-ab
+  descriptionKey: planet_description_alpha-centauri-ab
+  primaryColour: "#4a6ca8"
+  secondaryColour: "#c7d4f0"
+  allowedCitizenships:
+    - CentralSphere
+
+- type: planet
+  id: BetaEden14
+  nameKey: planet_name_beta-eden-14
+  descriptionKey: planet_description_beta-eden-14
+  primaryColour: "#3ca46f"
+  secondaryColour: "#9fd9b8"
+  allowedCitizenships:
+    - CentralSphere
+
+- type: planet
+  id: DeltaArgo21
+  nameKey: planet_name_delta-argo-21
+  descriptionKey: planet_description_delta-argo-21
+  primaryColour: "#5c7c3a"
+  secondaryColour: "#c2d6a1"
+  allowedCitizenships:
+    - CentralSphere
+
+- type: planet
+  id: ZetaAurora28
+  nameKey: planet_name_zeta-aurora-28
+  descriptionKey: planet_description_zeta-aurora-28
+  primaryColour: "#6b6f8a"
+  secondaryColour: "#c1c7df"
+  allowedCitizenships:
+    - SecondSphere

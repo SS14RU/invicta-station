@@ -1,13 +1,13 @@
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._EE.Contractors.Prototypes;
+namespace Content.Shared._Invicta.Contractors.Prototypes;
 
 /// <summary>
-/// Prototype representing a character's employer.
+/// Prototype representing a character's planet.
 /// </summary>
-[Prototype("employer")]
-public sealed partial class EmployerPrototype : IPrototype
+[Prototype("planet")]
+public sealed partial class PlanetPrototype : IPrototype
 {
     [IdDataField, ViewVariables]
     public string ID { get; } = string.Empty;
@@ -25,8 +25,14 @@ public sealed partial class EmployerPrototype : IPrototype
     public Color SecondaryColour { get; } = Color.FromHex("#AABB32");
 
     [DataField, ViewVariables]
-    public HashSet<ProtoId<EmployerPrototype>> Rivals { get; } = new();
+    public HashSet<ProtoId<PlanetPrototype>> Rivals { get; } = new();
 
     [DataField]
     public List<ProtoId<JobPrototype>> BlockingJobs { get; } = new();
+
+    /// <summary>
+    /// Citizenships that can pick this planet. Empty = no restriction.
+    /// </summary>
+    [DataField]
+    public List<ProtoId<CitizenshipPrototype>> AllowedCitizenships { get; } = new();
 }

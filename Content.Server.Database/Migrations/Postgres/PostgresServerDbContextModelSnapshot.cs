@@ -855,10 +855,10 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("flavor_text");
 
-                    b.Property<string>("Employer")
+                    b.Property<string>("Planet")
                         .IsRequired()
                         .HasColumnType("text")
-                        .HasColumnName("employer");
+                        .HasColumnName("planet");
 
                     b.Property<string>("Gender")
                         .IsRequired()
@@ -875,19 +875,19 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("hair_name");
 
-                    b.Property<string>("Lifepath")
+                    b.Property<string>("Background")
                         .IsRequired()
                         .HasColumnType("text")
-                        .HasColumnName("lifepath");
+                        .HasColumnName("background");
 
                     b.Property<JsonDocument>("Markings")
                         .HasColumnType("jsonb")
                         .HasColumnName("markings");
 
-                    b.Property<string>("Nationality")
+                    b.Property<string>("Citizenship")
                         .IsRequired()
                         .HasColumnType("text")
-                        .HasColumnName("nationality");
+                        .HasColumnName("citizenship");
 
                     b.Property<int>("PreferenceId")
                         .HasColumnType("integer")

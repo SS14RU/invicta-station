@@ -38,9 +38,9 @@ humanoid-profile-editor-sex-unsexed-text = None
 humanoid-profile-editor-age-label = Age:
 humanoid-profile-editor-skin-color-label = Skin color:
 humanoid-profile-editor-species-label = Species:
-humanoid-profile-editor-nationality-label = Citizenship:
-humanoid-profile-editor-employer-label = Planet:
-humanoid-profile-editor-lifepath-label = Background:
+humanoid-profile-editor-citizenship-label = Citizenship:
+humanoid-profile-editor-planet-label = Planet:
+humanoid-profile-editor-background-label = Background:
 humanoid-profile-editor-select-background = Choose background
 humanoid-profile-editor-toggle-background-text-hide = Hide text
 humanoid-profile-editor-toggle-background-text-show = Show text
@@ -96,3 +96,4 @@ humanoid-profile-editor-trait-count-hint = Points available: [{$current}/{$max}]
 trait-category-disabilities = Disabilities
 trait-category-speech = Speech traits
 trait-category-quirks = Quirks
+

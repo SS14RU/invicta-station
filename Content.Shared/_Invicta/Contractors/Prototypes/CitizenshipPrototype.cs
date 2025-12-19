@@ -1,13 +1,13 @@
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._EE.Contractors.Prototypes;
+namespace Content.Shared._Invicta.Contractors.Prototypes;
 
 /// <summary>
-/// Prototype representing a character's lifepath/background.
+/// Prototype representing a character's citizenship.
 /// </summary>
-[Prototype("lifepath")]
-public sealed partial class LifepathPrototype : IPrototype
+[Prototype("citizenship")]
+public sealed partial class CitizenshipPrototype : IPrototype
 {
     [IdDataField, ViewVariables]
     public string ID { get; } = string.Empty;
@@ -18,6 +18,13 @@ public sealed partial class LifepathPrototype : IPrototype
     [DataField]
     public string DescriptionKey { get; } = string.Empty;
 
+    [DataField("sortOrder")]
+    [ViewVariables]
+    public int SortOrder { get; private set; }
+
     [DataField]
     public List<ProtoId<JobPrototype>> BlockingJobs { get; } = new();
+
+    [DataField("passportPrototype")]
+    public string? PassportPrototype { get; private set; }
 }
