@@ -713,6 +713,9 @@ public sealed partial class DepartmentRewardConsoleSystem : SharedDepartmentRewa
     {
         taskState = default;
 
+        if (TryComp<MetaDataComponent>(sourceUid, out var meta) && meta.EntityLifeStage >= EntityLifeStage.Terminating)
+            return false;
+
         var server = EnsureServerComponent(sourceUid, out var serverUid);
         EnsureServerDepartmentsRegistered(serverUid, server);
 

@@ -24,6 +24,9 @@ public sealed class DepartmentRewardPdaSystem : EntitySystem
         if (args.Handled)
             return;
 
+        if (TryComp<MetaDataComponent>(uid, out var meta) && meta.EntityLifeStage >= EntityLifeStage.Terminating)
+            return;
+
         if (!TryComp<PdaComponent>(uid, out var pda))
             return;
 
