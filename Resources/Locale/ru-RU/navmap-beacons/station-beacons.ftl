@@ -5,19 +5,19 @@ station-beacon-vault = Хранилище
 station-beacon-gateway = Врата
 station-beacon-captain = Капитан
 station-beacon-hop = Кабинет ГП
-station-beacon-security = Служба безопасности
+station-beacon-security = Департамент Шерифа
 station-beacon-brig = Бриг
 station-beacon-brig-med = Бригмед
-station-beacon-warden = Смотритель
-station-beacon-hos = Кабинет ГСБ
+station-beacon-warden = Бейлиф
+station-beacon-hos = Шериф
 station-beacon-armory = Оружейная
 station-beacon-perma-brig = Пермабриг
-station-beacon-detective = Детектив
+station-beacon-detective = Следователь
 station-beacon-courtroom = Зал суда
 # Corvax-Localization-Start
 station-beacon-law = Офис адвоката
 # Corvax-Localization-End
-station-beacon-security-checkpoint = КПП СБ
+station-beacon-security-checkpoint = КПП
 station-beacon-medical = Медицинский отдел
 station-beacon-medbay = Медотсек
 station-beacon-chemistry = Хим. лаборатория

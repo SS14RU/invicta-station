@@ -14,5 +14,5 @@ ent-ClothingBackpackDuffelSyndicateFilledCandy = комплект с конфе�
     .desc = Набитый до отказа конфетами комплект. Кто-то явно сладкоежка!
 ent-ClothingBackpackDuffelSyndicateFilledHE1SG8 = комплект HE1S-G8
     .desc = Этот комплект содержит винтовку HE1S-G8 и 19 патронов для настоящего веселья.
-ent-ClothingBackpackDuffelHosFilledUtility = комплект утилитарных предметов Начальника службы безопасности
-    .desc = Комплект с различными утилитарными предметами начальника службы безопасности.
+ent-ClothingBackpackDuffelHosFilledUtility = комплект утилитарных предметов Начальника Департамента Шерифа
+    .desc = Комплект с различными утилитарными предметами начальника Департамента Шерифа.

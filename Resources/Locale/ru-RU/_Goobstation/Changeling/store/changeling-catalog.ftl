@@ -47,7 +47,7 @@ evolutionmenu-combat-shield-desc =
 evolutionmenu-combat-shriek-dissonant-name = Диссонантный крик
 evolutionmenu-combat-shriek-dissonant-desc =
     Издаёт ЭМИ-крик, отключающий технику поблизости, включая гарнитуры.
-    Полезен для побега от боргов и службы безопасности.
+    Полезен для побега от боргов и Департамента Шерифа.
     ПРЕДУПРЕЖДЕНИЕ: Требует поглощения как минимум 1 органика.
     Стоимость: 30 химикатов.
 evolutionmenu-combat-shriek-resonant-name = Резонансный крик

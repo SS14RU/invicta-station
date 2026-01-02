@@ -176,7 +176,7 @@
 - type: entity
   parent: BankAccountNanotrasen
   id: IDCard-NT-Security
-  name: Платёжный счет "Службы безопасности"
+  name: Платёжный счет "Департамента Шерифа"
   suffix: Economy
   components:
   - type: Sprite

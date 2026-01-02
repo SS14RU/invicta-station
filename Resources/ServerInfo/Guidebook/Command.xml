@@ -16,7 +16,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   </Box>
   <Box>
     <GuideEntityEmbed Entity="ToyFigurineHeadOfPersonnel" Caption="ГП"/>
-    <GuideEntityEmbed Entity="ToyFigurineHeadOfSecurity" Caption="ГСБ"/>
+    <GuideEntityEmbed Entity="ToyFigurineHeadOfSecurity" Caption="Шериф"/>
     <GuideEntityEmbed Entity="ToyFigurineChiefMedicalOfficer" Caption="ГВ"/>
   </Box>
   <Box>

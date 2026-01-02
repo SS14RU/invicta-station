@@ -63,14 +63,14 @@ loadout-group-security-cadet-envirohelm = экошлем кадета
 loadout-group-security-cadet-envirosuit = экокостюм кадета
 loadout-group-security-cadet-envirogloves = экоперчатки кадета
 # Detective
-loadout-group-detective-envirohelm = экошлем детектива
-loadout-group-detective-envirosuit = экокостюм детектива
-loadout-group-detective-envirogloves = экоперчатки детектива
-loadout-group-detective-gloves = перчатки детектива
+loadout-group-detective-envirohelm = экошлем следовательа
+loadout-group-detective-envirosuit = экокостюм следовательа
+loadout-group-detective-envirogloves = экоперчатки следовательа
+loadout-group-detective-gloves = перчатки следовательа
 # Warden
-loadout-group-warden-envirohelm = экошлем смотрителя
-loadout-group-warden-envirosuit = экокостюм смотрителя
-loadout-group-warden-envirogloves = экоперчатки смотрителя
+loadout-group-warden-envirohelm = экошлем бейлифа
+loadout-group-warden-envirosuit = экокостюм бейлифа
+loadout-group-warden-envirogloves = экоперчатки бейлифа
 # Head of Personnel
 loadout-group-hop-envirohelm = экошлем главы персонала
 loadout-group-hop-envirosuit = экокостюм главы персонала

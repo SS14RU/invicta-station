@@ -1,6 +1,6 @@
 background-tag-command-track = Командование
 background-tag-corporations-track = Корпоративный надзор
-background-tag-security-track = Служба безопасности
+background-tag-security-track = Департамент Шерифа
 background-tag-engineering-track = Инженерный отдел
 background-tag-medical-track = Медицинский отдел
 background-tag-science-track = Научный отдел

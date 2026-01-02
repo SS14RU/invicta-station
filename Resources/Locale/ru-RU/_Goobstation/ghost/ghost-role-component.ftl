@@ -51,7 +51,7 @@ ghost-role-information-inspector-name = Инспектор Центрально�
 ghost-role-information-inspector-description = Проверяй имущество станции и экипаж. Вероятно, погибнешь в ужасной аварии, и на тебя вызовут отряд смерти.
 ghost-role-information-sentient-shark-name = Разумный Акулёнок
 ghost-role-information-trevor-name = Тревор
-ghost-role-information-trevor-description = Боевой конь службы безопасности.
+ghost-role-information-trevor-description = Боевой конь Департамента Шерифа.
 
 # Half Life
 
@@ -81,7 +81,7 @@ ghost-role-information-conquest-description = Эта станция получи
 ghost-role-information-conquest-rules = Подготовь станцию к прибытию Империи Вилтрумов.
 # Justice Persona Role
 justice-role-name = Человек-правосудия
-justice-role-description = Помогай ГСБ с арестами, выкрикивая фразы пока тот совершает правосудиеe.
+justice-role-description = Помогай Шерифу с арестами, выкрикивая фразы пока тот совершает правосудиеe.
 
 # Token Roles
 

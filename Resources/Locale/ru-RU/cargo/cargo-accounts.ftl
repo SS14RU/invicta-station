@@ -7,6 +7,6 @@ cargo-account-medical-code = МЕД
 cargo-account-science-name = Фонд межзвёздных разработок
 cargo-account-science-code = НИО
 cargo-account-security-name = Резервы обороны станции
-cargo-account-security-code = СБ
+cargo-account-security-code = ДШ
 cargo-account-service-name = Совместные вклады сервиса
 cargo-account-service-code = СРВ

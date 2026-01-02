@@ -11,7 +11,7 @@ ntr-document-service-starting-text1 = [color=#b8972d]███[/color][color=#1d
 ntr-document-security-starting-text1 = [color=#b8972d]███[/color][color=#1d7a1d]░███░░░░██░░░░[/color][color=#b8972d]                          ★ ★ ★[/color][color=#1d7a1d]
     ░██░████░░░██░░░░           [head=3]Бланк документа[/head]
     ░░█░██░██░░██░█░░                   [head=3]NanoTrasen[/head]
-    ░░░░██░░██░██░██░                        [bold]ЦК-СБ[/bold]
+    ░░░░██░░██░██░██░                        [bold]ЦК-ДШ[/bold]
     ░░░░██░░░████░[/color][color=#b8972d]███[/color][color=#b8972d]                          ★ ★ ★[/color]
     ==================================================[bold]
     Время от начала смены: { $date }

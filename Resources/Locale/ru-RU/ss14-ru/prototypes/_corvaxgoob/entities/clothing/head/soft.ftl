@@ -1,4 +1,4 @@
-ent-ClothingHeadHatWardenHelper = кепка смотрителя
+ent-ClothingHeadHatWardenHelper = кепка бейлифа
     .desc = { ent-ClothingHeadHeadHatBaseFlippable.desc }
-ent-ClothingHeadHatWardenHelperFlipped = кепка смотрителя
+ent-ClothingHeadHatWardenHelperFlipped = кепка бейлифа
     .desc = { ent-ClothingHeadHeadHatBaseFlipped.desc }

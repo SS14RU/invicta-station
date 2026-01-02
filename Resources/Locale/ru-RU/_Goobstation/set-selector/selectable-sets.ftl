@@ -166,7 +166,7 @@ selectable-set-paramedic-modsuit-name = скафандр MOD «Санитар»
 selectable-set-paramedic-modsuit-desc =
     Модульный скафандр с усиленной защитой,
     чтобы выдержать хотя бы несколько выстрелов.
-selectable-set-security-voidsuit-name = пустотный скафандр службы безопасности
+selectable-set-security-voidsuit-name = пустотный скафандр Департамента Шерифа
 selectable-set-security-voidsuit-desc =
     Специальный костюм, защищающий от опасной среды с низким давлением. 
     Имеет дополнительный слой брони.
@@ -175,7 +175,7 @@ selectable-set-security-modsuit-desc =
     Модульный скафандр с керамическими вставками,
     обеспечивающий большую защиту по сравнению с боевым костюмом,
     но меньшей мобильностью.
-selectable-set-headofsecurity-voidsuit-name = скафандр главы службы безопасности
+selectable-set-headofsecurity-voidsuit-name = скафандр главы Департамента Шерифа
 selectable-set-headofsecurity-voidsuit-desc =
     Легкий боевой костюм с вырезами в неважных местах,
     слегка увеличивающий защиту жизненно важных органов

@@ -1,8 +1,8 @@
 ent-UndeterminedVoidsuitParamedic = селектор скафандра парамедика
     .desc = Небольшой пульт, использующий блюспейс технологии для вызова скафандра или тяжёлого костюма на ваш выбор.
-ent-UndeterminedVoidsuitSecurity = селектор скафандра службы безопасности
+ent-UndeterminedVoidsuitSecurity = селектор скафандра Департамента Шерифа
     .desc = { ent-UndeterminedVoidsuitParamedic.desc }
-ent-UndeterminedVoidsuitHeadOfSecurity = селектор скафандра главы службы безопасности
+ent-UndeterminedVoidsuitHeadOfSecurity = селектор скафандра главы Департамента Шерифа
     .desc = { ent-UndeterminedVoidsuitParamedic.desc }
 ent-UndeterminedVoidsuitEngineer = селектор скафандра инженера
     .desc = { ent-UndeterminedVoidsuitParamedic.desc }

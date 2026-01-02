@@ -83,7 +83,7 @@ guide-entry-sop-roboticist = Робототехник
 guide-entry-sop-scientist = Ученый
 # - Охрана
 guide-entry-sop-brigmedic = Бригмедик
-guide-entry-sop-detective = Детектив
+guide-entry-sop-detective = Следователь
 guide-entry-sop-officercadet = Офицер/Кадет
 guide-entry-sop-warden = Тюремщик
 # - Служба
