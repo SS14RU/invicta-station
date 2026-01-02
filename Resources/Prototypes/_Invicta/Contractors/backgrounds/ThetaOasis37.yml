@@ -1,32 +1,35 @@
 - type: background
   id: CorporateMiner
-  nameKey: background_name_corporate-miner
-  descriptionKey: background_description_corporate-miner
+  name: background_name_corporate-miner
+  description: background_description_corporate-miner
   backgroundTexture: /Textures/Interface/Backgrounds/corporate_miner.png
   allowedPlanets:
     - ThetaOasis37
+  backgroundTags:
+    - EngineeringTrack
 
 - type: background
   id: DownsizedMiner
-  nameKey: background_name_downsized-miner
-  descriptionKey: background_description_downsized-miner
+  name: background_name_downsized-miner
+  description: background_description_downsized-miner
   backgroundTexture: /Textures/Interface/Backgrounds/downsized_miner.png
   allowedPlanets:
     - ThetaOasis37
 
 - type: background
   id: CargoShipPilot
-  nameKey: background_name_cargo-ship-pilot
-  descriptionKey: background_description_cargo-ship-pilot
+  name: background_name_cargo-ship-pilot
+  description: background_description_cargo-ship-pilot
   backgroundTexture: /Textures/Interface/Backgrounds/cargo_ship_pilot.png
   allowedPlanets:
     - ThetaOasis37
 
 - type: background
   id: Foreman
-  nameKey: background_name_foreman
-  descriptionKey: background_description_foreman
+  name: background_name_foreman
+  description: background_description_foreman
   backgroundTexture: /Textures/Interface/Backgrounds/foreman.png
   allowedPlanets:
     - ThetaOasis37
-
+  backgroundTags:
+    - CommandTrack

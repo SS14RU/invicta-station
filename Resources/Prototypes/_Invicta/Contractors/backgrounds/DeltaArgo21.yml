@@ -1,40 +1,47 @@
 - type: background
   id: RingDockLoader
-  nameKey: background_name_ring-dock-loader
-  descriptionKey: background_description_ring-dock-loader
+  name: background_name_ring-dock-loader
+  description: background_description_ring-dock-loader
   backgroundTexture: /Textures/Interface/Backgrounds/ring_dock_loader.png
   allowedPlanets:
     - DeltaArgo21
 
 - type: background
   id: HydroponicsWorker
-  nameKey: background_name_hydroponics-worker
-  descriptionKey: background_description_hydroponics-worker
+  name: background_name_hydroponics-worker
+  description: background_description_hydroponics-worker
   backgroundTexture: /Textures/Interface/Backgrounds/hydroponics_worker.png
   allowedPlanets:
     - DeltaArgo21
 
 - type: background
   id: SpireClimateEngineer
-  nameKey: background_name_spire-climate-engineer
-  descriptionKey: background_description_spire-climate-engineer
+  name: background_name_spire-climate-engineer
+  description: background_description_spire-climate-engineer
   backgroundTexture: /Textures/Interface/Backgrounds/spire_climate_engineer.png
   allowedPlanets:
     - DeltaArgo21
+  backgroundTags:
+    - EngineeringTrack
 
 - type: background
   id: ProductionManager
-  nameKey: background_name_production-manager
-  descriptionKey: background_description_production-manager
+  name: background_name_production-manager
+  description: background_description_production-manager
   backgroundTexture: /Textures/Interface/Backgrounds/production_manager.png
   allowedPlanets:
     - DeltaArgo21
+  backgroundTags:
+    - CommandTrack
 
 - type: background
   id: NTInspector
-  nameKey: background_name_nt-inspector
-  descriptionKey: background_description_nt-inspector
+  name: background_name_nt-inspector
+  description: background_description_nt-inspector
   backgroundTexture: /Textures/Interface/Backgrounds/nt_inspector.png
   allowedPlanets:
     - DeltaArgo21
+  backgroundTags:
+    - CorporationsTrack
+    - RestrictedTrack
 

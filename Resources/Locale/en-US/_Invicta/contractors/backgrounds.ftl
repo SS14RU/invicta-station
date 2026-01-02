@@ -3,6 +3,9 @@ contractor-background-type-citizenship = Citizenship
 contractor-background-type-planet = Planet
 contractor-background-type-background = Background
 
+contractor-background-required-tags = with tag {$tags}
+contractor-background-required-tags-none = no available tags
+
 background_name_concord-service = Concord Gardens Service
 background_description_concord-service = Your routine was scripted: wake on signal, identical breakfast, practice smiles and bows in the mirror. A windowless berth, a locker with issued uniforms, an hour in VR before sleep, stimulants to keep the smile. Each cycle brought a medical checkup: scanners, tests, sleep and dosage control to keep the body working and the strain unseen. Staff lived in blocks: shared laundry, shared showers, brief chats in the supply room before the signal returned.
     By day you escorted the rich along the paths, curating a perfect picture, matching blankets to suits, carrying trays without a shake, reading who wanted attention and who wanted you gone. At night the garden closed and cleaning began: champagne traces on marble, smells in air handlers, swapping scent cartridges. If an accident happened, you sealed the area, removed the body, hid the signs. Morning meant the same smile and no word about the night.

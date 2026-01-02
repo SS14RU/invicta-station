@@ -1,32 +1,39 @@
 - type: background
   id: GreenCliffScientist
-  nameKey: background_name_green-cliff-scientist
-  descriptionKey: background_description_green-cliff-scientist
+  name: background_name_green-cliff-scientist
+  description: background_description_green-cliff-scientist
   backgroundTexture: /Textures/Interface/Backgrounds/green_cliff_scientist.png
   allowedPlanets:
     - EpsilonGaia58
+  backgroundTags:
+    - ScienceTrack
 
 - type: background
   id: RuralColonyResident
-  nameKey: background_name_rural-colony-resident
-  descriptionKey: background_description_rural-colony-resident
+  name: background_name_rural-colony-resident
+  description: background_description_rural-colony-resident
   backgroundTexture: /Textures/Interface/Backgrounds/rural_colony_resident.png
   allowedPlanets:
     - EpsilonGaia58
 
 - type: background
   id: SpaceportAdministrator
-  nameKey: background_name_spaceport-administrator
-  descriptionKey: background_description_spaceport-administrator
+  name: background_name_spaceport-administrator
+  description: background_description_spaceport-administrator
   backgroundTexture: /Textures/Interface/Backgrounds/spaceport_administrator.png
   allowedPlanets:
     - EpsilonGaia58
+  backgroundTags:
+    - CommandTrack
 
 - type: background
   id: CorporateCoordinatorNT
-  nameKey: background_name_corporate-coordinator-nt
-  descriptionKey: background_description_corporate-coordinator-nt
+  name: background_name_corporate-coordinator-nt
+  description: background_description_corporate-coordinator-nt
   backgroundTexture: /Textures/Interface/Backgrounds/corporate_coordinator_nt.png
   allowedPlanets:
     - EpsilonGaia58
+  backgroundTags:
+    - CorporationsTrack
+    - RestrictedTrack
 

@@ -1,40 +1,62 @@
 - type: background
   id: SpaceMarine
-  nameKey: background_name_space-marine
-  descriptionKey: background_description_space-marine
+  name: background_name_space-marine
+  description: background_description_space-marine
   backgroundTexture: /Textures/Interface/Backgrounds/space_marine.png
   allowedPlanets:
     - XiBorder48
+  backgroundTags:
+    - SecurityTrack
+    - RestrictedTrack
+    - CaptainRestricted
 
 - type: background
   id: Researcher
-  nameKey: background_name_researcher
-  descriptionKey: background_description_researcher
+  name: background_name_researcher
+  description: background_description_researcher
   backgroundTexture: /Textures/Interface/Backgrounds/researcher.png
   allowedPlanets:
     - XiBorder48
+  backgroundTags:
+    - ScienceTrack
+    - MedicalTrack
+    - RestrictedTrack
+    - CaptainRestricted
 
 - type: background
   id: CentralControlOperator
-  nameKey: background_name_central-control-operator
-  descriptionKey: background_description_central-control-operator
+  name: background_name_central-control-operator
+  description: background_description_central-control-operator
   backgroundTexture: /Textures/Interface/Backgrounds/central_control_operator.png
   allowedPlanets:
     - XiBorder48
+  backgroundTags:
+    - CommandTrack
+    - RestrictedTrack
+    - CaptainRestricted
 
 - type: background
   id: LinkStairsGuard
-  nameKey: background_name_link-stairs-guard
-  descriptionKey: background_description_link-stairs-guard
+  name: background_name_link-stairs-guard
+  description: background_description_link-stairs-guard
   backgroundTexture: /Textures/Interface/Backgrounds/link_stairs_guard.png
   allowedPlanets:
     - XiBorder48
+  backgroundTags:
+    - SecurityTrack
+    - RestrictedTrack
+    - CaptainRestricted
 
 - type: background
   id: FieldCorpsman
-  nameKey: background_name_field-corpsman
-  descriptionKey: background_description_field-corpsman
+  name: background_name_field-corpsman
+  description: background_description_field-corpsman
   backgroundTexture: /Textures/Interface/Backgrounds/field_corpsman.png
   allowedPlanets:
     - XiBorder48
+  backgroundTags:
+    - MedicalTrack
+    - SecurityTrack
+    - RestrictedTrack
+    - CaptainRestricted
 

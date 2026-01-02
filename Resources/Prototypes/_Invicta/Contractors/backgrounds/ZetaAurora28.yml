@@ -1,39 +1,48 @@
 - type: background
   id: PartsFactoryEngineer
-  nameKey: background_name_parts-factory-engineer
-  descriptionKey: background_description_parts-factory-engineer
+  name: background_name_parts-factory-engineer
+  description: background_description_parts-factory-engineer
   backgroundTexture: /Textures/Interface/Backgrounds/parts_factory_engineer.png
   allowedPlanets:
     - ZetaAurora28
+  backgroundTags:
+    - EngineeringTrack
 
 - type: background
   id: PoliceOfficer
-  nameKey: background_name_police-officer
-  descriptionKey: background_description_police-officer
+  name: background_name_police-officer
+  description: background_description_police-officer
   backgroundTexture: /Textures/Interface/Backgrounds/police_officer.png
   allowedPlanets:
     - ZetaAurora28
+  backgroundTags:
+    - SecurityTrack
 
 - type: background
   id: ClinicDoctor
-  nameKey: background_name_clinic-doctor
-  descriptionKey: background_description_clinic-doctor
+  name: background_name_clinic-doctor
+  description: background_description_clinic-doctor
   backgroundTexture: /Textures/Interface/Backgrounds/clinic_doctor.png
   allowedPlanets:
     - ZetaAurora28
+  backgroundTags:
+    - MedicalTrack
+    - ScienceTrack
 
 - type: background
   id: DomeDispatcher
-  nameKey: background_name_dome-dispatcher
-  descriptionKey: background_description_dome-dispatcher
+  name: background_name_dome-dispatcher
+  description: background_description_dome-dispatcher
   backgroundTexture: /Textures/Interface/Backgrounds/dome_dispatcher.png
   allowedPlanets:
     - ZetaAurora28
+  backgroundTags:
+    - EngineeringTrack
 
 - type: background
   id: UtilityWorker
-  nameKey: background_name_utility-worker
-  descriptionKey: background_description_utility-worker
+  name: background_name_utility-worker
+  description: background_description_utility-worker
   backgroundTexture: /Textures/Interface/Backgrounds/utility_worker.png
   allowedPlanets:
     - ZetaAurora28

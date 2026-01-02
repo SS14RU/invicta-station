@@ -1,18 +1,18 @@
 - type: citizenship
   id: CentralSphere
-  nameKey: citizenship_name_central-sphere
-  descriptionKey: citizenship_description_central-sphere
+  name: citizenship_name_central-sphere
+  description: citizenship_description_central-sphere
   sortOrder: 0
 
 - type: citizenship
   id: SecondSphere
-  nameKey: citizenship_name_second-sphere
-  descriptionKey: citizenship_description_second-sphere
+  name: citizenship_name_second-sphere
+  description: citizenship_description_second-sphere
   sortOrder: 10
 
 
 - type: citizenship
   id: ThirdSphere
-  nameKey: citizenship_name_third-sphere
-  descriptionKey: citizenship_description_third-sphere
+  name: citizenship_name_third-sphere
+  description: citizenship_description_third-sphere
   sortOrder: 20

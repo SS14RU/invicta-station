@@ -1,32 +1,38 @@
 - type: background
   id: ConcordService
-  nameKey: background_name_concord-service
-  descriptionKey: background_description_concord-service
+  name: background_name_concord-service
+  description: background_description_concord-service
   backgroundTexture: /Textures/Interface/Backgrounds/concord_service.png
   allowedPlanets:
     - BetaEden14
 
 - type: background
   id: UndergroundMedtech
-  nameKey: background_name_underground-medtech
-  descriptionKey: background_description_underground-medtech
+  name: background_name_underground-medtech
+  description: background_description_underground-medtech
   backgroundTexture: /Textures/Interface/Backgrounds/underground_medtech.png
   allowedPlanets:
     - BetaEden14
+  backgroundTags:
+    - MedicalTrack
 
 - type: background
   id: OddJob
-  nameKey: background_name_odd-job
-  descriptionKey: background_description_odd-job
+  name: background_name_odd-job
+  description: background_description_odd-job
   backgroundTexture: /Textures/Interface/Backgrounds/odd_job.png
   allowedPlanets:
     - BetaEden14
+  backgroundTags:
+    - EngineeringTrack
 
 - type: background
   id: EliteDockGuard
-  nameKey: background_name_elite-dock-guard
-  descriptionKey: background_description_elite-dock-guard
+  name: background_name_elite-dock-guard
+  description: background_description_elite-dock-guard
   backgroundTexture: /Textures/Interface/Backgrounds/elite_dock_guard.png
   allowedPlanets:
     - BetaEden14
+  backgroundTags:
+    - SecurityTrack
 

@@ -1,0 +1,68 @@
+- type: backgroundTag
+  id: CommandTrack
+  name: background-tag-command-track
+  allowedJobs:
+    - Captain
+    - HeadOfPersonnel
+    - HeadOfSecurity
+    - ChiefEngineer
+    - ChiefMedicalOfficer
+    - ResearchDirector
+
+- type: backgroundTag
+  id: CorporationsTrack
+  name: background-tag-corporations-track
+  allowedJobs:
+    - CnsRepresentative
+    - CnsCommander
+    - CnsOfficer
+
+- type: backgroundTag
+  id: SecurityTrack
+  name: background-tag-security-track
+  allowedJobs:
+    - HeadOfSecurity
+    - Detective
+    - Warden
+    - WardenHelper
+
+- type: backgroundTag
+  id: EngineeringTrack
+  name: background-tag-engineering-track
+  allowedJobs:
+    - ChiefEngineer
+    - AtmosphericTechnician
+
+- type: backgroundTag
+  id: MedicalTrack
+  name: background-tag-medical-track
+  allowedJobs:
+    - ChiefMedicalOfficer
+    - Chemist
+    - Surgeon
+
+- type: backgroundTag
+  id: ScienceTrack
+  name: background-tag-science-track
+  allowedJobs:
+    - ResearchDirector
+    - Scientist
+
+- type: backgroundTag
+  id: RestrictedTrack
+  name: background-tag-restricted-track
+  blockAllJobs: true
+
+- type: backgroundTag
+  id: HeadOfPersonnelRestricted
+  name: background-tag-service-restricted
+  restrictedOnly: true
+  allowedJobs:
+    - HeadOfPersonnel
+
+- type: backgroundTag
+  id: CaptainRestricted
+  name: background-tag-service-restricted
+  restrictedOnly: true
+  allowedJobs:
+    - Captain

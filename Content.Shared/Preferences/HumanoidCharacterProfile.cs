@@ -615,7 +615,7 @@ namespace Content.Shared.Preferences
                 prototypeManager,
                 "contractor-background-type-citizenship",
                 static proto => proto.BlockingJobs,
-                static proto => proto.NameKey,
+                static proto => proto.Name,
                 reasons);
 
             AppendBackgroundRequiredMessage<PlanetPrototype>(
@@ -624,16 +624,14 @@ namespace Content.Shared.Preferences
                 prototypeManager,
                 "contractor-background-type-planet",
                 static proto => proto.BlockingJobs,
-                static proto => proto.NameKey,
+                static proto => proto.Name,
                 reasons);
 
-            AppendBackgroundRequiredMessage<BackgroundPrototype>(
+            AppendBackgroundRequiredMessageBackground(
                 Background,
                 jobId,
                 prototypeManager,
                 "contractor-background-type-background",
-                static proto => proto.BlockingJobs,
-                static proto => proto.NameKey,
                 reasons);
 
             if (reasons.Count == 0)
@@ -665,11 +663,10 @@ namespace Content.Shared.Preferences
                 blocked,
                 static proto => proto.BlockingJobs);
 
-            CollectBlockedJobs<BackgroundPrototype>(
+            CollectBlockedJobsForBackground(
                 Background,
                 prototypeManager,
-                blocked,
-                static proto => proto.BlockingJobs);
+                blocked);
 
             return blocked;
         }
@@ -713,6 +710,63 @@ namespace Content.Shared.Preferences
             output.Add($"{typeName}: {backgrounds}");
         }
 
+        private static void AppendBackgroundRequiredMessageBackground(
+            string? prototypeId,
+            ProtoId<JobPrototype> jobId,
+            IPrototypeManager prototypeManager,
+            string typeLoc,
+            ICollection<string> output)
+        {
+            if (string.IsNullOrWhiteSpace(prototypeId))
+                return;
+
+            if (!prototypeManager.TryIndex(prototypeId, out BackgroundPrototype? current))
+                return;
+
+            var allowlisted = JobIsAllowlisted(jobId, prototypeManager);
+            var hasBlockAll = BackgroundHasBlockAllTag(current, prototypeManager);
+            var requiresTag = allowlisted || hasBlockAll;
+            var blockedByExplicit = BackgroundBlocksJob(current, jobId, prototypeManager);
+            var blockedByTagRequirement = requiresTag && !BackgroundAllowsJob(current, jobId, prototypeManager);
+            var blocked = blockedByExplicit || blockedByTagRequirement;
+
+            if (!blocked)
+                return;
+
+            var typeName = Loc.GetString(typeLoc);
+            if (blockedByTagRequirement && !blockedByExplicit)
+            {
+                var tags = GetAllowlistedBackgroundTags(jobId, prototypeManager, includeRestrictedOnly: hasBlockAll);
+                string required;
+                if (tags.Count == 0)
+                {
+                    required = Loc.GetString("contractor-background-required-tags-none");
+                }
+                else
+                {
+                    var tagList = string.Join(", ", tags);
+                    required = Loc.GetString("contractor-background-required-tags", ("tags", tagList));
+                }
+
+                output.Add($"{typeName}: {required}");
+                return;
+            }
+
+            var allowed = prototypeManager.EnumeratePrototypes<BackgroundPrototype>()
+                .Where(p => !BackgroundBlocksJob(p, jobId, prototypeManager))
+                .Where(p => !allowlisted || BackgroundAllowsJob(p, jobId, prototypeManager))
+                .Where(p => !BackgroundHasBlockAllTag(p, prototypeManager) || BackgroundAllowsJob(p, jobId, prototypeManager))
+                .Select(static p => p.Name)
+                .Select(Loc.GetString)
+                .ToList();
+
+            if (allowed.Count == 0)
+                return;
+
+            var backgrounds = string.Join(", ", allowed);
+            output.Add($"{typeName}: {backgrounds}");
+        }
+
         private static void CollectBlockedJobs<TPrototype>(
             string? prototypeId,
             IPrototypeManager prototypeManager,
@@ -727,6 +781,152 @@ namespace Content.Shared.Preferences
                 return;
 
             blocked.UnionWith(blockingSelector(prototype));
+        }
+
+        private static void CollectBlockedJobsForBackground(
+            string? prototypeId,
+            IPrototypeManager prototypeManager,
+            ISet<ProtoId<JobPrototype>> blocked)
+        {
+            if (string.IsNullOrWhiteSpace(prototypeId))
+                return;
+
+            if (!prototypeManager.TryIndex(prototypeId, out BackgroundPrototype? background))
+                return;
+
+            blocked.UnionWith(background.BlockingJobs);
+            foreach (var tagId in background.BackgroundTags)
+            {
+                if (!prototypeManager.TryIndex(tagId, out BackgroundTagPrototype? tag))
+                    continue;
+
+                blocked.UnionWith(tag.BlockingJobs);
+            }
+
+            var allowlistedJobs = GetAllowlistedBackgroundJobs(prototypeManager);
+            foreach (var jobId in allowlistedJobs)
+            {
+                if (!BackgroundAllowsJob(background, jobId, prototypeManager))
+                    blocked.Add(jobId);
+            }
+
+            if (BackgroundHasBlockAllTag(background, prototypeManager))
+            {
+                foreach (var job in prototypeManager.EnumeratePrototypes<JobPrototype>())
+                {
+                    if (!BackgroundAllowsJob(background, job.ID, prototypeManager))
+                        blocked.Add(job.ID);
+                }
+            }
+        }
+
+        private static bool BackgroundBlocksJob(
+            BackgroundPrototype background,
+            ProtoId<JobPrototype> jobId,
+            IPrototypeManager prototypeManager)
+        {
+            if (background.BlockingJobs.Contains(jobId))
+                return true;
+
+            foreach (var tagId in background.BackgroundTags)
+            {
+                if (!prototypeManager.TryIndex(tagId, out BackgroundTagPrototype? tag))
+                    continue;
+
+                if (tag.BlockingJobs.Contains(jobId))
+                    return true;
+            }
+
+            return false;
+        }
+
+        private static bool BackgroundAllowsJob(
+            BackgroundPrototype background,
+            ProtoId<JobPrototype> jobId,
+            IPrototypeManager prototypeManager)
+        {
+            var hasBlockAll = BackgroundHasBlockAllTag(background, prototypeManager);
+            foreach (var tagId in background.BackgroundTags)
+            {
+                if (!prototypeManager.TryIndex(tagId, out BackgroundTagPrototype? tag))
+                    continue;
+
+                if (tag.AllowedJobs.Contains(jobId))
+                {
+                    if (!tag.RestrictedOnly || hasBlockAll)
+                        return true;
+                }
+            }
+
+            return false;
+        }
+
+        private static bool BackgroundHasBlockAllTag(
+            BackgroundPrototype background,
+            IPrototypeManager prototypeManager)
+        {
+            foreach (var tagId in background.BackgroundTags)
+            {
+                if (!prototypeManager.TryIndex(tagId, out BackgroundTagPrototype? tag))
+                    continue;
+
+                if (tag.BlockAllJobs)
+                    return true;
+            }
+
+            return false;
+        }
+
+        private static bool JobIsAllowlisted(
+            ProtoId<JobPrototype> jobId,
+            IPrototypeManager prototypeManager)
+        {
+            foreach (var tag in prototypeManager.EnumeratePrototypes<BackgroundTagPrototype>())
+            {
+                if (tag.RestrictedOnly)
+                    continue;
+
+                if (tag.AllowedJobs.Contains(jobId))
+                    return true;
+            }
+
+            return false;
+        }
+
+        private static HashSet<ProtoId<JobPrototype>> GetAllowlistedBackgroundJobs(
+            IPrototypeManager prototypeManager)
+        {
+            var allowlisted = new HashSet<ProtoId<JobPrototype>>();
+            foreach (var tag in prototypeManager.EnumeratePrototypes<BackgroundTagPrototype>())
+            {
+                if (tag.RestrictedOnly)
+                    continue;
+
+                allowlisted.UnionWith(tag.AllowedJobs);
+            }
+
+            return allowlisted;
+        }
+
+        private static List<string> GetAllowlistedBackgroundTags(
+            ProtoId<JobPrototype> jobId,
+            IPrototypeManager prototypeManager,
+            bool includeRestrictedOnly)
+        {
+            var tags = new HashSet<string>();
+            foreach (var tag in prototypeManager.EnumeratePrototypes<BackgroundTagPrototype>())
+            {
+                if (!includeRestrictedOnly && tag.RestrictedOnly)
+                    continue;
+
+                if (tag.AllowedJobs.Contains(jobId) && !tag.BlockingJobs.Contains(jobId))
+                {
+                    var name = string.IsNullOrWhiteSpace(tag.Name) ? tag.ID : Loc.GetString(tag.Name);
+                    tags.Add(name);
+                }
+            }
+
+            return tags.OrderBy(static name => name).ToList();
         }
 
         public void EnsureValid(ICommonSession session, IDependencyCollection collection, string[] sponsorPrototypes)

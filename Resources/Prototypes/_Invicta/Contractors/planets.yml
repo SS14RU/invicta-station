@@ -1,7 +1,7 @@
 - type: planet
   id: AlphaCentauriAb
-  nameKey: planet_name_alpha-centauri-ab
-  descriptionKey: planet_description_alpha-centauri-ab
+  name: planet_name_alpha-centauri-ab
+  description: planet_description_alpha-centauri-ab
   backgroundTexture: /Textures/Interface/Backgrounds/alpha_centauri_ab.png
   primaryColour: "#4a6ca8"
   secondaryColour: "#c7d4f0"
@@ -10,8 +10,8 @@
 
 - type: planet
   id: BetaEden14
-  nameKey: planet_name_beta-eden-14
-  descriptionKey: planet_description_beta-eden-14
+  name: planet_name_beta-eden-14
+  description: planet_description_beta-eden-14
   backgroundTexture: /Textures/Interface/Backgrounds/beta_eden_14.png
   primaryColour: "#3ca46f"
   secondaryColour: "#9fd9b8"
@@ -20,8 +20,8 @@
 
 - type: planet
   id: DeltaArgo21
-  nameKey: planet_name_delta-argo-21
-  descriptionKey: planet_description_delta-argo-21
+  name: planet_name_delta-argo-21
+  description: planet_description_delta-argo-21
   backgroundTexture: /Textures/Interface/Backgrounds/delta_argo_21.png
   primaryColour: "#5c7c3a"
   secondaryColour: "#c2d6a1"
@@ -30,8 +30,8 @@
 
 - type: planet
   id: ZetaAurora28
-  nameKey: planet_name_zeta-aurora-28
-  descriptionKey: planet_description_zeta-aurora-28
+  name: planet_name_zeta-aurora-28
+  description: planet_description_zeta-aurora-28
   backgroundTexture: /Textures/Interface/Backgrounds/zeta_aurora_28.png
   primaryColour: "#6b6f8a"
   secondaryColour: "#c1c7df"
@@ -41,40 +41,40 @@
 
 - type: planet
   id: ThetaOasis37
-  nameKey: planet_name_theta-oasis-37
-  descriptionKey: planet_description_theta-oasis-37
+  name: planet_name_theta-oasis-37
+  description: planet_description_theta-oasis-37
   backgroundTexture: /Textures/Interface/Backgrounds/theta_oasis_37.png
   allowedCitizenships:
     - SecondSphere
 
 - type: planet
   id: XiBorder48
-  nameKey: planet_name_xi-border-48
-  descriptionKey: planet_description_xi-border-48
+  name: planet_name_xi-border-48
+  description: planet_description_xi-border-48
   backgroundTexture: /Textures/Interface/Backgrounds/xi_border_48.png
   allowedCitizenships:
     - SecondSphere
 
 - type: planet
   id: EpsilonGaia58
-  nameKey: planet_name_epsilon-gaia-58
-  descriptionKey: planet_description_epsilon-gaia-58
+  name: planet_name_epsilon-gaia-58
+  description: planet_description_epsilon-gaia-58
   backgroundTexture: /Textures/Interface/Backgrounds/epsilon_gaia_58.png
   allowedCitizenships:
     - ThirdSphere
 
 - type: planet
   id: KappaArcadia67
-  nameKey: planet_name_kappa-arcadia-67
-  descriptionKey: planet_description_kappa-arcadia-67
+  name: planet_name_kappa-arcadia-67
+  description: planet_description_kappa-arcadia-67
   backgroundTexture: /Textures/Interface/Backgrounds/kappa_arcadia_67.png
   allowedCitizenships:
     - ThirdSphere
 
 - type: planet
   id: ThetaOrpheus71
-  nameKey: planet_name_theta-orpheus-71
-  descriptionKey: planet_description_theta-orpheus-71
+  name: planet_name_theta-orpheus-71
+  description: planet_description_theta-orpheus-71
   backgroundTexture: /Textures/Interface/Backgrounds/theta_orpheus_71.png
   allowedCitizenships:
     - ThirdSphere

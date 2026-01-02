@@ -980,7 +980,7 @@ namespace Content.Client.Lobby.UI
         {
             _backgrounds.Clear();
 
-            _backgrounds.AddRange(_prototypeManager.EnumeratePrototypes<BackgroundPrototype>().OrderBy(l => Loc.GetString(l.NameKey)));
+            _backgrounds.AddRange(_prototypeManager.EnumeratePrototypes<BackgroundPrototype>().OrderBy(l => Loc.GetString(l.Name)));
             if (Profile != null && !_backgrounds.Any(l => l.ID == Profile.Background) && _backgrounds.Count > 0)
             {
                 SetBackground(_backgrounds[0].ID);
@@ -991,7 +991,7 @@ namespace Content.Client.Lobby.UI
         {
             _planets.Clear();
 
-            _planets.AddRange(_prototypeManager.EnumeratePrototypes<PlanetPrototype>().OrderBy(e => Loc.GetString(e.NameKey)));
+            _planets.AddRange(_prototypeManager.EnumeratePrototypes<PlanetPrototype>().OrderBy(e => Loc.GetString(e.Name)));
             if (Profile != null && !_planets.Any(e => e.ID == Profile.Planet) && _planets.Count > 0)
             {
                 SetPlanet(_planets[0].ID);
@@ -2183,7 +2183,7 @@ namespace Content.Client.Lobby.UI
                     {
                         var option = new Button
                         {
-                            Text = WrapButtonText(Loc.GetString(proto.NameKey), BackgroundButtonWrap),
+                            Text = WrapButtonText(Loc.GetString(proto.Name), BackgroundButtonWrap),
                             ToggleMode = true,
                             Pressed = Profile?.Citizenship == proto.ID,
                             HorizontalExpand = true,
@@ -2204,7 +2204,7 @@ namespace Content.Client.Lobby.UI
                     {
                         var option = new Button
                         {
-                            Text = WrapButtonText(Loc.GetString(proto.NameKey), BackgroundButtonWrap),
+                            Text = WrapButtonText(Loc.GetString(proto.Name), BackgroundButtonWrap),
                             ToggleMode = true,
                             Pressed = Profile?.Planet == proto.ID,
                             HorizontalExpand = true,
@@ -2225,7 +2225,7 @@ namespace Content.Client.Lobby.UI
                     {
                         var option = new Button
                         {
-                            Text = WrapButtonText(Loc.GetString(proto.NameKey), BackgroundButtonWrap),
+                            Text = WrapButtonText(Loc.GetString(proto.Name), BackgroundButtonWrap),
                             ToggleMode = true,
                             Pressed = Profile?.Background == proto.ID,
                             HorizontalExpand = true,
@@ -2279,8 +2279,8 @@ namespace Content.Client.Lobby.UI
                 case BackgroundCategory.Citizenship when Profile != null:
                     if (_prototypeManager.TryIndex<CitizenshipPrototype>(Profile.Citizenship, out var natProto))
                     {
-                        BackgroundTitleLabel.Text = Loc.GetString(natProto.NameKey);
-                        BackgroundDescriptionLabel.SetMessage(FormattedMessage.FromMarkup(Loc.GetString(natProto.DescriptionKey)));
+                        BackgroundTitleLabel.Text = Loc.GetString(natProto.Name);
+                        BackgroundDescriptionLabel.SetMessage(FormattedMessage.FromMarkup(Loc.GetString(natProto.Description)));
                         UpdateBackgroundImage(null);
                         return;
                     }
@@ -2288,8 +2288,8 @@ namespace Content.Client.Lobby.UI
                 case BackgroundCategory.Planet when Profile != null:
                     if (_prototypeManager.TryIndex<PlanetPrototype>(Profile.Planet, out var empProto))
                     {
-                        BackgroundTitleLabel.Text = Loc.GetString(empProto.NameKey);
-                        BackgroundDescriptionLabel.SetMessage(FormattedMessage.FromMarkup(Loc.GetString(empProto.DescriptionKey)));
+                        BackgroundTitleLabel.Text = Loc.GetString(empProto.Name);
+                        BackgroundDescriptionLabel.SetMessage(FormattedMessage.FromMarkup(Loc.GetString(empProto.Description)));
                         UpdateBackgroundImage(string.IsNullOrWhiteSpace(empProto.BackgroundTexture)
                             ? null
                             : empProto.BackgroundTexture);
@@ -2299,8 +2299,8 @@ namespace Content.Client.Lobby.UI
                 case BackgroundCategory.Background when Profile != null:
                     if (_prototypeManager.TryIndex<BackgroundPrototype>(Profile.Background, out var lifeProto))
                     {
-                        BackgroundTitleLabel.Text = Loc.GetString(lifeProto.NameKey);
-                        BackgroundDescriptionLabel.SetMessage(FormattedMessage.FromMarkup(Loc.GetString(lifeProto.DescriptionKey)));
+                        BackgroundTitleLabel.Text = Loc.GetString(lifeProto.Name);
+                        BackgroundDescriptionLabel.SetMessage(FormattedMessage.FromMarkup(Loc.GetString(lifeProto.Description)));
                         UpdateBackgroundImage(string.IsNullOrWhiteSpace(lifeProto.BackgroundTexture)
                             ? null
                             : lifeProto.BackgroundTexture);
@@ -2360,15 +2360,15 @@ namespace Content.Client.Lobby.UI
         {
             var citizenshipText = string.Empty;
             if (Profile != null && _prototypeManager.TryIndex<CitizenshipPrototype>(Profile.Citizenship, out var natProto))
-                citizenshipText = WrapButtonText(Loc.GetString(natProto.NameKey), BackgroundButtonWrap);
+                citizenshipText = WrapButtonText(Loc.GetString(natProto.Name), BackgroundButtonWrap);
 
             var planetText = string.Empty;
             if (Profile != null && _prototypeManager.TryIndex<PlanetPrototype>(Profile.Planet, out var empProto))
-                planetText = WrapButtonText(Loc.GetString(empProto.NameKey), BackgroundButtonWrap);
+                planetText = WrapButtonText(Loc.GetString(empProto.Name), BackgroundButtonWrap);
 
             var backgroundText = string.Empty;
             if (Profile != null && _prototypeManager.TryIndex<BackgroundPrototype>(Profile.Background, out var lifeProto))
-                backgroundText = WrapButtonText(Loc.GetString(lifeProto.NameKey), BackgroundButtonWrap);
+                backgroundText = WrapButtonText(Loc.GetString(lifeProto.Name), BackgroundButtonWrap);
 
             BackgroundSummaryCitizenshipValue.Text = citizenshipText;
             BackgroundSummaryPlanetValue.Text = planetText;

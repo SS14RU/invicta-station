@@ -1,40 +1,48 @@
 - type: background
   id: ColonialEmbryo
-  nameKey: background_name_colonial-embryo
-  descriptionKey: background_description_colonial-embryo
+  name: background_name_colonial-embryo
+  description: background_description_colonial-embryo
   backgroundTexture: /Textures/Interface/Backgrounds/colonial_embryo.png
   allowedPlanets:
     - AlphaCentauriAb
 
 - type: background
   id: Unemployed
-  nameKey: background_name_unemployed
-  descriptionKey: background_description_unemployed
+  name: background_name_unemployed
+  description: background_description_unemployed
   backgroundTexture: /Textures/Interface/Backgrounds/unemployed.png
   allowedPlanets:
     - AlphaCentauriAb
 
 - type: background
   id: AlphaCoordinator
-  nameKey: background_name_alpha-coordinator
-  descriptionKey: background_description_alpha-coordinator
+  name: background_name_alpha-coordinator
+  description: background_description_alpha-coordinator
   backgroundTexture: /Textures/Interface/Backgrounds/alpha_coordinator.png
   allowedPlanets:
     - AlphaCentauriAb
+  backgroundTags:
+    - CommandTrack
 
 - type: background
   id: GSArchiveAnalyst
-  nameKey: background_name_gs-archive-analyst
-  descriptionKey: background_description_gs-archive-analyst
+  name: background_name_gs-archive-analyst
+  description: background_description_gs-archive-analyst
   backgroundTexture: /Textures/Interface/Backgrounds/gs_archive_analyst.png
   allowedPlanets:
     - AlphaCentauriAb
+  backgroundTags:
+    - ScienceTrack
 
 - type: background
   id: BargeRecruiter
-  nameKey: background_name_barge-recruiter
-  descriptionKey: background_description_barge-recruiter
+  name: background_name_barge-recruiter
+  description: background_description_barge-recruiter
   backgroundTexture: /Textures/Interface/Backgrounds/barge_recruiter.png
   allowedPlanets:
     - AlphaCentauriAb
+  backgroundTags:
+    - CorporationsTrack
+    - RestrictedTrack
+    - HeadOfPersonnelRestricted
 
