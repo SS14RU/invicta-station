@@ -1,0 +1,24 @@
+- type: background
+  id: CorporateSpy
+  nameKey: background_name_corporate-spy
+  descriptionKey: background_description_corporate-spy
+  backgroundTexture: /Textures/Interface/Backgrounds/corporate_spy.png
+  allowedPlanets:
+    - KappaArcadia67
+
+- type: background
+  id: PortEngineer
+  nameKey: background_name_port-engineer
+  descriptionKey: background_description_port-engineer
+  backgroundTexture: /Textures/Interface/Backgrounds/port_engineer.png
+  allowedPlanets:
+    - KappaArcadia67
+
+- type: background
+  id: GangMember
+  nameKey: background_name_gang-member
+  descriptionKey: background_description_gang-member
+  backgroundTexture: /Textures/Interface/Backgrounds/gang_member.png
+  allowedPlanets:
+    - KappaArcadia67
+

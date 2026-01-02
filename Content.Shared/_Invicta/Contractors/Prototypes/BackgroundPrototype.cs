@@ -18,6 +18,9 @@ public sealed partial class BackgroundPrototype : IPrototype
     [DataField]
     public string DescriptionKey { get; } = string.Empty;
 
+    [DataField("backgroundTexture")]
+    public string? BackgroundTexture { get; } = null;
+
     [DataField]
     public List<ProtoId<JobPrototype>> BlockingJobs { get; } = new();
 

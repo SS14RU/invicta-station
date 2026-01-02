@@ -1,0 +1,56 @@
+- type: background
+  id: MilitaryPolice
+  nameKey: background_name_military-police
+  descriptionKey: background_description_military-police
+  backgroundTexture: /Textures/Interface/Backgrounds/military_police.png
+  allowedPlanets:
+    - ThetaOrpheus71
+
+- type: background
+  id: ServiceCenterWorker
+  nameKey: background_name_service-center-worker
+  descriptionKey: background_description_service-center-worker
+  backgroundTexture: /Textures/Interface/Backgrounds/service_center_worker.png
+  allowedPlanets:
+    - ThetaOrpheus71
+
+- type: background
+  id: BluespaceObservatoryLabTech
+  nameKey: background_name_bluespace-observatory-lab-tech
+  descriptionKey: background_description_bluespace-observatory-lab-tech
+  backgroundTexture: /Textures/Interface/Backgrounds/bluespace_observatory_lab_tech.png
+  allowedPlanets:
+    - ThetaOrpheus71
+
+- type: background
+  id: LongHaulPilot
+  nameKey: background_name_long-haul-pilot
+  descriptionKey: background_description_long-haul-pilot
+  backgroundTexture: /Textures/Interface/Backgrounds/long_haul_pilot.png
+  allowedPlanets:
+    - ThetaOrpheus71
+
+- type: background
+  id: OrpheusDockAdministrator
+  nameKey: background_name_orpheus-dock-administrator
+  descriptionKey: background_description_orpheus-dock-administrator
+  backgroundTexture: /Textures/Interface/Backgrounds/orpheus_dock_administrator.png
+  allowedPlanets:
+    - ThetaOrpheus71
+
+- type: background
+  id: OrpheusParamedic
+  nameKey: background_name_orpheus-paramedic
+  descriptionKey: background_description_orpheus-paramedic
+  backgroundTexture: /Textures/Interface/Backgrounds/orpheus_paramedic.png
+  allowedPlanets:
+    - ThetaOrpheus71
+
+- type: background
+  id: CorporateSecurityAgent
+  nameKey: background_name_corporate-security-agent
+  descriptionKey: background_description_corporate-security-agent
+  backgroundTexture: /Textures/Interface/Backgrounds/corporate_security_agent.png
+  allowedPlanets:
+    - ThetaOrpheus71
+

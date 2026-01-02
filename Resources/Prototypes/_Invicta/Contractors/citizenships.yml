@@ -9,3 +9,10 @@
   nameKey: citizenship_name_second-sphere
   descriptionKey: citizenship_description_second-sphere
   sortOrder: 10
+
+
+- type: citizenship
+  id: ThirdSphere
+  nameKey: citizenship_name_third-sphere
+  descriptionKey: citizenship_description_third-sphere
+  sortOrder: 20

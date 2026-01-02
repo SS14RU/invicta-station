@@ -271,8 +271,6 @@ namespace Content.Client.Lobby.UI
 
         private BackgroundCategory _currentBackgroundCategory = BackgroundCategory.Citizenship;
         private const int BackgroundButtonWrap = 25;
-        private const string ColonialEmbryoBackgroundPath = "/Textures/Interface/Backgrounds/colonial_embryo.png";
-        private const string AlphaCentauriBackgroundPath = "/Textures/Interface/Backgrounds/alpha_centauri_ab.png";
         private bool _backgroundTextHidden;
         private bool _ensuringBackground;
 
@@ -2292,14 +2290,9 @@ namespace Content.Client.Lobby.UI
                     {
                         BackgroundTitleLabel.Text = Loc.GetString(empProto.NameKey);
                         BackgroundDescriptionLabel.SetMessage(FormattedMessage.FromMarkup(Loc.GetString(empProto.DescriptionKey)));
-                        if (Profile.Planet == "AlphaCentauriAb")
-                        {
-                            UpdateBackgroundImage(AlphaCentauriBackgroundPath);
-                        }
-                        else
-                        {
-                            UpdateBackgroundImage(null);
-                        }
+                        UpdateBackgroundImage(string.IsNullOrWhiteSpace(empProto.BackgroundTexture)
+                            ? null
+                            : empProto.BackgroundTexture);
                         return;
                     }
                     break;
@@ -2308,14 +2301,9 @@ namespace Content.Client.Lobby.UI
                     {
                         BackgroundTitleLabel.Text = Loc.GetString(lifeProto.NameKey);
                         BackgroundDescriptionLabel.SetMessage(FormattedMessage.FromMarkup(Loc.GetString(lifeProto.DescriptionKey)));
-                        if (Profile.Background == "ColonialEmbryo")
-                        {
-                            UpdateBackgroundImage(ColonialEmbryoBackgroundPath);
-                        }
-                        else
-                        {
-                            UpdateBackgroundImage(null);
-                        }
+                        UpdateBackgroundImage(string.IsNullOrWhiteSpace(lifeProto.BackgroundTexture)
+                            ? null
+                            : lifeProto.BackgroundTexture);
                         return;
                     }
                     break;

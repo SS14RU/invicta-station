@@ -1,0 +1,40 @@
+- type: background
+  id: SpaceMarine
+  nameKey: background_name_space-marine
+  descriptionKey: background_description_space-marine
+  backgroundTexture: /Textures/Interface/Backgrounds/space_marine.png
+  allowedPlanets:
+    - XiBorder48
+
+- type: background
+  id: Researcher
+  nameKey: background_name_researcher
+  descriptionKey: background_description_researcher
+  backgroundTexture: /Textures/Interface/Backgrounds/researcher.png
+  allowedPlanets:
+    - XiBorder48
+
+- type: background
+  id: CentralControlOperator
+  nameKey: background_name_central-control-operator
+  descriptionKey: background_description_central-control-operator
+  backgroundTexture: /Textures/Interface/Backgrounds/central_control_operator.png
+  allowedPlanets:
+    - XiBorder48
+
+- type: background
+  id: LinkStairsGuard
+  nameKey: background_name_link-stairs-guard
+  descriptionKey: background_description_link-stairs-guard
+  backgroundTexture: /Textures/Interface/Backgrounds/link_stairs_guard.png
+  allowedPlanets:
+    - XiBorder48
+
+- type: background
+  id: FieldCorpsman
+  nameKey: background_name_field-corpsman
+  descriptionKey: background_description_field-corpsman
+  backgroundTexture: /Textures/Interface/Backgrounds/field_corpsman.png
+  allowedPlanets:
+    - XiBorder48
+

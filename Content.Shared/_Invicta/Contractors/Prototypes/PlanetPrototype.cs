@@ -18,6 +18,9 @@ public sealed partial class PlanetPrototype : IPrototype
     [DataField]
     public string DescriptionKey { get; } = string.Empty;
 
+    [DataField("backgroundTexture")]
+    public string? BackgroundTexture { get; } = null;
+
     [DataField]
     public Color PrimaryColour { get; } = Color.FromHex("#23BB32");
 
