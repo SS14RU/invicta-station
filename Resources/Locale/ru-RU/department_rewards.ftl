@@ -40,6 +40,10 @@ department-reward-console-history-entry = { $time } — { $description }
 department-reward-console-no-history = Пока не выполнено ни одной задачи.
 department-reward-department-cargo = Карго
 department-reward-department-engineering = Инженерный
+department-reward-department-medical = Медицинский
+department-reward-department-science = Научный
+department-reward-department-security = Служба безопасности
+department-reward-department-service = Сервис
 
 # Задачи карго
 department-reward-cargo-start-deliver-title = Пополните запас материалов
@@ -81,12 +85,25 @@ department-reward-engineering-late-grid-desc = Добавьте резервны
 department-reward-engineering-late-emergency-title = Аварийная готовность
 department-reward-engineering-late-emergency-desc = Подготовьте резервные генераторы и аварийные системы к работе в кризис.
 
+# Задачи Медицинского
+department-reward-medical-start
+department-reward-
+
+
 ent-DepartmentRewardConsoleBase = Консоль наград отдела
     .desc = Консоль, которая выдаёт задачи и выплаты отдела. Вставьте ID-карту с нужным доступом.
 ent-DepartmentRewardConsoleCargo = Консоль наград отдела Карго
     .desc = Консоль наград отдела Карго.
 ent-DepartmentRewardConsoleEngineering = Консоль наград Инженерного отдела
     .desc = Консоль наград Инженерного отдела.
+ent-DepartmentRewardConsoleMedical = Консоль наград Медицинского отдела
+    .desc = Консоль наград Медицинского отдела.
+ent-DepartmentRewardConsoleScience = Консоль наград Научного отдела
+    .desc = Консоль наград Научного отдела.
+ent-DepartmentRewardConsoleSecurity = Консоль наград Службы безопасности
+    .desc = Консоль наград Службы безопасности.
+ent-DepartmentRewardConsoleService = Консоль наград Сервисного отдела
+    .desc = Консоль наград Сервисного отдела.
 ent-DepartmentRewardConsoleMaster = Консоль контроля отделов
     .desc = Командный терминал, который отображает состояние всех отделенческих консолей наград.
 department-reward-pda-instruction-display-task = [color=#b0b0b0]Задача:[/color] [color=white]{ $title }[/color]

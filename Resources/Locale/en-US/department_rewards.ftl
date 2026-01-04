@@ -40,6 +40,10 @@ department-reward-console-history-entry = { $time } — { $description }
 department-reward-console-no-history = No tasks completed yet.
 department-reward-department-cargo = Cargo
 department-reward-department-engineering = Engineering
+department-reward-department-medical = Medical
+department-reward-department-science = Science
+department-reward-department-security = Security
+department-reward-department-service = Service
 
 # Cargo tasks
 department-reward-cargo-start-deliver-title = Restock materials
@@ -89,6 +93,18 @@ ent-DepartmentRewardConsoleCargo = Department reward console
 ent-DepartmentRewardConsoleEngineering = Department reward console
     .desc = Engineering department reward console.
     .suffix = Engineering
+ent-DepartmentRewardConsoleMedical = Department reward console
+    .desc = Medical department reward console.
+    .suffix = Medical
+ent-DepartmentRewardConsoleScience = Department reward console
+    .desc = Science department reward console.
+    .suffix = Science
+ent-DepartmentRewardConsoleSecurity = Department reward console
+    .desc = Security department reward console.
+    .suffix = Security
+ent-DepartmentRewardConsoleService = Department reward console
+    .desc = Service department reward console.
+    .suffix = Service
 ent-DepartmentRewardConsoleMaster = Department reward control console
     .desc = A command terminal that shows the status of all department reward consoles.
 department-reward-pda-instruction-display-task = [color=#b0b0b0]Task:[/color] [color=white]{ $title }[/color]

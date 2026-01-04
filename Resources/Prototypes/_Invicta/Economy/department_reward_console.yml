@@ -45,6 +45,46 @@
     departmentNameLocId: department-reward-department-engineering
 
 - type: entity
+  id: DepartmentRewardConsoleMedical
+  parent: DepartmentRewardConsoleBase
+  name: ent-DepartmentRewardConsoleMedical
+  suffix: Medical
+  components:
+  - type: DepartmentRewardConsole
+    departmentId: NT-Medical
+    departmentNameLocId: department-reward-department-medical
+
+- type: entity
+  id: DepartmentRewardConsoleScience
+  parent: DepartmentRewardConsoleBase
+  name: ent-DepartmentRewardConsoleScience
+  suffix: Science
+  components:
+  - type: DepartmentRewardConsole
+    departmentId: NT-Science
+    departmentNameLocId: department-reward-department-science
+
+- type: entity
+  id: DepartmentRewardConsoleSecurity
+  parent: DepartmentRewardConsoleBase
+  name: ent-DepartmentRewardConsoleSecurity
+  suffix: Security
+  components:
+  - type: DepartmentRewardConsole
+    departmentId: NT-Security
+    departmentNameLocId: department-reward-department-security
+
+- type: entity
+  id: DepartmentRewardConsoleService
+  parent: DepartmentRewardConsoleBase
+  name: ent-DepartmentRewardConsoleService
+  suffix: Service
+  components:
+  - type: DepartmentRewardConsole
+    departmentId: NT-Service
+    departmentNameLocId: department-reward-department-service
+
+- type: entity
   id: DepartmentRewardConsoleMaster
   parent: BaseComputer
   name: ent-DepartmentRewardConsoleMaster
