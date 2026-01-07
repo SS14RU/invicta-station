@@ -1,9 +1,9 @@
 - type: guideEntry
-  id: NanotrasenTest
-  name: guide-entry-nanotrasen-test
-  text: "/ServerInfo/_Invicta/Guidebook/NanotrasenTest.xml"
+  id: GuideEntryPilotMemo
+  name: guide-entry-pilot-memo
+  text: "/ServerInfo/_Invicta/Guidebook/PilotMemo.xml"
 
 - type: guideEntry
-  id: GuideEntryGS
-  name: guide-entry-gs
-  text: "/ServerInfo/_Invicta/Guidebook/GS.xml"
+  id: GuideEntryBluespaceTheory
+  name: guide-entry-bluespace-theory
+  text: "/ServerInfo/_Invicta/Guidebook/BluespaceTheory.xml"

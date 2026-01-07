@@ -200,5 +200,5 @@ guide-entry-rules-ban-types = Виды банов
 guide-entry-rules-ban-durations = Длительности банов
 guide-entry-writing = Разметка письма
 guide-entry-glossary = Словарь терминов
-guide-entry-nanotrasen-test = НаноТразен (тест)
-guide-entry-gs = Галактический шаг (GS)
+guide-entry-pilot-memo = Памятка юному пилоту
+guide-entry-bluespace-theory = Теория блюспейса

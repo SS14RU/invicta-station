@@ -253,5 +253,5 @@ guide-entry-rules-ban-durations = Ban Durations
 
 guide-entry-writing = Writing
 guide-entry-glossary = Glossary
-guide-entry-nanotrasen-test = NanoTrasen (test)
-guide-entry-gs = Galactic Step (GS)
+guide-entry-pilot-memo = Young Pilot Memo
+guide-entry-bluespace-theory = Bluespace Theory
