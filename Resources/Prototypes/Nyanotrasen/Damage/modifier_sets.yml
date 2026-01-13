@@ -12,4 +12,9 @@
     Blunt: 1.15
     Slash: 1.15
     Piercing: 1.15
+    Heat: 0.85
+    Cold: 0.85
+    Shock: 0.85
+    Radiation: 0.85
+    Caustic: 0.85
   ignoreArmorPierceFlags: All # Goobstation
