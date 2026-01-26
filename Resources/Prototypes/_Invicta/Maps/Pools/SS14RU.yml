@@ -1,0 +1,5 @@
+- type: gameMapPool
+  id: SS14RUMapPool
+  # Highpop 60+
+  maps:
+  - SS14RUCyberiad

@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/27/2025 19:50:44
-  entityCount: 10680
-maps:
-- 7105
+  time: 01/26/2026 16:05:14
+  entityCount: 10679
+maps: []
 grids:
 - 1
-orphans: []
+orphans:
+- 1
 nullspace: []
 tilemap:
   0: Space
@@ -89,7 +89,7 @@ entities:
       name: Станция ЦентКом
     - type: Transform
       pos: -48.14583,-52
-      parent: 7105
+      parent: invalid
     - type: MapGrid
       chunks:
         0,5:
@@ -10052,16 +10052,6 @@ entities:
     - type: ContainedSolution
       containerName: spray
       container: 2
-  - uid: 7105
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: GridTree
-    - type: Broadphase
-    - type: OccluderTree
 - proto: AirAlarm
   entities:
   - uid: 20
