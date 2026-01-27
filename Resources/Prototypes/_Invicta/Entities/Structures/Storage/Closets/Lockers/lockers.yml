@@ -57,3 +57,5 @@
     - id: MagazineRifle
     - id: MagazineRifle
     - id: ClothingBeltMedicalEMTFilled
+    - id: DoubleEmergencyOxygenTankFilled
+    - id: DoubleEmergencyNitrogenTankFilled
