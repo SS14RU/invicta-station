@@ -1,0 +1,59 @@
+﻿- type: entity
+  id: GunSafeBulldogInvicta
+  parent: GunSafeBaseSecure
+  suffix: Cns, Bulldog, Armory, Locked
+  components:
+  - type: AccessReader
+    access: [["BlueshieldOfficer"], ["CentralCommand"]]
+  - type: StorageFill
+    contents:
+    - id: WeaponShotgunBulldog
+      amount: 2
+    - id: MagazineShotgun
+      amount: 4
+    - id: MagazineShotgunIncendiary
+      amount: 2
+
+- type: entity
+  id: GunSafeLecterInvicta
+  parent: GunSafeBaseSecure
+  suffix: Cns, Lecter, Armory, Locked
+  components:
+  - type: AccessReader
+    access: [["BlueshieldOfficer"], ["CentralCommand"]]
+  - type: StorageFill
+    contents:
+    - id: WeaponRifleLecter
+      amount: 2
+    - id: MagazineRifle
+      amount: 4
+
+- type: entity
+  id: SuitStorageBlueshieldInvicta
+  name: blueshield suit storage unit
+  parent: SuitStorageBase
+  suffix: Cns, Locked
+  components:
+  - type: AccessReader
+    access: [["BlueshieldOfficer"], ["CentralCommand"]]
+  - type: StorageFill
+    contents:
+    - id: ClothingOuterHardsuitBlueshieldLight
+    - id: NitrogenTankFilled
+    - id: OxygenTankFilled
+    - id: ClothingShoesBootsMag
+
+- type: entity
+  id: LockerParamedicInvicta
+  parent: LockerParamedic
+  suffix: Paramedic, Locked
+  components:
+  - type: AccessReader
+    access: [["Paramedic"], ["ChiefMedicalOfficer"]]
+  - type: StorageFill
+    contents:
+    - id: UndeterminedVoidsuitParamedic
+    - id: WeaponRifleLecter
+    - id: MagazineRifle
+    - id: MagazineRifle
+    - id: ClothingBeltMedicalEMTFilled

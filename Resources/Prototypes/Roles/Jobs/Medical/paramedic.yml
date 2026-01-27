@@ -136,12 +136,8 @@
     ears: ClothingHeadsetMedical
   storage:
     back:
-    - UndeterminedVoidsuitParamedic
     - EmergencyRollerBedSpawnFolded
     - BodyBagFolded
-    - WeaponSubMachineGunAtreides
-    - MagazinePistolSubMachineGun
-    - MagazinePistolSubMachineGun
 
 - type: chameleonOutfit
   id: ParamedicChameleonOutfit
